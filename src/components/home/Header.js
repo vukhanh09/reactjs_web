@@ -18,6 +18,10 @@ function Header() {
   const [dateCurr,setDateCurr] = useState(date.toLocaleDateString())
   const [dayCurr,setDayCurr] = useState(dictDay[date.getDate()])
 
+  const listTopic = [['Thời sự','thoi-su'],['Góc nhìn','goc-nhin'],['Thế giới','the-gioi'],
+  ['Kinh doanh','kinh-doanh'],['Giải trí','giai-tri'],['Thể thao','the-thao'],
+  ['Khoa học','khoa-hoc'],['Giáo dục','giao-duc'],['Sức khỏe','suc-khoe'],['Du lịch','du-lich']]
+
   return (
     <div className="Header">
       <div className="tool-bar">
@@ -37,6 +41,20 @@ function Header() {
         </div>
 
       </div>
+
+      <nar className="nar-bar">
+        <ul className='text-color nar-menu'>
+          {
+            listTopic.map(topic => <li ><a href={`/${topic[1]}`} >{topic[0]}</a></li>)
+          }
+          <li >
+            <a>
+              Tất cả
+            </a>
+          </li>
+        </ul>
+
+      </nar>
       
     </div>
   );

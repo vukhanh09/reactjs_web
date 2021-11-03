@@ -1,5 +1,5 @@
 .Header{
-    background-color: black;
+    /* background-color: black; */
 }
 
 .tool-bar{
@@ -7,6 +7,7 @@
     align-items: center;
     padding: 10px 10%;
     display: flex;
+    background-color: black;
 }
 .image{
     width: 20px;
@@ -51,3 +52,58 @@
 .text-date{
     padding-left: 10px;
 }
+
+
+/* ------------- nar-bar */
+.nar-bar{
+
+    background-color: black;
+    display: flex;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.nar-menu{
+    flex-direction: row;
+    display: flex;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    justify-content: space-between;
+    z-index: 9999;
+  }
+  li{
+      margin-right: 10px;
+  }
+  
+  ul li {
+    border: 2px solid transparent;
+    align-content: center;
+    align-items: center;
+
+  }
+  
+  ul li:hover {
+    border-color: yellow;
+    z-index: 9999;
+    /* border-radius: 10px yellow; */
+  }
+  
+  #left {
+    float: left;
+  }
+  
+  #right {
+    float: right;
+  }
+  
+  a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 12px 12px;
+    text-decoration: none;
+  }

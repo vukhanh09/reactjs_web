@@ -1,6 +1,7 @@
 import React from "react";
 import searchImage from '../../assets/magnifier.png'
 import userImage from '../../assets/user1.png'
+import menuImage from '../../assets/squares.png'
 import './HeaderCSS.css'
 import {useState} from 'react'
 
@@ -51,6 +52,7 @@ function Header() {
             <a>
               Tất cả
             </a>
+
           </li>
         </ul>
 

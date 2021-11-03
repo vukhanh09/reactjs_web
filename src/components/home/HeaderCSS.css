@@ -1,0 +1,53 @@
+.Header{
+    background-color: black;
+}
+
+.tool-bar{
+    /* justify-content: space-between; */
+    align-items: center;
+    padding: 10px 10%;
+    display: flex;
+}
+.image{
+    width: 20px;
+    height: 20px;
+    padding-right: 20px;
+}
+.userIcon{
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+
+}
+.namePaper {
+    /* align-items: center; */
+    color: white;
+    margin-right: 20px;
+    font-size: 25px;
+}
+.text-color{
+    color: white;
+}
+.search{
+    width: 91%;
+    border-radius: 10px;
+    height: 30px;
+    padding-left: 10px;
+}
+.div-search{
+    margin-left: 60px;
+    width: 60%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.div-user{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 20px;
+    
+}
+.text-date{
+    padding-left: 10px;
+}

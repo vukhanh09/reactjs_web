@@ -3,7 +3,7 @@ import searchImage from '../../assets/magnifier.png'
 import userImage from '../../assets/user1.png'
 import menuImage from '../../assets/squares.png'
 import './HeaderCSS.css'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 
 function Header() {
   const dictDay = {
@@ -16,12 +16,31 @@ function Header() {
     6:'Thứ Bảy'
   }
   let date = new Date()
-  const [dateCurr,setDateCurr] = useState(date.toLocaleDateString())
-  const [dayCurr,setDayCurr] = useState(dictDay[date.getDate()])
+  const dateCurr = date.toLocaleDateString()
+  const dayCurr = dictDay[date.getDate()]
 
   const listTopic = [['Thời sự','thoi-su'],['Góc nhìn','goc-nhin'],['Thế giới','the-gioi'],
   ['Kinh doanh','kinh-doanh'],['Giải trí','giai-tri'],['Thể thao','the-thao'],
   ['Khoa học','khoa-hoc'],['Giáo dục','giao-duc'],['Sức khỏe','suc-khoe'],['Du lịch','du-lich']]
+
+  const topicThoiSu = [['Chính trị','thoi-su/chinh-tri'],['Dân sinh','thoi-su/dan-sinh'],['Giao thông','thoisu-dan-sinh']]
+  const toppicGocNhin = [['Bình luận nhiều','goc-nhin/nhieu-binh-luan'],['Covid-19','goc-nhin/covid-19'],['Kinh doanh','goc-nhin/kinh-doanh']]
+
+  const [isScroll,setIsScroll] = useState('')
+  useEffect(()=>{
+    const handlleScroll = ()=>{
+      if(window.scrollY>71){
+        setIsScroll('fixed')
+      }else{
+        setIsScroll('')
+      }
+    }
+
+    window.addEventListener('scroll',handlleScroll)
+  },[])
+
+  console.log(isScroll)
+
 
   return (
     <div className="Header">
@@ -43,20 +62,98 @@ function Header() {
 
       </div>
 
-      <nar className="nar-bar">
+      <div className="nar-bar" style={{position:isScroll,top:0}}>
         <ul className='text-color nar-menu'>
           {
             listTopic.map(topic => <li ><a href={`/${topic[1]}`} >{topic[0]}</a></li>)
           }
           <li >
-            <a>
-              Tất cả
-            </a>
+            <div className='div-user' onClick={()=>console.log('click me!')}>
+              <a>
+                Tất cả
+              </a>
+              <img src={menuImage} className='image'  alt='menuImage'/>
+            </div>
+
 
           </li>
         </ul>
 
-      </nar>
+      </div>
+
+
+
+
+      
+
+      <div className='row-menu'>
+        <div className='row-menu-1'>
+          <ul>
+            <h2>Thời sự</h2>
+            {
+              topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
+            }
+          </ul>
+          <ul>
+            <h2>Góc nhìn</h2>
+            {
+              toppicGocNhin.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
+            }
+          </ul>
+          <ul>
+            <h2>Thời sự</h2>
+            {
+              topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
+            }
+          </ul>
+          <ul>
+            <h2>Góc nhìn</h2>
+            {
+              toppicGocNhin.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
+            }
+          </ul>
+          <ul>
+            <h2>Thời sự</h2>
+            {
+              topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
+            }
+          </ul>        
+        </div>
+
+        <div className='row-menu-2'>
+          <ul>
+            <h2>Thời sự</h2>
+            {
+              topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
+            }
+          </ul>
+          <ul>
+            <h2>Góc nhìn</h2>
+            {
+              toppicGocNhin.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
+            }
+          </ul>
+          <ul>
+            <h2>Thời sự</h2>
+            {
+              topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
+            }
+          </ul>
+          <ul>
+            <h2>Góc nhìn</h2>
+            {
+              toppicGocNhin.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
+            }
+          </ul>
+          <ul>
+            <h2>Thời sự</h2>
+            {
+              topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
+            }
+          </ul>        
+        </div>
+        
+      </div>
       
     </div>
   );

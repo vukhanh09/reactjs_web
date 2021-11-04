@@ -1,6 +1,4 @@
-.Header{
-    /* background-color: black; */
-}
+
 
 .tool-bar{
     /* justify-content: space-between; */
@@ -45,12 +43,10 @@
     align-items: center;
     display: flex;
     justify-content: space-between;
-    /* margin-left: 20px; */
+    cursor: pointer;
     
 }
-.text-date{
-    /* padding-left: 10px; */
-}
+
 
 
 /* ------------- nar-bar */
@@ -113,7 +109,7 @@
     text-align: center;
     padding: 12px 12px;
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 .row-menu-1{
@@ -126,3 +122,12 @@
     padding:10px 20%;
     justify-content: space-between;
 }
+
+.row-menu{
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    align-items: center;
+    
+}
+

@@ -27,19 +27,30 @@ function Header() {
   const toppicGocNhin = [['Bình luận nhiều','goc-nhin/nhieu-binh-luan'],['Covid-19','goc-nhin/covid-19'],['Kinh doanh','goc-nhin/kinh-doanh']]
 
   const [isScroll,setIsScroll] = useState('')
+  const [VisibleMenuAll,setVisibleMenuAll] = useState(false)
+  const [VisibleMenuTop,setVisibleMenuTop] = useState(71+47)
+
+
   useEffect(()=>{
     const handlleScroll = ()=>{
+      let x1 = document.querySelector('.nar-bar').clientHeight
+      let x2 = document.querySelector('.tool-bar').clientHeight
       if(window.scrollY>71){
         setIsScroll('fixed')
+        setVisibleMenuTop(x1)
       }else{
         setIsScroll('')
+        setVisibleMenuTop(x1+x2-window.scrollY)
       }
     }
 
     window.addEventListener('scroll',handlleScroll)
   },[])
 
-  console.log(isScroll)
+  
+  const handlleVisibleMenu = ()=>{
+    setVisibleMenuAll(!VisibleMenuAll)
+  }
 
 
   return (
@@ -68,7 +79,7 @@ function Header() {
             listTopic.map(topic => <li ><a href={`/${topic[1]}`} >{topic[0]}</a></li>)
           }
           <li >
-            <div className='div-user' onClick={()=>console.log('click me!')}>
+            <div className='div-user' onClick={handlleVisibleMenu}>
               <a>
                 Tất cả
               </a>
@@ -79,6 +90,8 @@ function Header() {
           </li>
         </ul>
 
+        
+
       </div>
 
 
@@ -86,8 +99,8 @@ function Header() {
 
       
 
-      <div className='row-menu'>
-        <div className='row-menu-1'>
+      {VisibleMenuAll &&<div className='row-menu' style={{top:VisibleMenuTop}}>
+        <div className='row-menu-1 text-color'>
           <ul>
             <h2>Thời sự</h2>
             {
@@ -152,9 +165,67 @@ function Header() {
             }
           </ul>        
         </div>
+        <br/>
         
       </div>
-      
+      }
+
+
+      <h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
+<h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
+<h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
+<h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
+<h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
+<h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
+<h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
+<h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
+<h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
+<h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
+<h1>Vietjet và Airbus trao thỏa thuận hợp tác chiến lược về cung cấp 184 tàu bay, phát triển mới đội tàu bay thân rộng và bàn giao 3 tàu bay thân rộng A330.
+
+HDBank ký với tổ chức tài chính Phát triển Pháp (Proparco) tài trợ tín dụng dài hạn trị giá 100 triệu USD cho các dự án năng lượng tái tạo tại Việt Nam; ký với DEG (Đức) tổng giá trị thực hiện từ 200 tới 300 triệu USD trong lĩnh vực phát triển bền vững...
+
+Tập đoàn T&T có loạt thỏa thuận hợp tác chiến lược với Total Eren trong lĩnh vực năng lượng tái tạo tại Việt Nam trị giá 3 tỷ USD. Tập đoàn này cũng thoả thuận với NG Biotech về nghiên cứu phát triển và chuyển giao công nghệ sản xuất 175 loại test nhanh, với đại diện Trung tâm phòng chống Ung thư Francois Baclesse xây dựng hệ thống bệnh viện chất lượng cao và bệnh viện tư nhân chuyên khoa về ung bướu tại TP HCM. Đồng thời, T&T cũng ký thoả thuận với đại diện Trường Quản trị Normandie về tư vấn xây dựng các mô hình giáo dục quốc tế chất lượng cao.</h1>
     </div>
   );
 }

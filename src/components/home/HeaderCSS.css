@@ -68,24 +68,24 @@
     display: flex;
 }
 
- ul {
+.Header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     justify-content: space-between;
     z-index: 9999;
-  }
-  li{
-      margin-right: 10px;
-  }
-  
-  ul li {
+}
+.Header li{
+    margin-right: 10px;
+}
+
+.Header ul li {
     border: 2px solid transparent;
     align-content: center;
     align-items: center;
 
-  }
+}
   
 .nar-bar ul li:hover {
     border-color: yellow;
@@ -129,5 +129,10 @@
     width: 100%;
     align-items: center;
     
+}
+.Header h1{
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: justify;
 }
 

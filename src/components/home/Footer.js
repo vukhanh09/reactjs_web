@@ -1,5 +1,5 @@
 import React from "react";
-import './Footer.css'
+import './FooterCSS.css'
 import logoImage from '../../assets/logo-design.png'
 import appStore from '../../assets/app-store.png'
 import appStore1 from '../../assets/app-store2.png'

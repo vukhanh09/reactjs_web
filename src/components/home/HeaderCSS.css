@@ -46,6 +46,9 @@
     cursor: pointer;
     
 }
+.tool-bar a{
+    text-decoration: none;
+}
 
 
 

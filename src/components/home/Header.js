@@ -65,11 +65,11 @@ function Header() {
             <img src={searchImage} className='image' alt='search'/>
         </div>
             
-        <div className='div-user'>
+        <a className='div-user' href='/login'>
             <img src ={userImage} className='userIcon' />
             <p className='text-color'>Đăng nhập</p>
 
-        </div>
+        </a>
 
       </div>
 

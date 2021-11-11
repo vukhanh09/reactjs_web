@@ -1,15 +1,16 @@
+import React from "react";
 import Header from '../components/home/Header';
-import HomeContent from '../components/content/HomeContent';
+import Gocnhin from '../components/content/GocNhin/Gocnhin';
 import Footer from '../components/home/Footer';
 
 
-function Home() {
+function GocNhin() {
     return ( <
-        div className = "Home" >
+        div className = "GocNhin" >
         <
         Header / >
         <
-        HomeContent / >
+        Gocnhin / >
         <
         Footer / >
 
@@ -18,4 +19,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default GocNhin;

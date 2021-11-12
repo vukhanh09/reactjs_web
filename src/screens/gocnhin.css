@@ -130,7 +130,7 @@
     background: #f7f7f7;
     padding: 15px 20px 24px 20px;
     width: calc(100% + 40px);
-    margin-left: -20px
+    margin-left: -20px 
 }
 
 .list-stream-gocnhin .item-news-common.art-top .title-news {
@@ -977,32 +977,32 @@ p.meri-font {
     }
 }
 
-html,
+/* html,
 body {
     text-rendering: optimizeLegibility;
-}
+} */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* * { */
+    /* margin: 0; */
+    /* padding: 0;   */
+    /* box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    text-rendering: optimizeLegibility
-}
+    -ms-box-sizing: border-box; */
+    /* text-rendering: optimizeLegibility*/
+/* }  */
 
-body {
+/* body {
     color: #222;
     font: 400 15px arial;
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: scroll;
-}
+} */
 
-html {
+/* html {
     -webkit-text-size-adjust: none;
-}
+} */
 
 h1,
 h2,
@@ -1604,9 +1604,9 @@ li {
 }
 
 
-/* img:not([src]):not([srcset]) {
+img:not([src]):not([srcset]) {
     visibility: hidden
-} */
+}
 
 @keyframes fading {
     0% {

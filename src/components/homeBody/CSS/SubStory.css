@@ -1,0 +1,15 @@
+.item_story{
+    width: 100%;
+    border-bottom-style: solid;
+    border-width: 2px;
+    height: 30%;
+
+    /* margin-bottom: 40px; */
+}
+.item_story_last{
+    width: 100%;
+    /* border-bottom-style: solid;
+    border-width: 2px; */
+    height: 30%;
+
+}

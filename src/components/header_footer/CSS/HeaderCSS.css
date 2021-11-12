@@ -1,79 +1,77 @@
-.tool-bar {
+
+
+.tool-bar{
     /* justify-content: space-between; */
     align-items: center;
     padding: 10px 10%;
     display: flex;
     background-color: black;
 }
-
-.image {
+.image{
     width: 20px;
     height: 20px;
     padding-right: 20px;
 }
-
-.userIcon {
+.userIcon{
     width: 25px;
     height: 25px;
     margin-right: 10px;
 }
-
 .namePaper {
     /* align-items: center; */
     color: white;
     margin-right: 20px;
     font-size: 25px;
 }
-
-.text-color {
+.text-color{
     color: white;
 }
-
-.search {
+.search{
     width: 91%;
     border-radius: 10px;
     height: 30px;
     padding-left: 10px;
 }
-
-.div-search {
+.div-search{
     margin-left: 60px;
     width: 60%;
     align-items: center;
     display: flex;
     justify-content: space-between;
 }
-
-.div-user {
+.div-user{
     align-items: center;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    
+}
+.tool-bar a{
+    text-decoration: none;
 }
 
 
-/* ------------- nar-bar */
 
-.nar-bar {
+/* ------------- nar-bar */
+.nar-bar{
+
     background-color: black;
     display: flex;
-    padding-left: 15%;
+    /* padding-left: 15%; */
     padding-right: 15%;
     width: 100%;
     align-items: center;
 }
-
-.menu-fixed {
+.menu-fixed{
     position: fixed;
-    top: 0;
+    top:0;
 }
-
-.nar-menu {
+.nar-menu{
     /* flex-direction: row; */
     display: flex;
 }
 
-ul {
+.Header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -81,53 +79,63 @@ ul {
     justify-content: space-between;
     z-index: 9999;
 }
-
-li {
+.Header li{
     margin-right: 10px;
 }
 
-ul li {
+.Header ul li {
     border: 2px solid transparent;
     align-content: center;
     align-items: center;
-}
 
+}
+  
 .nar-bar ul li:hover {
     border-color: yellow;
+    
     z-index: 9999;
-    background: linear-gradient(to right, #7fa2d1, #06ff4b);
-}
 
-.nar-bar a {
+    background: linear-gradient(to right, #7fa2d1, #06ff4b);
+
+  }
+  
+  
+.nar-bar  a {
     display: block;
     color: white;
     text-align: center;
     padding: 12px 12px;
     text-decoration: none;
-}
+  }
 
-.row-menu a {
+.row-menu a{
     text-align: center;
     padding: 12px 12px;
     text-decoration: none;
     color: white;
 }
 
-.row-menu-1 {
+.row-menu-1{
     display: flex;
-    padding: 10px 20%;
+    padding:10px 20%;
+    justify-content: space-between;
+}
+.row-menu-2{
+    display: flex;
+    padding:10px 20%;
     justify-content: space-between;
 }
 
-.row-menu-2 {
-    display: flex;
-    padding: 10px 20%;
-    justify-content: space-between;
-}
-
-.row-menu {
+.row-menu{
     position: fixed;
     background-color: black;
     width: 100%;
     align-items: center;
+    
 }
+.Header h1{
+    padding-left: 15%;
+    padding-right: 15%;
+    text-align: justify;
+}
+

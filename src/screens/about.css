@@ -8,7 +8,8 @@ body .login-wrap {
 *,
 :after,
 :before {
-    box-sizing: border-box
+    box-sizing: border-box;
+
 }
 
 .clearfix:after,
@@ -148,8 +149,12 @@ a {
 .login-form .group .button {
     border: none;
     padding: 15px 20px;
-    border-radius: 25px;
+    border-radius: 25px !important;
     background: rgba(255, 255, 255, .1);
+    -webkit-border-radius: 25px !important;
+    -moz-border-radius: 25px !important;
+    -ms-border-radius: 25px !important;
+    -o-border-radius: 25px !important;
 }
 
 .login-form .group input[data-type="password"] {

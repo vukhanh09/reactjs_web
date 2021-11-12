@@ -1,0 +1,13 @@
+.main_story{
+    width :68%;
+    justify-content: center;
+}
+.main_story img{
+    width: 100%;
+    display:block;
+    margin:auto;
+    
+}
+.main_story p{
+    text-align: justify;
+}

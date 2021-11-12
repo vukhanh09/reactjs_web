@@ -7,7 +7,7 @@ import {useState,useEffect} from 'react'
 
 function Header() {
   const dictDay = {
-    7:'Chủ nhật',
+    0:'Chủ nhật',
     1:'Thứ Hai',
     2:'Thứ Ba',
     3:'Thứ Tư',
@@ -17,7 +17,7 @@ function Header() {
   }
   let date = new Date()
   const dateCurr = date.toLocaleDateString()
-  const dayCurr = dictDay[date.getDate()]
+  const dayCurr = dictDay[date.getDay()]
 
   const listTopic = [['Thời sự','thoi-su'],['Góc nhìn','goc-nhin'],['Thế giới','the-gioi'],
   ['Kinh doanh','kinh-doanh'],['Giải trí','giai-tri'],['Thể thao','the-thao'],

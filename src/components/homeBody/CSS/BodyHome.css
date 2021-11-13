@@ -16,9 +16,11 @@
     display: block;
     height: inherit;
     justify-content: space-between;
+
 }
 .section_middle .sub_story{
     display: flex;
     justify-content: space-between;
     width: 100%;
+
 }

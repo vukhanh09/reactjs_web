@@ -16,6 +16,7 @@ export const subData = [
     }
 ]
 
+
 export const middleData = [
     {
         id:0,
@@ -50,5 +51,6 @@ export const middleData = [
         extend_description:'Khi Taliban áp sát thủ đô Kabul hôm 15/8, đội ...'
     }
 ]
+
 
 

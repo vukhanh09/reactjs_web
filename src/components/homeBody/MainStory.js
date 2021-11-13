@@ -26,6 +26,7 @@ function MainStory({data,classType}){
            }
         </>
         
+
     )
 
 }

@@ -2,7 +2,7 @@ import React from "react";
 import searchImage from '../../assets/magnifier.png'
 import userImage from '../../assets/user1.png'
 import menuImage from '../../assets/squares.png'
-import './CSS/HeaderCSS.css'
+import './CSS/HeaderCSS.module.css'
 import {useState,useEffect} from 'react'
 
 function Header() {
@@ -33,8 +33,8 @@ function Header() {
 
   useEffect(()=>{
     const handlleScroll = ()=>{
-      let x1 = document.querySelector('.nar-bar').clientHeight
-      let x2 = document.querySelector('.tool-bar').clientHeight
+      let x1 = document.querySelector('.narBar').clientHeight
+      let x2 = document.querySelector('.toolBar').clientHeight
       if(window.scrollY>71){
         setIsScroll('fixed')
         setVisibleMenuTop(x1)
@@ -55,31 +55,31 @@ function Header() {
 
   return (
     <div className="Header">
-      <div className="tool-bar">
+      <div className="toolBar">
         <label className='namePaper'>Time News</label>
-        <label className='text-color text-date'>{`${dayCurr}, ${dateCurr}`}</label>
+        <label className='textColor textDate'>{`${dayCurr}, ${dateCurr}`}</label>
 
         
-        <div className='div-search'>
+        <div className='divSearch'>
             <input type='text' placeholder='Nhập nội dung...' className='search'/>
             <img src={searchImage} className='image' alt='search'/>
         </div>
             
-        <a className='div-user' href='/login'>
+        <a className='divUser' href='/login'>
             <img src ={userImage} className='userIcon' />
-            <p className='text-color'>Đăng nhập</p>
+            <p className='textColor'>Đăng nhập</p>
 
         </a>
 
       </div>
 
-      <div className="nar-bar" style={{position:isScroll,top:0}}>
-        <ul className='text-color nar-menu'>
+      <div className="narBar" style={{position:isScroll,top:0}}>
+        <ul className='textColor narMenu'>
           {
             listTopic.map(topic => <li ><a href={`/${topic[1]}`} >{topic[0]}</a></li>)
           }
           <li >
-            <div className='div-user' onClick={handlleVisibleMenu}>
+            <div className='divUser' onClick={handlleVisibleMenu}>
               <a>
                 Tất cả
               </a>
@@ -99,8 +99,8 @@ function Header() {
 
       
 
-      {VisibleMenuAll &&<div className='row-menu' style={{top:VisibleMenuTop}}>
-        <div className='row-menu-1 text-color'>
+      {VisibleMenuAll &&<div className='rowMenu' style={{top:VisibleMenuTop}}>
+        <div className='rowMenu_1 textColor'>
           <ul>
             <h2>Thời sự</h2>
             {
@@ -133,7 +133,7 @@ function Header() {
           </ul>        
         </div>
 
-        <div className='row-menu-2 text-color'>
+        <div className='rowMenu_2 textColor'>
           <ul>
             <h2>Thời sự</h2>
             {

@@ -6,8 +6,29 @@
     width: 100%;
     display:block;
     margin:auto;
+    /* height: 40%; */
     
 }
 .main_story p{
     text-align: justify;
+}
+.main_story .title{
+    /* height: 10%; */
+    height: 55px;
+}
+.middle-col-3{
+    width: 30%;
+}
+.middle-col-3 .title{
+    height: 55px;
+}
+.middle-col-3 img{
+    width: 100%;
+    display:block;
+    margin:auto;
+    /* height: 40%; */
+}
+.middle-col-3 .topic{
+    text-align: center;
+    color:blue;
 }

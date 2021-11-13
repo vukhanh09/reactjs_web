@@ -1,8 +1,11 @@
 import { Routes, Route, Link } from "react-router-dom";
+
 import './gocnhin.css';
+
 function GocNhin() {
 return (
     <>
+
 
     <section class="section top-header top-header-folder">
         <div class="container">
@@ -221,6 +224,7 @@ return (
             </div>
         </div>
     </section>
+
 
     
     </>

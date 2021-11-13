@@ -982,15 +982,15 @@ body {
     text-rendering: optimizeLegibility;
 } */
 
-/* * { */
+* {
     /* margin: 0; */
-    /* padding: 0;   */
-    /* box-sizing: border-box;
+    padding: 0;  
+    box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box; */
-    /* text-rendering: optimizeLegibility*/
-/* }  */
+    -ms-box-sizing: border-box; 
+     text-rendering: optimizeLegibility
+} 
 
 /* body {
     color: #222;

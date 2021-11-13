@@ -1,6 +1,6 @@
 
 
-.tool-bar{
+.toolBar{
     /* justify-content: space-between; */
     align-items: center;
     padding: 10px 10%;
@@ -23,7 +23,7 @@
     margin-right: 20px;
     font-size: 25px;
 }
-.text-color{
+.textColor{
     color: white;
 }
 .search{
@@ -32,28 +32,28 @@
     height: 30px;
     padding-left: 10px;
 }
-.div-search{
+.divSearch{
     margin-left: 60px;
     width: 60%;
     align-items: center;
     display: flex;
     justify-content: space-between;
 }
-.div-user{
+.divUser{
     align-items: center;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     
 }
-.tool-bar a{
+.toolBar a{
     text-decoration: none;
 }
 
 
 
 /* ------------- nar-bar */
-.nar-bar{
+.narBar{
 
     background-color: black;
     display: flex;
@@ -63,11 +63,11 @@
     width: 100%;
     align-items: center;
 }
-.menu-fixed{
+.menuFixed{
     position: fixed;
     top:0;
 }
-.nar-menu{
+.narMenu{
     /* flex-direction: row; */
     display: flex;
 }
@@ -91,7 +91,7 @@
 
 }
   
-.nar-bar ul li:hover {
+.narBar ul li:hover {
     border-color: yellow;
     
     z-index: 9999;
@@ -101,7 +101,7 @@
   }
   
   
-.nar-bar  a {
+.narBar  a {
     display: block;
     color: white;
     text-align: center;
@@ -109,25 +109,25 @@
     text-decoration: none;
   }
 
-.row-menu a{
+.rowMenu a{
     text-align: center;
     padding: 12px 12px;
     text-decoration: none;
     color: white;
 }
 
-.row-menu-1{
+.rowMenu_1{
     display: flex;
     padding:10px 20%;
     justify-content: space-between;
 }
-.row-menu-2{
+.rowMenu_2{
     display: flex;
     padding:10px 20%;
     justify-content: space-between;
 }
 
-.row-menu{
+.rowMenu{
     position: fixed;
     background-color: black;
     width: 100%;

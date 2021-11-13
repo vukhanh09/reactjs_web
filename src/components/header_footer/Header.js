@@ -2,7 +2,7 @@ import React from "react";
 import searchImage from '../../assets/magnifier.png'
 import userImage from '../../assets/user1.png'
 import menuImage from '../../assets/squares.png'
-import './CSS/HeaderCSS.module.css'
+import styles from './CSS/HeaderCSS.module.css'
 import {useState,useEffect} from 'react'
 
 function Header() {
@@ -19,6 +19,7 @@ function Header() {
   const dateCurr = date.toLocaleDateString()
   const dayCurr = dictDay[date.getDay()]
 
+
   const listTopic = [['Thời sự','thoi-su'],['Góc nhìn','goc-nhin'],['Thế giới','the-gioi'],
   ['Kinh doanh','kinh-doanh'],['Giải trí','giai-tri'],['Thể thao','the-thao'],
   ['Khoa học','khoa-hoc'],['Giáo dục','giao-duc'],['Sức khỏe','suc-khoe'],['Du lịch','du-lich']]
@@ -33,8 +34,9 @@ function Header() {
 
   useEffect(()=>{
     const handlleScroll = ()=>{
-      let x1 = document.querySelector('.narBar').clientHeight
-      let x2 = document.querySelector('.toolBar').clientHeight
+      // console.log(document.querySelector(`.${styles.narBar}`))
+      let x1 = document.querySelector(`.${styles.narBar}`).clientHeight
+      let x2 = document.querySelector(`.${styles.toolBar}`).clientHeight
       if(window.scrollY>71){
         setIsScroll('fixed')
         setVisibleMenuTop(x1)
@@ -54,36 +56,36 @@ function Header() {
 
 
   return (
-    <div className="Header">
-      <div className="toolBar">
-        <label className='namePaper'>Time News</label>
-        <label className='textColor textDate'>{`${dayCurr}, ${dateCurr}`}</label>
+    <div className={styles.Header}>
+      <div className={styles.toolBar}>
+        <label className={styles.namePaper}>Time News</label>
+        <label className={`${styles.textColor} ${styles.textDate}`}>{`${dayCurr}, ${dateCurr}`}</label>
 
         
-        <div className='divSearch'>
-            <input type='text' placeholder='Nhập nội dung...' className='search'/>
-            <img src={searchImage} className='image' alt='search'/>
+        <div className={styles.divSearch}>
+            <input type='text' placeholder='Nhập nội dung...' className={styles.search}/>
+            <img src={searchImage} className={styles.image} alt='search'/>
         </div>
             
-        <a className='divUser' href='/login'>
-            <img src ={userImage} className='userIcon' />
-            <p className='textColor'>Đăng nhập</p>
+        <a className={styles.divUser} href='/login'>
+            <img src ={userImage} className={styles.userIcon} />
+            <p className={styles.textColor}>Đăng nhập</p>
 
         </a>
 
       </div>
 
-      <div className="narBar" style={{position:isScroll,top:0}}>
-        <ul className='textColor narMenu'>
+      <div className={styles.narBar} style={{position:isScroll,top:0}}>
+        <ul className={`${styles.textColor} ${styles.narMenu}`}>
           {
             listTopic.map(topic => <li ><a href={`/${topic[1]}`} >{topic[0]}</a></li>)
           }
           <li >
-            <div className='divUser' onClick={handlleVisibleMenu}>
+            <div className={styles.divUser} onClick={handlleVisibleMenu}>
               <a>
                 Tất cả
               </a>
-              <img src={menuImage} className='image'  alt='menuImage'/>
+              <img src={menuImage} className={styles.image}  alt='menuImage'/>
             </div>
 
 
@@ -99,8 +101,8 @@ function Header() {
 
       
 
-      {VisibleMenuAll &&<div className='rowMenu' style={{top:VisibleMenuTop}}>
-        <div className='rowMenu_1 textColor'>
+      {VisibleMenuAll &&<div className={styles.rowMenu} style={{top:VisibleMenuTop}}>
+        <div className={`${styles.rowMenu_1} ${styles.textColor}`}>
           <ul>
             <h2>Thời sự</h2>
             {
@@ -133,7 +135,7 @@ function Header() {
           </ul>        
         </div>
 
-        <div className='rowMenu_2 textColor'>
+        <div className={`${styles.rowMenu_2} ${styles.textColor}`}>
           <ul>
             <h2>Thời sự</h2>
             {

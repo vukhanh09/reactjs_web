@@ -7,7 +7,7 @@
   	text-decoration-color: white;
 }
 
-.text-color{
+.textColor{
     color: white;
 }
 .footer{
@@ -17,24 +17,24 @@
     display: flex;
     justify-content: space-between;
 }
-.footer-col-3 .col-3-logo{
+.footerCol_3 .col_3_logo{
     display: block;
     margin: 0 auto;
     width: 50px;
     height: 50px;
 }
 
-.footer-col-2{
+.footerCol_2{
     margin-left: 20px;
 }
-.footer-col-3{
+.footerCol_3{
     margin-left: 20px;
     padding-top: 28px;
 }
-.footer-col-4{
+.footerCol_4{
     margin-left: 20px;
 }
-.footer-col-5 .logo-col5{
+.footerCol_5 .loGoCol5{
     height: 30px;
     width: 140px;
     border-radius: 5px;

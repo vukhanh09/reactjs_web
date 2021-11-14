@@ -53,11 +53,16 @@
 
 
 /* ------------- nar-bar */
+<<<<<<< HEAD:src/components/header_footer/CSS/HeaderCSS.module.css
 .narBar{
 
+=======
+.nar-bar{
+>>>>>>> login:src/components/header_footer/CSS/HeaderCSS.css
     background-color: black;
     display: flex;
-
+    padding-left: 15%;
+    padding-right: 15%;
     padding-left: 15%;
     padding-right: 15%;
     width: 100%;

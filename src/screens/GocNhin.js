@@ -2,7 +2,6 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import styles from './gocnhin.module.css';
 
-
 function GocNhin() {
 return (
     <>

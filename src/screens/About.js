@@ -2,10 +2,14 @@
 import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
 <<<<<<< HEAD
+<<<<<<< HEAD
 import styles from './about.module.css';
 =======
 // import './about.css';
 >>>>>>> 2fb805a3ed902b62011ba1e86034cc3155fb866b
+=======
+import styles from './about.module.css';
+>>>>>>> 85a18cf04e91801425f1cfaec4a2d077244aac92
 
 function About() {
 return (

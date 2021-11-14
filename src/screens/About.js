@@ -1,7 +1,11 @@
 
 import React from 'react';
 import { Routes, Route, Link } from "react-router-dom";
+<<<<<<< HEAD
 import styles from './about.module.css';
+=======
+// import './about.css';
+>>>>>>> 2fb805a3ed902b62011ba1e86034cc3155fb866b
 
 function About() {
 return (

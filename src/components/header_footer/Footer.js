@@ -5,11 +5,12 @@ import appStore from '../../assets/app-store.png'
 import appStore1 from '../../assets/app-store2.png'
 import playStore from '../../assets/play-store.png'
 import playStore1 from '../../assets/play-store2.png'
+import clsx from "clsx";
 
 
 function Footer(){
     return(
-        <div className={`${styles.footer} ${styles.textColor}`}>
+        <div className={clsx(styles.footer,styles.textColor)}>
             <div className={styles.footerCol_1}>
                 <h3>About Us</h3>
                 <p>Tổng biên tập: Nguyễn Hoàng Anh Tuấn</p>

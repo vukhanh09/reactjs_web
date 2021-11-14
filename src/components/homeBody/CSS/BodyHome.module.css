@@ -18,9 +18,19 @@
     justify-content: space-between;
 
 }
+.section_middle{
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: red;
+    
+}
 .section_middle .sub_story{
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+}
+.section_middle_2{
+    justify-content: space-between;
 
 }

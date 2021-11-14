@@ -986,12 +986,12 @@ body {
 * {
     /* margin: 0; */
     padding: 0;  
-    box-sizing: border-box;
+    /* box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
-    -ms-box-sizing: border-box; 
-     text-rendering: optimizeLegibility
-} 
+    -ms-box-sizing: border-box;  */
+     /* text-rendering: optimizeLegibility */
+}  
 
 /* body {
     color: #222;
@@ -1256,7 +1256,7 @@ li {
 
 .section {
     width: 100%;
-    float: left
+    float: left;
 }
 
 .hidden {
@@ -1536,7 +1536,7 @@ li {
 
 .top_header_folder {
     padding: 0;
-    border: none
+    border: none;
 }
 
 .top_header_folder .search {

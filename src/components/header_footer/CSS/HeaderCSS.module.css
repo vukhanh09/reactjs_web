@@ -58,9 +58,9 @@
     background-color: black;
     display: flex;
     padding-left: 15%;
-    padding-right: 15%;
-    padding-left: 15%;
-    padding-right: 15%;
+    /* padding-right: 15%; */
+    /* padding-left: 15%;  */
+    /* padding-right: 15%; */
     width: 100%;
     align-items: center;
 }

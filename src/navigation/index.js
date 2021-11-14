@@ -1,15 +1,16 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "../screens/Home";
-import About from "../screens/About";
-import GocNhin from "../screens/GocNhin";
+import Gocnhin from "../screens/Gocnhin";
+import ABout from "../screens/ABout";
 
 function RootRoutes(){
     return(
         <Routes>
             <Route path="/" element={<Home />} />
             
-            <Route path="/login" element={<About />} /> 
-            <Route path="/goc-nhin" element={<GocNhin />} /> 
+            <Route path="/login" element={<ABout />} /> 
+            <Route path="/goc-nhin" element={<Gocnhin />} /> 
+
       </Routes>
     )
 }

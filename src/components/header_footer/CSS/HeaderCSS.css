@@ -54,17 +54,12 @@
 
 /* ------------- nar-bar */
 .nar-bar{
-
     background-color: black;
     display: flex;
-<<<<<<< HEAD
-    padding-left: 15%;
-    /* padding-right: 15%; */
-=======
-
     padding-left: 15%;
     padding-right: 15%;
->>>>>>> 0905e1474cf5a1ee6b23d10932e6705214b5ba98
+    padding-left: 15%;
+    padding-right: 15%;
     width: 100%;
     align-items: center;
 }

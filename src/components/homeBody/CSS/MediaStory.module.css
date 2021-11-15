@@ -1,0 +1,14 @@
+.container{
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: red;
+    justify-content: space-between;
+}
+
+.first_section{
+    width: 30%;
+    
+}
+.second_section{
+    width: 65%;
+}

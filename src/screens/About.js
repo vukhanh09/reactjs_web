@@ -1,5 +1,5 @@
 
-import About from '../components/homeBody/About';
+import About from '../components/Login/About';
 function ABout() {
   return (
     <div className="ABout">

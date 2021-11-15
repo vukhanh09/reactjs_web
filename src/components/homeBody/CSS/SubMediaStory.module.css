@@ -1,0 +1,11 @@
+.container{
+    height: 100%;
+}
+
+.row_1{
+    height: 60%;
+}
+.row_2{
+    display: inline-flex;
+    justify-content: space-between;
+}

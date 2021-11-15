@@ -1,5 +1,5 @@
 import React from "react";
-import './CSS/MainStory.css'
+import styles from './CSS/MainStory.module.css'
 import plyImage from '../../assets/may-bay.jpg'
 
 function MainStory({data,classType}){
@@ -7,21 +7,21 @@ function MainStory({data,classType}){
         <>
            {
                !classType &&  
-               <div className='main_story'>
-                    <h3 className='title'><a href=''>{data.title}</a></h3>
+               <div className={styles.main_story}>
+                    <h3 className={styles.title}><a href=''>{data.title}</a></h3>
                     <img src={data.src} />
-                    <p className='description'>{data.description}</p>
-                    <p className='extend-description'>{data.extend_description}</p>
+                    <p className={styles.description}>{data.description}</p>
+                    <p className={styles.extend_description}>{data.extend_description}</p>
                 </div>
            }
            {
                classType &&  
-               <div className={classType}>
-                    <h3 className='topic'>{data.topic}</h3>
-                    <h3 className='title'><a href=''>{data.title}</a></h3>
+               <div className={styles.middle_col_3}>
+                    <h3 className={styles.topic}>{data.topic}</h3>
+                    <h3 className={styles.title}><a href=''>{data.title}</a></h3>
                     <img src={data.src} />
-                    <p className='description'>{data.description}</p>
-                    <p className='extend-description'>{data.extend_description}</p>
+                    <p className={styles.description}>{data.description}</p>
+                    <p className={styles.extend_description}>{data.extend_description}</p>
                 </div>
            }
         </>

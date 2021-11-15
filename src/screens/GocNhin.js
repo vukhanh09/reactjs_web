@@ -1,6 +1,6 @@
 import Header from '../components/header_footer/Header';
 import Footer from '../components/header_footer/Footer';
-import GocNhin from '../components/homeBody/GocNhin';
+import GocNhin from '../components/GocNhin/GocNhin';
 function Gocnhin() {
   return (
 

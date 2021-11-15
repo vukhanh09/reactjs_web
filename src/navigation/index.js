@@ -1,7 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "../screens/Home";
-import Gocnhin from "../screens/Gocnhin";
-import ABout from "../screens/ABout";
+import Gocnhin from "../screens/GocNhin";
+import ABout from "../screens/About";
 
 function RootRoutes(){
     return(

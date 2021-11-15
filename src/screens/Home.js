@@ -7,6 +7,7 @@ function Home() {
       <Header/>
       <BodyHome/>
       <Footer/>
+      <h3>Test</h3>
       
     </div>
   );

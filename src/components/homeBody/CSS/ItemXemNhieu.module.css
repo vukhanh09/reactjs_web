@@ -1,0 +1,9 @@
+.ItemXemNhieu{
+    display: flex;
+}
+.ItemXemNhieu .title{
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 15px;
+}

@@ -1,0 +1,29 @@
+.container_border{
+    display: flex;
+    /* margin-top: 10px; */
+    padding-bottom: 5px;
+    justify-content: space-around;
+
+    border-bottom-style: solid;
+    border-width: 2px;
+
+}
+.container_no_border{
+    display: flex;
+    /* margin-top: 10px; */
+    padding-bottom: 5px;
+    justify-content: space-around;
+
+}
+.col_1{
+   width: 35%;
+   justify-content: center;
+   display: flex;
+}
+.col_2{
+    width: 60%;
+}
+.col_1 .image{
+    width: 100%;
+    margin-top: 15px;
+}

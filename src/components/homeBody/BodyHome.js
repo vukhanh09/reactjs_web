@@ -7,6 +7,8 @@ import MediaStory from "./MediaStory";
 
 import {subData,middleData} from './data.js'
 
+import XemNhieu from "./XemNhieu";
+
 function BodyHome(){
     const middle3Data = middleData.filter(item=>item.id !=0)
     return (
@@ -45,9 +47,14 @@ function BodyHome(){
                 
                 <MediaStory/>
                 <MediaStory/>
+                <MediaStory/>
                 
 
 
+            </div>
+
+            <div>
+                <XemNhieu/>
             </div>
             
 

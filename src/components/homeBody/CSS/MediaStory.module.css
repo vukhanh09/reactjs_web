@@ -12,3 +12,8 @@
 .second_section{
     width: 65%;
 }
+.innerDiv{
+    border-right-style: solid;
+    border-width: 1px;
+    border-color: #e5e5e5;
+}

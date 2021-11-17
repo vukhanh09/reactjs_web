@@ -2,23 +2,19 @@ import clsx from "clsx";
 import styles from './CSS/SubMediaStory.module.css'
 import {subData} from './data.js'
 import SubStory from "./SubStory";
+import ImageStory from "./ImageStory";
+import {middleData} from './data.js'
+
 
 function SubMediaStory(){
-    const datas = subData.filter(item=>item.id!=3)
+    const middle3Data = middleData.filter(item=>item.id !=0)
     return(
         <div className={styles.container}>
-            <div className={styles.row_1}>
-                <h2>Hello</h2>
+            <h3>Thể thao</h3>
+            <ImageStory data={middle3Data[0]} op1/>
+            <ImageStory data={middle3Data[1]} op1/>
+            <ImageStory data={middle3Data[1]} op2/>
 
-            </div>
-            <div className={styles.row_2}>
-                {
-                    datas.map(data=>{
-                        return <SubStory title={data.title} description={data.description} op3 key={data.id}/>
-                    })
-                }
-
-            </div>
 
         </div>
     )

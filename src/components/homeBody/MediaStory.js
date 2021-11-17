@@ -22,6 +22,7 @@ function MediaStory(){
                 }
 
             </div>
+            <div className={styles.innerDiv}></div>
             <div className={styles.second_section}>
                 <SubMediaStory/>
             </div>

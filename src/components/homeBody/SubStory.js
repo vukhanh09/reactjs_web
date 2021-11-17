@@ -11,25 +11,13 @@ function SubStory({title,description,op1,op2,op3}){
         [styles.col_2_item] :op3
     })
     return (
-        <div>
-            {/* {!index&&<div className={styles.item_story}>
-                <h3 className={styles.title}><a href=''>{title}</a></h3>
-                <p className={styles.description}>{description}</p>
-            </div>
-            }
-            {
-                index&&<div className={styles.item_story_last}>
-                    <h3 className={styles.title}><a href=''>{title}</a></h3>
-                    <p className={styles.description}>{description}</p>
-                </div>
-            
-            } */}
+
             <div className={classes}>
                 <h3 className={styles.title}><a href=''>{title}</a></h3>
                 <p className={styles.description}>{description}</p>
             </div>
             
-        </div>
+
        
     )
 

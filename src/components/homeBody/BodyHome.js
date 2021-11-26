@@ -8,12 +8,14 @@ import MediaStory from "./MediaStory";
 import {subData,middleData} from './data.js'
 
 import XemNhieu from "./XemNhieu";
+import rightArrow from '../../assets/rightnext.png'
+import leftArrow from '../../assets/leftnext.png'
 
 function BodyHome(){
     const middle3Data = middleData.filter(item=>item.id !=0)
     return (
         <div className={styles.container}>
-            <div className={styles.section_topstory}>
+            <div className={styles.section_1}>
                 <MainStory data={middleData[0]}/>
 
                 <div className={styles.sub_story}>
@@ -23,16 +25,15 @@ function BodyHome(){
                                 return <SubStory title={item.title} op1 description={item.description}/>
                             else{
                                 return <SubStory title={item.title} op2 description={item.description}/>
-
                             }
                         })
                     }
                 </div>
             </div>
 
-            <div className={styles.section_middle}>
+            <div className={styles.section_2}>
 
-                <div className={styles.sub_story}>
+                <div className={styles.inner_middle}>
                     {
                         middle3Data.map(item=>{
                             return <MainStory data={item} classType = {true}/>
@@ -43,17 +44,31 @@ function BodyHome(){
 
             </div>
 
-            <div className={clsx(styles.section_middle_2)}>
+            <div className={clsx(styles.section_3)}>
                 
                 <MediaStory/>
                 <MediaStory/>
-                <MediaStory/>
+
+            </div>
+
+            <div className={clsx(styles.section_4)}>
                 
+                <div className={styles.hot_keyword}>
+                    <p>Thời sự</p>
+                    <p>Du lịch bốn phương</p>
+                    <p>Các quốc gia mở của</p>
+                    <p>Kết quả vòng loại WC</p>
+                </div>
+                
+                <div className={styles.navi_next}>
+                    <img src ={leftArrow} className={styles.arrowIcon} />
+                    <img src ={rightArrow} className={styles.arrowIcon} />
+                </div>
 
 
             </div>
 
-            <div>
+            <div className={clsx(styles.section_5)}>
                 <XemNhieu/>
             </div>
             

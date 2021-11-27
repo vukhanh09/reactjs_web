@@ -24,6 +24,12 @@
     width: 60%;
 }
 .col_1 .image{
-    width: 100%;
+    width: auto;
     margin-top: 15px;
 }
+
+@media screen and (max-width: 800px) {
+    .col_1 .image{
+        height: 80px;
+    }
+  }

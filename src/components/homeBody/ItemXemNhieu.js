@@ -1,7 +1,11 @@
 import styles from './CSS/ItemXemNhieu.module.css'
-function ItemXemNhieu({title,src,top}){
+import clsx from 'clsx'
+function ItemXemNhieu({title,src,top,op}){
+    const classes = clsx({
+        [styles.border_bottom]:op
+    })
     return (
-        <div className={styles.ItemXemNhieu}>
+        <div className={clsx(styles.ItemXemNhieu,classes)}>
             <h1>
                 {top}
             </h1>

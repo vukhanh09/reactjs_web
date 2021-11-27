@@ -1,0 +1,14 @@
+.container_1{
+    width: 24%;
+    height: auto;
+    /* margin-left: 16px;
+    padding-left: 16px;
+    border-left: solid 1px black; */
+}
+.container_2{
+    width: 24%;
+    height: auto;
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: solid 1px black;
+}

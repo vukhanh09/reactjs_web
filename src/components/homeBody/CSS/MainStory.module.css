@@ -20,7 +20,7 @@
     height: 55px;
 }
 .middle_col_3{
-    width: 30%;
+    width: 32%;
 }
 .middle_col_3 .title{
     height: 55px;
@@ -35,5 +35,12 @@
     text-align: center;
     color:blue;
 }
+.container_1{
 
+}
+.container_2{
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: solid 1px black;
+}
 

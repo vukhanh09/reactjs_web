@@ -7,7 +7,7 @@ import {middleData} from './data.js'
 
 
 function SubMediaStory(){
-    const middle3Data = middleData.filter(item=>item.id !=0)
+    const middle3Data = middleData.filter(item=>item.id !==0)
     return(
         <div className={styles.container}>
             <h3>Thể thao</h3>

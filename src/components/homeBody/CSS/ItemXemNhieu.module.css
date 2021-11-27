@@ -1,9 +1,14 @@
 .ItemXemNhieu{
     display: flex;
+    /* border-bottom: solid black 1px; */
 }
 .ItemXemNhieu .title{
     text-align: center;
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 15px;
+}
+
+.border_bottom{
+    border-bottom: solid 1px black;
 }

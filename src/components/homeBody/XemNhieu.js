@@ -11,13 +11,17 @@ function XemNhieu(){
             <div className={styles.TableXemNhieu}>
                 <div className={styles.listTop5}>
                     {
-                        dataTop5.map(data=> <ItemXemNhieu top={data.id} key={data.id} title ={data.title}/>)
+                        dataTop5.map(data=> <ItemXemNhieu top={data.id} key={data.id} title ={data.title}
+                            op = {data.id!==5?1:0}
+                        />)
                     }
 
                 </div>
                 <div className={styles.listTop5_10}>
                     {
-                        dataTop5_10.map(data=> <ItemXemNhieu key={data.id} top={data.id} title ={data.title}/>)
+                        dataTop5_10.map(data=> <ItemXemNhieu key={data.id} top={data.id} title ={data.title}
+                            op = {data.id!==10?1:0}
+                        />)
                     }
                     
                 </div>

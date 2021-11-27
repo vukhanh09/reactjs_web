@@ -11,8 +11,10 @@ import XemNhieu from "./XemNhieu";
 import rightArrow from '../../assets/rightnext.png'
 import leftArrow from '../../assets/leftnext.png'
 
+import Topic from "./Topic";
+
 function BodyHome(){
-    const middle3Data = middleData.filter(item=>item.id !=0)
+    const middle3Data = middleData.filter(item=>item.id !==0)
     return (
         <div className={styles.container}>
             <div className={styles.section_1}>
@@ -36,7 +38,7 @@ function BodyHome(){
                 <div className={styles.inner_middle}>
                     {
                         middle3Data.map(item=>{
-                            return <MainStory data={item} classType = {true}/>
+                            return <MainStory data={item} op={item.id===1?1:0} classType = {true}/>
                         })
                     }
                 </div>
@@ -44,10 +46,23 @@ function BodyHome(){
 
             </div>
 
-            <div className={clsx(styles.section_3)}>
+            <div className={styles.section_3}>
                 
                 <MediaStory/>
+
+
+            </div>
+
+            <div className={styles.section_5}>
+                
+                <Topic/>
+
+            </div>
+
+            <div className={styles.section_3}>
+                
                 <MediaStory/>
+
 
             </div>
 
@@ -68,7 +83,11 @@ function BodyHome(){
 
             </div>
 
-            <div className={clsx(styles.section_5)}>
+            <div className={styles.section_5}>
+                <Topic/>
+            </div>
+
+            <div className={clsx(styles.section_6)}>
                 <XemNhieu/>
             </div>
             

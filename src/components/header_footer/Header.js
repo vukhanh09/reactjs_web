@@ -75,13 +75,10 @@ function Header() {
 
       </div>
 
-<<<<<<< HEAD
-      <div className="nar-bar" style={{position:isScroll,top:0}}>
-        <ul className='text-color nar-menu'>
-=======
+
       <div className={styles.narBar} style={{position:isScroll,top:0}}>
         <ul className={`${styles.textColor} ${styles.narMenu}`}>
->>>>>>> 2fb805a3ed902b62011ba1e86034cc3155fb866b
+
           {
             listTopic.map(topic => <li ><a href={`/${topic[1]}`} >{topic[0]}</a></li>)
           }

@@ -1,8 +1,13 @@
 import React from "react";
 import styles from './CSS/MainStory.module.css'
 import plyImage from '../../assets/may-bay.jpg'
+import clsx from "clsx";
 
-function MainStory({data,classType}){
+function MainStory({data,classType,op}){
+    const classes = clsx({
+        [styles.container_1]:op,
+        [styles.container_2] :!op
+    })
     return (
         <>
            {
@@ -16,7 +21,7 @@ function MainStory({data,classType}){
            }
            {
                classType &&  
-               <div className={styles.middle_col_3}>
+               <div className={clsx(styles.middle_col_3,classes)}>
                     <h3 className={styles.topic}>{data.topic}</h3>
                     <h3 className={styles.title}><a href=''>{data.title}</a></h3>
                     <img src={data.src} />

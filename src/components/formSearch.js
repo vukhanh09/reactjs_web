@@ -36,8 +36,8 @@ function FormSearch(){
     return (
         <div className={styles.container}>
             <div class={styles.subnav}>
-                <button class={styles.down_btn} onClick={e=>handleToView(e)}>
-                Thời gian</button>
+                <a class={styles.down_btn} onClick={e=>handleToView(e)}>
+                Thời gian</a>
                 <div class={styles.down_content1}>
                     <input type="radio" name="time" className={styles.radioCheck} id='1-week'/>
                     <label for="1-week">1 tuần qua</label><br/>
@@ -50,8 +50,8 @@ function FormSearch(){
                 </div>
             </div> 
             <div class={styles.subnav}>
-                <button class={styles.down_btn} onClick={e=>handleToView(e)}>
-                        Chủ đề</button>
+                <a class={styles.down_btn} onClick={e=>handleToView(e)}>
+                        Chủ đề</a>
                 <div class={`${styles.down_content2} ${styles.tmp}`}>
                 <input type="radio" name="phanloai" className={styles.radioCheck} id='thoisu'/>
                     <label for="thoisu">Thời sự</label><br/>

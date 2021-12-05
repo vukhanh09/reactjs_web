@@ -1,9 +1,10 @@
 .container{
     display: flex;
     justify-content: center;
+    margin-top: 20px;
 }
 .container .input{
-    width: 60%;
+    width: 100%;
     height: 40px;
     font-size:20px;
 
@@ -14,4 +15,5 @@
     margin-top: auto;
     margin-bottom: auto;
     margin-left: 5px;
+    cursor: pointer;
 }

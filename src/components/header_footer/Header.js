@@ -4,8 +4,11 @@ import userImage from '../../assets/user1.png'
 import menuImage from '../../assets/squares.png'
 import styles from './CSS/HeaderCSS.module.css'
 import {useState,useEffect} from 'react'
+import { useNavigate } from 'react-router-dom';
+
 
 function Header() {
+  const navigate = useNavigate();
   const dictDay = {
     0:'Chủ nhật',
     1:'Thứ Hai',
@@ -54,17 +57,26 @@ function Header() {
     setVisibleMenuAll(!VisibleMenuAll)
   }
 
+  const navigatePath = function(path){
+    if (window.location.pathname !== path){
+        navigate(path)
+    }
+
+  }
+
 
   return (
     <div className={styles.Header}>
       <div className={styles.toolBar}>
-        <label className={styles.namePaper}>Time News</label>
+        <label className={styles.namePaper} onClick={()=>navigatePath('/')}>Time News</label>
         <label className={`${styles.textColor} ${styles.textDate}`}>{`${dayCurr}, ${dateCurr}`}</label>
 
         
         <div className={styles.divSearch}>
             <input type='text' placeholder='Nhập nội dung...' className={styles.search}/>
-            <img src={searchImage} className={styles.image} alt='search'/>
+            <img src={searchImage} className={styles.image} alt='search' 
+              onClick={()=>navigatePath('/tim-kiem')}
+            />
         </div>
             
         <a className={styles.divUser} href='/login'>

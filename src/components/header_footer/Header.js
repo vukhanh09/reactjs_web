@@ -79,9 +79,9 @@ function Header() {
             />
         </div>
             
-        <a className={styles.divUser} href='/login'>
-            <img src ={userImage} className={styles.userIcon} />
-            <p className={styles.textColor}>Đăng nhập</p>
+        <a className={styles.divUser}>
+            <img src ={userImage} className={styles.userIcon} onClick={()=>navigatePath('/user-information')} />
+            <p className={styles.textColor} onClick={()=>navigatePath('/login')}>Đăng nhập</p>
 
         </a>
 

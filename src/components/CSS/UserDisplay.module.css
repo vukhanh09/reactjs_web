@@ -1,0 +1,14 @@
+.container{
+    margin-top: 30px;
+    border-bottom: solid rgb(77, 75, 75) 1px;
+}
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+.user_avatar{
+    border-radius: 50%;
+}

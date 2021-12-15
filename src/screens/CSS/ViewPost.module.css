@@ -1,0 +1,11 @@
+.content{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 50px;
+}
+.authors{
+    text-decoration: none;
+}
+.inforPost{
+    border-bottom: solid black 1px;
+}

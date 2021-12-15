@@ -4,6 +4,8 @@ import Gocnhin from "../screens/GocNhin";
 import ABout from "../screens/About";
 import TimKiem from "../screens/TimKiem";
 import UserInformation from "../screens/UserInformation";
+import SectionComment from "../components/SectionComment";
+import ViewPost from "../screens/ViewPost";
 
 function RootRoutes(){
     return(
@@ -14,6 +16,8 @@ function RootRoutes(){
             <Route path="/goc-nhin" element={<Gocnhin />} /> 
             <Route path="/tim-kiem" element={<TimKiem />} />
             <Route path="/user-information" element={<UserInformation />} />
+            <Route path="/comment" element={<SectionComment />} />
+            <Route path="/view-post" element={<ViewPost />} />
 
       </Routes>
     )

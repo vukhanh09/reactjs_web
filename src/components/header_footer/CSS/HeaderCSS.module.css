@@ -1,16 +1,24 @@
 
+.Header{
+    background-color: black;
+    width: 100%;
+}   
+
 
 .toolBar{
     /* justify-content: space-between; */
     align-items: center;
-    padding: 10px 10%;
+    /* padding: 10px 10px; */
     display: flex;
     background-color: black;
+    width: 100%;
+    top: 0;
 }
 .image{
     width: 20px;
     height: 20px;
     padding-right: 20px;
+    cursor: pointer;
 }
 .userIcon{
     width: 25px;
@@ -22,6 +30,7 @@
     color: white;
     margin-right: 20px;
     font-size: 25px;
+    cursor: pointer;
 }
 .textColor{
     color: white;
@@ -57,20 +66,18 @@
 .narBar{
     background-color: black;
     display: flex;
-    padding-left: 15%;
-    padding-right: 15%;
-    padding-left: 15%;
-    padding-right: 15%;
     width: 100%;
-    align-items: center;
+    justify-content: space-around;
 }
 .menuFixed{
     position: fixed;
     top:0;
 }
+
 .narMenu{
     /* flex-direction: row; */
     display: flex;
+
 }
 
 .Header ul {
@@ -91,10 +98,16 @@
     align-items: center;
 
 }
-  
+ 
+.narBar ul li{
+    padding: 16.5px 0;
+    display: block;
+    white-space: nowrap;
+}
+
 .narBar ul li:hover {
     border-color: yellow;
-    
+   
     z-index: 9999;
 
     background: linear-gradient(to right, #7fa2d1, #06ff4b);
@@ -109,12 +122,12 @@
     padding: 12px 12px;
     text-decoration: none;
   }
-
 .rowMenu a{
     text-align: center;
     padding: 12px 12px;
     text-decoration: none;
     color: white;
+    
 }
 
 .rowMenu_1{

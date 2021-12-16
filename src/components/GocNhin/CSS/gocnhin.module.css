@@ -51,13 +51,13 @@
 
 
 .col_left_folder_v2 {
-    width: 760px;
-    padding-right: 39px
+    width: 700px;
+    padding-right: 20px
 }
 
 .col_right_folder_v2 {
-    width: 160px;
-    padding-left: 30px
+    width: 200px;
+    padding-left: 20px
 }
 
 .col_right_folder_v2 .box_category {
@@ -185,7 +185,7 @@
 }
 
 .col_center_home_gn {
-    width: 45%;
+    width: 700px;
     padding-right: 0;
     border-right: none;
     padding-left: 20px;
@@ -233,8 +233,8 @@
 }
 
 .col_right_home_gn {
-    width: 160px;
-    padding-left: 35px
+    width: 200px;
+    padding-left: 20px
 }
 
 .box_author_home .view_all a {

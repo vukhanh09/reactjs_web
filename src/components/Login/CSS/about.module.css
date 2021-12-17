@@ -1,48 +1,25 @@
-body .loginWrap {
+.body {
     margin: 10 auto;
     color: #b5b5b5;
     background: #c8c8c8;
     font: 600 16px/18px 'Open Sans', sans-serif;
 }
 
-*,
-:after,
-:before {
-    box-sizing: border-box;
-
-}
-
-.clearfix:after,
-.clearfix:before {
-    content: '';
-    display: table
-}
-
-.clearfix:after {
-    clear: both;
-    display: block
-}
-
-a {
-    color: inherit;
-    text-decoration: none
-}
-
 .loginWrap {
     margin: 20px auto;
-    max-width: 525px;
-    min-height: 670px;
+    max-width: 500px;
+    min-height: 600px;
     position: relative;
-    background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center !important;
+    /* background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center !important; */
     box-shadow: 0 12px 15px 0 rgba(69, 4, 245, 0.24), 0 17px 50px 0 rgba(65, 17, 240, 0.19);
     border-radius: 2%;
 }
 
 .loginHtml {
-    width: 100%;
+    width: 80%;
     height: 100%;
     position: absolute;
-    padding: 90px 70px 50px 70px;
+    padding: 70px 70px 50px 35px;
     background: rgba(57, 62, 66, 0.9);
     border-radius: 2%;
     -webkit-border-radius: 2%;
@@ -103,44 +80,58 @@ a {
 
 .imgFb {
     color: #0000ff !important;
-    padding-left: 45px;
+    padding-left: 30px;
 }
 
 .imgGoogle {
     color: #ff0000 !important;
-    padding-left: 45px;
+    padding-left: 30px;
 }
-
+.divgroup{
+    margin-top: 30px;
+    width: 110%;
+}
 .social_log_fb {
     border: none;
-    padding: 10px 25px;
+    padding: 10px 47px;
     border-radius: 25px;
     background: #ebebf0 !important;
     float: left;
     box-shadow: 0 12px 15px 0 rgba(69, 4, 245, 0.24), 0 17px 50px 0 rgba(65, 17, 240, 0.19);
     border-style: solid;
     border-color: blue;
+    list-style-type: none;
+    color: inherit;
+    text-decoration: none;
+    margin-left: 10px;
 }
 
 .social_log_gg {
-    border: none;
-    padding: 10px 25px;
+    border: none;  
+    padding: 10px 47px;
     border-radius: 25px;
     background: #ebebf0 !important;
     float: left;
     box-shadow: 0 12px 15px 0 rgba(69, 4, 245, 0.24), 0 17px 50px 0 rgba(65, 17, 240, 0.19);
     border-style: solid;
     border-color: red;
+    list-style-type: none;
+    color: inherit;
+    text-decoration: none;
+
 }
 
-a {
-    list-style-type: none;
-}
+
 
 .loginForm .group .label,
-.loginForm .group .input,
-.loginForm .group .button {
+.loginForm .group .input{
     width: 100%;
+    color: #fff;
+    display: block;
+}
+.loginForm .group .button {
+    margin-top: 30px;
+    width: 110%;
     color: #fff;
     display: block;
 }
@@ -158,7 +149,6 @@ a {
 }
 
 .loginForm .group input[data-type="password"] {
-    text-security: circle;
     -webkit-text-security: circle;
 }
 
@@ -230,10 +220,19 @@ a {
 
 .hr {
     height: 2px;
-    margin: 100px 0 50px 0;
+    margin: 110px 0 50px 0;
     background: #ffa805;
+    width: 110%;
 }
 
-.foot-lnk {
+.footLnk {
     text-align: center;
+    /* margin-top: 50px; */
 }
+
+.footLnk a{
+    list-style-type: none;
+    color: inherit;
+    text-decoration: none;
+}
+

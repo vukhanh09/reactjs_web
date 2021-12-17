@@ -1,3 +1,4 @@
+
 import { Routes, Route, Link } from "react-router-dom";
 
 import styles from './CSS/gocnhin.module.css';
@@ -6,7 +7,7 @@ function GocNhin() {
 return (
     <>
     <section className={`${styles.section} ${styles.top_header} ${styles.top_header_folder}`}>
-        <div className={styles.container}>
+        <div>
             <div className={`${styles.width_common} ${styles.top_folder} ${styles.flexbox}`}>
                 <div className={styles.title_folder}>Góc nhìn</div>
             </div>
@@ -34,16 +35,7 @@ return (
                             <a href="tac-gia/nguyen-thi-thu-hien-1311.html" title="Nguyễn Thị Thu Hiền">Nguyễn Thị Thu Hiền</a>
                         </li>
                         <li>
-                            <a href="tac-gia/nguyen-tran-hoang-phuong-1346.html" title="Nguyễn Trần Hoàng Phương">Nguyễn Trần Hoàng Phương</a>
-                        </li>
-                        <li>
-                            <a href="tac-gia/jesse-peterson-1050.html" title="Jesse Peterson">Jesse Peterson</a>
-                        </li>
-                        <li>
-                            <a href="tac-gia/nguyen-van-tho-28.html" title="Nguyễn Văn Thọ">Nguyễn Văn Thọ</a>
-                        </li>
-                        <li>
-                            <a href="tac-gia/ngo-trong-thanh-1006.html" title="Ngô Trọng Thanh">Ngô Trọng Thanh</a>
+                            <a href="tac-gia/nguyen-tran-hoang-phuong-1346.html"  title="Ngô Trọng Thanh">Ngô Trọng Thanh</a>
                         </li>
                         <li>
                             <a href="tac-gia/nguyen-si-dung-928.html" title="Nguyễn Sĩ Dũng">Nguyễn Sĩ Dũng</a>

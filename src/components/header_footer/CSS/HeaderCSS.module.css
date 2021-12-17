@@ -77,6 +77,14 @@
     /* flex-direction: row; */
     display: flex;
 }
+/* .narMenu ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    justify-content: space-between;
+    z-index: 9999;
+} */
 
 .Header ul {
     list-style-type: none;
@@ -94,9 +102,14 @@
     border: 2px solid transparent;
     align-content: center;
     align-items: center;
-
 }
   
+.narBar ul li{
+    padding: 16.5px 0;
+    display: block;
+    white-space: nowrap;
+}
+
 .narBar ul li:hover {
     border-color: yellow;
     
@@ -114,6 +127,13 @@
     padding: 12px 12px;
     text-decoration: none;
   }
+
+  @media only screen and (min-width: 1024px) {
+    .narBar  a {
+        padding: 8px 8px;
+      }
+  }
+
 
 .rowMenu a{
     text-align: center;
@@ -145,3 +165,15 @@
     padding-right: 15%;
     text-align: justify;
 }
+
+@media only screen and (min-width: 1024px) {
+    .Header .toolBar {
+      display:flex;
+    }
+  }
+
+  @media only screen and (min-width: 1024px) {
+    .Header .narBar  {
+      display:flex;
+    }
+  }

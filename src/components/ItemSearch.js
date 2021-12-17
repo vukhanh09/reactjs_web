@@ -12,7 +12,7 @@ function ItemSearch({data,op1}){
     return(
         <div className={classes}>
             <div className={styles.col_1}>
-                <img src={data.src} className={styles.image} />
+                <img src={data.url_image[0]} className={styles.image} />
             </div>
             <div className={styles.col_2}>
                 <h3 className={styles.title}><a>{data.title}</a></h3>

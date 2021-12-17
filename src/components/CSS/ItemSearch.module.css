@@ -1,18 +1,19 @@
 .container_border{
     display: flex;
 
-    padding-bottom: 5px;
+
     justify-content:space-between;
+
 
     border-bottom-style: solid;
     border-width: 2px;
-
+    padding-bottom: 20px;
 }
 .container_no_border{
     display: flex;
-
-    padding-bottom: 5px;
     justify-content: space-between;
+    padding-bottom: 20px;
+
 
 }
 .col_1{

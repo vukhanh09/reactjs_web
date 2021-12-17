@@ -105,7 +105,7 @@
 }
   
 .narBar ul li{
-    padding: 16.5px 0;
+    /* padding: 16.5px 0; */
     display: block;
     white-space: nowrap;
 }
@@ -128,11 +128,11 @@
     text-decoration: none;
   }
 
-  @media only screen and (min-width: 1024px) {
+  /* @media only screen and (min-width: 1024px) {
     .narBar  a {
         padding: 8px 8px;
       }
-  }
+  } */
 
 
 .rowMenu a{
@@ -165,7 +165,7 @@
     padding-right: 15%;
     text-align: justify;
 }
-
+/* 
 @media only screen and (min-width: 1024px) {
     .Header .toolBar {
       display:flex;
@@ -176,4 +176,4 @@
     .Header .narBar  {
       display:flex;
     }
-  }
+  } */

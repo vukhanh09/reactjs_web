@@ -218,12 +218,7 @@
     transform: rotate(0);
 }
 
-.hr {
-    height: 2px;
-    margin: 110px 0 50px 0;
-    background: #ffa805;
-    width: 110%;
-}
+
 
 .footLnk {
     text-align: center;

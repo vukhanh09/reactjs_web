@@ -3,9 +3,40 @@
     margin-right: 20%;
     margin-bottom: 50px;
 }
+.firstContent{
+    display: flex;
+    flex-direction: row;
+}
+.utilitiesArea{
+    margin-top: 20%;
+    width: 10%;
+    margin-left: -10%;
+}
+.contentPost{
+    width: 100%;
+
+}
 .authors{
     text-decoration: none;
 }
 .inforPost{
     border-bottom: solid black 1px;
+}
+.image{
+    display: flex;
+    margin: auto;
+}
+.extendInfor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.totalView{
+    margin-right: 10px;
+}
+.imagelikePost{
+    width: 32px;
+    height: 32px;
+    margin-left: 15%;
+    cursor: pointer;
 }

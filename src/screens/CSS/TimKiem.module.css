@@ -1,0 +1,11 @@
+.container{
+    margin-left: 13%;
+    margin-right: 13%;
+}
+.mainSection{
+    display: flex;
+    margin-top: 20px;
+}
+.leftSection{
+    width: 20%;
+}

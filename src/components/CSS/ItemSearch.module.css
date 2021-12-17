@@ -1,0 +1,37 @@
+.container_border{
+    display: flex;
+
+
+    justify-content:space-between;
+
+
+    border-bottom-style: solid;
+    border-width: 2px;
+    padding-bottom: 20px;
+}
+.container_no_border{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+
+
+}
+.col_1{
+   width: 25%;
+   justify-content:start;
+   display: flex;
+}
+.col_2{
+    width: 72%;
+}
+.col_1 .image{
+    width: 100%;
+    margin-top: 15px;
+
+}
+
+@media screen and (max-width: 800px) {
+    .col_1 .image{
+        height: 80px;
+    }
+  }

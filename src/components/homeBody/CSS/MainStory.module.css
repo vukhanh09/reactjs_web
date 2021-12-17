@@ -19,20 +19,28 @@
     /* height: 10%; */
     height: 55px;
 }
-.middle-col-3{
-    width: 30%;
+.middle_col_3{
+    width: 32%;
 }
-.middle-col-3 .title{
+.middle_col_3 .title{
     height: 55px;
 }
-.middle-col-3 img{
+.middle_col_3 img{
     width: 100%;
     display:block;
     margin:auto;
     /* height: 40%; */
 }
-.middle-col-3 .topic{
+.middle_col_3 .topic{
     text-align: center;
     color:blue;
+}
+.container_1{
+
+}
+.container_2{
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: solid 1px black;
 }
 

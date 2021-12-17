@@ -49,6 +49,14 @@ export const middleData = [
         src:'https://i1-kinhdoanh.vnecdn.net/2021/11/12/dsc251515895142041589514231706-2560-7091-1636707835.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=6RrThAhUWIHv4PSWVXjmkQ',
         description:'Ôtô chở bê tông nhựa tổng tải trọng 44 tấn qua cầu cho phép xe dưới 5 tấn, khiến nhịp cầu bị sập, giao thông tê liệt nhiều giờ.',
         extend_description:'Khi Taliban áp sát thủ đô Kabul hôm 15/8, đội ...'
+    },
+    {
+        id:4,
+        topic:'Thể thao',
+        title:'Chủ tịch PSG mong Mbappe tiếp bước Messi',
+        src:'https://i1-thethao.vnecdn.net/2021/11/30/Untitled-5836-1638238730.jpg?w=120&h=72&q=100&dpr=1&fit=crop&s=8h7r6xxbg1EBwv48hr9N-A',
+        description:'Nasser Al-Khelaifi hy vọng Kylian Mbappe sẽ giành Quả Bóng Vàng khi khoác áo PSG như Lionel Messi.',
+        extend_description:'Khi Taliban áp sát thủ đô Kabul hôm 15/8, đội ...'
     }
 ]
 

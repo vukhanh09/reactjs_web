@@ -1,0 +1,40 @@
+.container{
+    margin-left: 13%;
+    margin-right: 13%;
+    margin-bottom: 200px;
+}
+.mainSection{
+    display: flex;
+    margin-top: 20px;
+}
+.leftSection{
+    width: 20%;
+    border: solid rgb(151, 1, 1) 1px;
+    /* margin: auto; */
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+}
+.optionRow{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+}
+.optionRow p{
+    cursor: pointer;
+}
+.fieldOption{
+    width: 50%;
+    text-align: center;
+    padding: 10px 0;
+}
+.fieldOption:hover{
+    background-color: blanchedalmond;
+    transform: rotate(20deg);
+}
+@keyframes mymove {
+    50% {transform: rotate(180deg);}
+  }

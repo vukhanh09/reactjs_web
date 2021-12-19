@@ -5,7 +5,11 @@ import SubTopic from "./SubTopic"
 function Topic(){
     return(
         <div className={styles.container}>
-            <h3>{dataToppic.topic}</h3>
+            <h3>
+                
+                {dataToppic.topic}
+            
+            </h3>
             <div className={styles.content}>
                 {
                     dataToppic.content.map(item=>{

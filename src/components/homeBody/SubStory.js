@@ -10,10 +10,12 @@ function SubStory({title,description,op1,op2,op3}){
         [styles.item_story_last] :op2,
         [styles.col_2_item] :op3
     })
+    var url_post = title.split(' ')
+    url_post = url_post.join('-')
     return (
 
-            <div className={classes}>
-                <h3 className={styles.title}><a href=''>{title}</a></h3>
+            <div className={classes} href={`/view-post/${url_post}`}>
+                <h3 className={styles.title}><a href={`/view-post/${url_post}`}>{title}</a></h3>
                 <p className={styles.description}>{description}</p>
             </div>
             

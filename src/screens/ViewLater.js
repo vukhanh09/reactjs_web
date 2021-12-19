@@ -41,7 +41,7 @@ function ViewLater(){
 
                     </div>
                     <div className={styles.rightSection}>
-                        <h2>Kết quả tìm kiếm</h2>
+                        <h2>Nội dung đã lưu</h2>
 
 
                     </div>

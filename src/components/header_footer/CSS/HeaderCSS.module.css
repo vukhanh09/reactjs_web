@@ -105,7 +105,6 @@
 }
   
 .narBar ul li{
-    padding: 16.5px 0;
     display: block;
     white-space: nowrap;
 }
@@ -118,8 +117,7 @@
     background: linear-gradient(to right, #7fa2d1, #06ff4b);
 
   }
-  
-  
+
 .narBar  a {
     display: block;
     color: white;

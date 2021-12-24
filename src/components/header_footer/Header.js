@@ -24,8 +24,7 @@ function Header() {
 
 
   const listTopic = [['Thời sự','thoi-su'],['Góc nhìn','goc-nhin'],['Thế giới','the-gioi'],
-  ['Kinh doanh','kinh-doanh'],['Giải trí','giai-tri'],['Thể thao','the-thao'],
-  ['Khoa học','khoa-hoc'],['Giáo dục','giao-duc'],['Sức khỏe','suc-khoe'],['Du lịch','du-lich']]
+  ['Kinh doanh','kinh-doanh'],['Du lịch','du-lich'],['Xem sau','xem-sau']]
 
   const topicThoiSu = [['Chính trị','thoi-su/chinh-tri'],['Dân sinh','thoi-su/dan-sinh'],['Giao thông','thoisu-dan-sinh']]
   const toppicGocNhin = [['Bình luận nhiều','goc-nhin/nhieu-binh-luan'],['Covid-19','goc-nhin/covid-19'],['Kinh doanh','goc-nhin/kinh-doanh']]
@@ -130,52 +129,19 @@ function Header() {
             }
           </ul>
           <ul>
-            <h2>Thời sự</h2>
+            <h2>Thế giới</h2>
             {
               topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
             }
           </ul>
           <ul>
-            <h2>Góc nhìn</h2>
+            <h2>Kinh doanh</h2>
             {
               toppicGocNhin.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
             }
           </ul>
           <ul>
-            <h2>Thời sự</h2>
-            {
-              topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
-            }
-          </ul>        
-        </div>
-
-        <div className={`${styles.rowMenu_2} ${styles.textColor}`}>
-          <ul>
-            <h2>Thời sự</h2>
-            {
-              topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
-            }
-          </ul>
-          <ul>
-            <h2>Góc nhìn</h2>
-            {
-              toppicGocNhin.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
-            }
-          </ul>
-          <ul>
-            <h2>Thời sự</h2>
-            {
-              topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
-            }
-          </ul>
-          <ul>
-            <h2>Góc nhìn</h2>
-            {
-              toppicGocNhin.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
-            }
-          </ul>
-          <ul>
-            <h2>Thời sự</h2>
+            <h2>Du lịch</h2>
             {
               topicThoiSu.map(topic => <li><a href={`/${topic[1]}`}>{topic[0]}</a></li>)
             }

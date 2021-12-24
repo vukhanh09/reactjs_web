@@ -6,6 +6,7 @@ import TimKiem from "../screens/TimKiem";
 import UserInformation from "../screens/UserInformation";
 import SectionComment from "../components/SectionComment";
 import ViewPost from "../screens/ViewPost";
+import ViewLater from "../screens/ViewLater";
 
 function RootRoutes(){
     return(
@@ -17,7 +18,10 @@ function RootRoutes(){
             <Route path="/tim-kiem" element={<TimKiem />} />
             <Route path="/user-information" element={<UserInformation />} />
             <Route path="/comment" element={<SectionComment />} />
-            <Route path="/view-post" element={<ViewPost />} />
+            <Route path="/view-post" element={<ViewPost />} >
+                <Route path=":postId" element={<ViewPost />} />
+            </Route>
+            <Route path="/view-later" element={<ViewLater />} />
 
       </Routes>
     )

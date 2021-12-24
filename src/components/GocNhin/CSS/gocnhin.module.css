@@ -78,8 +78,6 @@
     padding-left: 35px
 }
 
-
-
 .col_right_folder_v2 .box_category {
     margin-bottom: 30px
 }
@@ -596,13 +594,10 @@ img {
     line-height: 140%
 }
 
-
-
 .list_news_subfolder .item_news_common:first-of-type {
     margin-top: 0;
     padding-top: 0
 }
-
 
 img:not([src]):not([srcset]) {
     visibility: hidden

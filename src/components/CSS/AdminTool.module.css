@@ -1,0 +1,42 @@
+/* .container{
+    
+} */
+.hyperLink{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+.opGeneral{
+    margin-top: 60px;
+    background-color: #1f45ec;
+    font-size: 20px;
+    height: 10vh;
+}
+.opManageAcc{
+    margin-top: 60px;
+    background-color: #4caf50;
+    height: 10vh;
+    font-size: 20px;
+}
+.opManagePost{
+    margin-top: 60px;
+    background-color: rgb(184, 24, 162);
+    height: 10vh;
+    font-size: 20px;
+}
+.textInfo{
+    text-align: center;
+    padding: 1.5rem 0px;
+}
+.opGeneral:hover{
+    background-color:  #5a76f0;
+    transform: rotate(20deg);
+}
+.opManageAcc:hover{
+    background-color:  #73b174;
+    transform: rotate(-20deg);
+}
+.opManagePost:hover{
+    background-color: rgb(182, 85, 169);
+    transform: rotate(20deg);
+}

@@ -1,0 +1,30 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: 50px 2%;
+}
+.leftElement{
+    width: 15%;
+}
+.rightElement{
+    width: 80%;
+    margin-left: 1%;
+    text-align: center;
+}
+.inner{
+    border-right: solid 1px black;
+    height: 100vh;
+    margin-left: 10px;
+}
+
+.firstRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.firstInfo{
+    border: solid 2px skyblue;
+    height: 5vh;
+    padding-top: 1rem;
+    width: 45%;
+}

@@ -1,0 +1,15 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+}
+.fieldSearch{
+    display: flex;
+    flex-direction: column;
+}
+.searchBtn{
+    background-color: #4caf50;
+    cursor: pointer;
+    width: 5vw;
+    height: 3vh;
+    text-align: center;
+}

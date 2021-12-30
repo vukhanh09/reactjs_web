@@ -1,0 +1,26 @@
+.tableAcc{
+    width: 100%;
+    text-align: center;
+    border: 1px solid black;
+}
+.tableAcc td,th{
+    border: 1px solid black;
+    height: 5vh;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: 50px 2%;
+}
+.leftElement{
+    width: 15%;
+}
+.rightElement{
+    width: 80%;
+    margin-left: 1%;
+}
+.inner{
+    border-right: solid 1px black;
+    height: 100vh;
+    margin-left: 10px;
+}

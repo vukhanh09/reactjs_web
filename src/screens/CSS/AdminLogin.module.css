@@ -1,0 +1,153 @@
+.body {
+    margin: 10 auto;
+    color: #b5b5b5;
+    background: #c8c8c8;
+    font: 600 16px/18px 'Open Sans', sans-serif;
+}
+
+.loginWrap {
+    margin: 120px auto;
+    max-width: 500px;
+    min-height: 400px;
+    position: relative;
+    /* background: url(https://raw.githubusercontent.com/khadkamhn/day-01-login-form/master/img/bg.jpg) no-repeat center !important; */
+    box-shadow: 0 12px 15px 0 rgba(69, 4, 245, 0.24), 0 17px 50px 0 rgba(65, 17, 240, 0.19);
+    border-radius: 2%;
+}
+
+.loginHtml {
+    /* margin-top: 20%; */
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    padding: 70px 70px 50px 35px;
+    background: rgba(57, 62, 66, 0.9);
+    border-radius: 2%;
+    -webkit-border-radius: 2%;
+    -moz-border-radius: 2%;
+    -ms-border-radius: 2%;
+    -o-border-radius: 2%;
+}
+
+.loginHtml .signInHtm {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+
+}
+
+.loginHtml .signIn,
+.loginForm .group .check {
+    display: none;
+}
+
+.loginHtml .tab,
+.loginForm .group .label,
+.loginForm .group .button {
+    text-transform: uppercase;
+}
+
+.loginHtml .tab {
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
+}
+
+.loginHtml .signIn:checked+.tab{
+    color: #ffa805;
+    border-color: #1161ee;
+}
+
+.loginForm {
+    min-height: 345px;
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.loginForm .group {
+    margin-bottom: 15px;
+}
+
+.imgFb {
+    color: #0000ff !important;
+    padding-left: 30px;
+}
+
+.imgGoogle {
+    color: #ff0000 !important;
+    padding-left: 30px;
+}
+.divgroup{
+    margin-top: 30px;
+    width: 110%;
+}
+
+.loginForm .group .label,
+.loginForm .group .input{
+    width: 100%;
+    color: #fff;
+    display: block;
+}
+.loginForm .group .button {
+    margin-top: 30px;
+    width: 110%;
+    color: #fff;
+    display: block;
+}
+
+.loginForm .group .input,
+.loginForm .group .button {
+    border: none;
+    padding: 15px 20px;
+    border-radius: 25px !important;
+    background: rgba(255, 255, 255, .1);
+    -webkit-border-radius: 25px !important;
+    -moz-border-radius: 25px !important;
+    -ms-border-radius: 25px !important;
+    -o-border-radius: 25px !important;
+}
+
+.loginForm .group input[data-type="password"] {
+    -webkit-text-security: circle;
+}
+
+.loginForm .group .label {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.loginForm .group .button {
+    background: #1161ee;
+    box-shadow: 0 12px 15px 0 rgba(69, 4, 245, 0.24), 0 17px 50px 0 rgba(65, 17, 240, 0.19);
+}
+
+.loginForm .group label .icon {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+    position: relative;
+    display: inline-block;
+    background: rgba(255, 255, 255, .1);
+}
+
+
+
+
+
+
+.footLnk {
+    text-align: center;
+    /* margin-top: 50px; */
+}
+
+.footLnk a{
+    list-style-type: none;
+    color: inherit;
+    text-decoration: none;
+}

@@ -1,12 +1,13 @@
 
 import {dataAcc} from './users.js'
-import { useEffect } from 'react';
+import { useEffect,useState } from 'react';
 import styles from "./CSS/ManageAcc.module.css"
 import AdminTool from "../components/AdminTool"
-import SearchAccount from '../components/SearchAccount.js';
 
 function ManageAcc(){
     const cols = ['username','email','nick_name','address','date_of_birth']
+    const [searchUser,setSearchUser] = useState('')
+    const [searchFullName,setSearchFullName] = useState('')
 
     useEffect(()=>{
         var table = document.getElementById("tableAccount");
@@ -27,7 +28,23 @@ function ManageAcc(){
             </div>
             <div className={styles.inner}></div>
             <div className={styles.rightElement}>
-                <SearchAccount/>
+                <h3 className={styles.title}>Account Manager</h3>
+
+                <div className={styles.searchAcc}>
+
+                    <div className={styles.fieldSearch}>
+                        <label>Username</label>
+                        <input type='text' id='username' className={styles.searchArea} onChange={e=> setSearchUser(e.target.value)}/>
+                    </div>
+                    <div className={styles.fieldSearch}>
+                        <label>Full name</label>
+                        <input type='text' id ='fullName' className={styles.searchArea} onChange={e=> setSearchFullName(e.target.value)}/>
+                    </div>
+
+                    <button className={styles.searchBtn}>Tìm kiếm</button>
+
+                </div>
+
                 <table id="tableAccount" className={styles.tableAcc}>
                     <tr>
                         <th>Username</th>

@@ -10,6 +10,8 @@ import ViewLater from "../screens/ViewLater";
 import AdminLogin from "../screens/AdminLogin";
 import Admin from "../screens/Admin";
 import ManageAcc from "../screens/ManageAcc";
+import ManagePost from "../screens/ManagePost";
+import AddPost from "../screens/AddPost";
 
 function RootRoutes(){
     return(
@@ -29,6 +31,8 @@ function RootRoutes(){
             <Route path="/login-admin" element={<AdminLogin />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/admin/manager-account" element={<ManageAcc />} />
+            <Route path="/admin/manager-post" element={<ManagePost />} />
+            <Route path="/admin/add-post" element={<AddPost />} />
 
 
       </Routes>

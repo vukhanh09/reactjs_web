@@ -2,10 +2,14 @@
     width: 100%;
     text-align: center;
     border: 1px solid black;
+    margin-top: 20px;
 }
 .tableAcc td,th{
     border: 1px solid black;
     height: 5vh;
+}
+.tableAcc th{
+    color: green;
 }
 .container{
     display: flex;
@@ -16,11 +20,44 @@
     width: 15%;
 }
 .rightElement{
-    width: 80%;
+    width: 85%;
     margin-left: 1%;
 }
 .inner{
     border-right: solid 1px black;
     height: 100vh;
     margin-left: 10px;
+}
+.title{
+    text-align: center;
+    color: green;
+}
+.searchAcc{
+    display: flex;
+    justify-content: space-around;
+}
+.fieldSearch{
+    display: flex;
+    flex-direction: column;
+}
+.fieldSearch label{
+    color: green;
+}
+.searchBtn{
+    margin-top: 20px;
+    background-color: #e22d15;
+    cursor: pointer;
+    width: 5vw;
+    height: 3vh;
+    text-align: center;
+    color: white;
+}
+
+.searchAcc .fieldSearch{
+    width: 20%;
+}
+
+.searchArea{
+    height: 3vh;
+    border-radius: 1vh;
 }

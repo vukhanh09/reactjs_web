@@ -1,0 +1,64 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    margin: 50px 2%;
+}
+.title{
+    text-align: center;
+    color: rgb(3, 13, 102);
+}
+.leftElement{
+    width: 15%;
+}
+.rightElement{
+    width: 85%;
+}
+.inner{
+    border-right: solid 1px black;
+    height: 100vh;
+    margin-left: 10px;
+}
+.formAddPost .leftColumn{
+    width: 45%;
+}
+.formAddPost .rightColumn{
+    width: 50%;
+}
+.formAddPost{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 2%;
+    margin-left: 5%;
+    margin-top: 5%;
+}
+.formAddPost label{
+    color: rgb(3, 13, 102);
+}
+.fieldSearch{
+    display: flex;
+    flex-direction: column;
+}
+.fieldSearch .searchArea{
+    height: 3vh;
+    margin-bottom: 10px;
+}
+.desArea{
+    height: 10vh;
+    margin-bottom: 10px;
+}
+.contentPost{
+    height: 33vh;
+    margin-bottom: 8px;
+
+}
+.searchBtn{
+    margin-top: 20px;
+    width: 20%;
+    height: 5vh;
+    font-size: 16px;
+    margin-left: 40%;
+    cursor: pointer;
+    background-color: rgb(212, 188, 109);
+    border-radius: 20px;
+}

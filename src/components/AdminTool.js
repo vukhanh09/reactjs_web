@@ -18,6 +18,12 @@ function AdminTool(){
                     </div>
                 </Link>
 
+                <Link to='/admin/add-post' className={styles.hyperLink}>
+                    <div className={styles.opAddPost}>
+                        <p className={styles.textInfo}>Thêm bài viết</p>
+                    </div>
+                </Link>
+
                 <Link to='/admin/manager-post' className={styles.hyperLink}>
                     <div className={styles.opManagePost}>
                         <p className={styles.textInfo}>Quản lý bài viết</p>

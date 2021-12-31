@@ -7,6 +7,9 @@ import UserInformation from "../screens/UserInformation";
 import SectionComment from "../components/SectionComment";
 import ViewPost from "../screens/ViewPost";
 import ViewLater from "../screens/ViewLater";
+import AdminLogin from "../screens/AdminLogin";
+import Admin from "../screens/Admin";
+import ManageAcc from "../screens/ManageAcc";
 
 function RootRoutes(){
     return(
@@ -21,7 +24,12 @@ function RootRoutes(){
             <Route path="/view-post" element={<ViewPost />} >
                 <Route path=":postId" element={<ViewPost />} />
             </Route>
-            <Route path="/view-later" element={<ViewLater />} />
+            <Route path="/xem-sau" element={<ViewLater />} />
+
+            <Route path="/login-admin" element={<AdminLogin />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/admin/manager-account" element={<ManageAcc />} />
+
 
       </Routes>
     )

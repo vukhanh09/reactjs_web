@@ -1,0 +1,68 @@
+.container{
+    margin-top: 5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-bottom: 10%;
+}
+.group{
+    border-bottom: solid rgb(136, 130, 130) 1px;
+    display: block;
+
+}
+.infor{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    min-height: 50px;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.update{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    display: none;
+    margin-top: 5px;
+    margin-bottom: 15px;
+
+}
+/* .inputUpdate{
+    height: 20px;
+} */
+.column{
+    width: 30%;
+    color: blue;
+}
+.midColumn{
+    width: 50%;
+}
+.lastColumn{
+    width: 10%;
+}
+.replaceInfor{
+    cursor: pointer;
+    color: rgb(168, 8, 21);
+}
+.desArea{
+    height: 10vh;
+    margin-bottom: 10px;
+}
+.contentPost{
+    height: auto;
+    margin-bottom: 8px;
+    min-height: 50vh;
+
+}
+.disablePost{
+    color: black;
+}
+.title{
+    text-align: center;
+    color: green;
+    font-size: 30px;
+    margin-bottom: 20px;
+}

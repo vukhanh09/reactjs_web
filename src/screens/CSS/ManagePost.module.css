@@ -16,18 +16,43 @@
 }
 .inner{
     border-right: solid 1px black;
-    height: 100vh;
+    height: auto;
     margin-left: 10px;
 }
 .parentPost{
     display: block;
+    margin-top: 50px;
     width: 100%;
 }
 .childPost{
     width: 25%;
     /* display: inline; */
     background-color: green;
-    float: left;
+    float: left
+}
+.searchAcc{
+    display: flex;
+    justify-content: space-around;
+}
+.searchAcc .fieldSearch{
+    width: 20%;
+}
 
-
+.searchArea{
+    height: 3vh;
+    border-radius: 1vh;
+}
+.fieldOp{
+    height: 3vh;
+    width: 60%;
+    border-radius: 1vh;
+}
+.searchBtn{
+    margin-top: 20px;
+    background-color: #1575e2;
+    cursor: pointer;
+    width: 5vw;
+    height: 3vh;
+    text-align: center;
+    color: white;
 }

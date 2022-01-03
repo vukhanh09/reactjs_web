@@ -32,3 +32,7 @@
 .option:hover{
     background-color: rgb(187, 22, 36);
 }
+.linkPost{
+    text-decoration: none;
+    
+}

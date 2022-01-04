@@ -12,6 +12,7 @@ import Admin from "../screens/Admin";
 import ManageAcc from "../screens/ManageAcc";
 import ManagePost from "../screens/ManagePost";
 import AddPost from "../screens/AddPost";
+import AdminViewPost from "../components/AdminViewPost";
 
 function RootRoutes(){
     return(
@@ -33,6 +34,9 @@ function RootRoutes(){
             <Route path="/admin/manager-account" element={<ManageAcc />} />
             <Route path="/admin/manager-post" element={<ManagePost />} />
             <Route path="/admin/add-post" element={<AddPost />} />
+            <Route path="/admin/view-post" element={<AdminViewPost />} >
+                <Route path=":postId" element={<ViewPost />} />
+            </Route>
 
 
       </Routes>

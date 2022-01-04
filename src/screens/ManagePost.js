@@ -1,12 +1,13 @@
 import AdminTool from "../components/AdminTool"
 import styles from "./CSS/ManagePost.module.css"
 
-import { useEffect } from "react"
+import { useEffect,useState } from "react"
 import ItemAdmin from "../components/ItemAdmin"
 
 function ManagePost(){
     const url = 'https://static01.nyt.com/images/2020/11/25/dining/23leftoversrex1-copy/merlin_179868645_ccb9d1b4-9544-4368-afa4-c5fa354aa794-threeByTwoSmallAt2X.jpg?format=pjpg&quality=75&auto=webp&disable=upscale'
     const title = 'Best Thanksgiving Leftovers Sandwich'
+    const [searchTitle,setTitle] = useState('')
     
     const middleData = [
         {
@@ -41,6 +42,12 @@ function ManagePost(){
             description:'Nasser Al-Khelaifi hy vọng Kylian Mbappe sẽ giành Quả Bóng Vàng khi khoác áo PSG như Lionel Messi.',
             extend_description:'Khi Taliban áp sát thủ đô Kabul hôm 15/8, đội ...'
         }]
+    
+
+
+    const handleSearch = ()=>{
+        // console.log(document.getElementById("topics").value)
+    }
 
     return (
         <div className={styles.container}>
@@ -50,6 +57,27 @@ function ManagePost(){
             <div className={styles.inner}></div>
             <div className={styles.rightElement}>
                 <h3 className={styles.title}>Quản lý bài viết</h3>
+                <div className={styles.searchAcc}>
+
+                    <div className={styles.fieldSearch}>
+                        <label>Chủ đề</label><br/>
+                        <select name="topic" id="topics" className={styles.fieldOp}>
+                            <option value="none">None</option>
+                            <option value="thoisu">Thời sự</option>
+                            <option value="gocnhin">Góc nhìn</option>
+                            <option value="thegioi">Thế giới</option>
+                            <option value="kinhdoanh">Kinh doanh</option>
+                            <option value="dulich">Du lịch</option>
+                        </select>
+                    </div>
+                    <div className={styles.fieldSearch}>
+                        <label>Tiêu đề</label><br/>
+                        <input type='text' id ='fullName' className={styles.searchArea} onChange={e=> setTitle(e.target.value)}/>
+                    </div>
+
+                    <button className={styles.searchBtn} onClick={handleSearch}>Tìm kiếm</button>
+
+                </div>
                 <div className={styles.parentPost}>
                     {
                         middleData.map((item,id) =>{

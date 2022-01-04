@@ -32,9 +32,7 @@ function AccountInformation(){
                         <input placeholder='Nhập thông tin...'
                             className={clsx(styles.midColumn,styles.inputUpdate)}
                         />
-                        <lable className={clsx(styles.lastColumn,styles.replaceInfor)}>Lưu thay đổi</lable>
-
-
+                        <lable className={clsx(styles.lastColumn,styles.replaceInfor)} onClick={()=> {console.log("aaa")}}>Lưu thay đổi</lable>
                     </div>
                 </div>
 

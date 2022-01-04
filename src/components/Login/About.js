@@ -15,7 +15,7 @@ function About() {
             username: username,
             password: password,
         }).then(res => {
-            Cookies.set('access_token', res.data.data.accessToken,{expires: 1, sameSite:'Strict', path:'/'})
+            Cookies.set('access_token', res.data.data.accessToken,{expires: 1, sameSite:'Strict', path:'/'});
             console.log(res.data.data.accessToken);
             navigate('/');
         }).catch((err) => {

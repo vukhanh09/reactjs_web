@@ -17,7 +17,7 @@ function BodyHome(){
     const [hotNews, setHotNews] = useState();
     useEffect(() => {
         axiosConfig.get('/news/get-hot-news').then(res => {
-            console.log(res.data);
+            // console.log(res.data.data[0]);
             setHotNews(res.data.data[0]);
         }).catch((err) => {
             console.log(err);

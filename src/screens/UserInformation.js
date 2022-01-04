@@ -14,7 +14,6 @@ function UserInformation(){
         axiosConfig.get('/users/get-user-info', {
             headers: {"Authorization":`Bearer ${Cookies.get("access_token")}`}
         }).then(res => {
-            console.log(res.data);
             setUser(res.data.data);
         }).catch((err) => {
             console.log(err);

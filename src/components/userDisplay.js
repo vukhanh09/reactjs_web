@@ -13,7 +13,7 @@ function UserDisplay(props){
                 </div>
                 <div className={styles.right_cpn}>
                     <h3>{user_name}</h3>
-                    <p>{user_age} tuổi</p>
+                    <p>{user_age}</p>
                 </div>
             </div>
 

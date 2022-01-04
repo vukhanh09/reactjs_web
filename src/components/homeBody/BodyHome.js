@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import MainStory from "./MainStory";
 import SubStory from "./SubStory";
 import styles from './CSS/BodyHome.module.css'
@@ -10,15 +10,24 @@ import {subData,middleData} from './data.js'
 import XemNhieu from "./XemNhieu";
 import rightArrow from '../../assets/rightnext.png'
 import leftArrow from '../../assets/leftnext.png'
-
+import axiosConfig from '../../config/axiosConfig';
 import Topic from "./Topic";
 
 function BodyHome(){
+    const [hotNews, setHotNews] = useState();
+    useEffect(() => {
+        axiosConfig.get('/news/get-hot-news').then(res => {
+            console.log(res.data);
+            setHotNews(res.data.data[0]);
+        }).catch((err) => {
+            console.log(err);
+        });
+    },[])
     const middle3Data = middleData.filter(item=>item.id !==0)
     return (
         <div className={styles.container}>
             <div className={styles.section_1}>
-                <MainStory data={middleData[0]}/>
+                <MainStory data={hotNews}/>
 
                 <div className={styles.sub_story}>
                     {

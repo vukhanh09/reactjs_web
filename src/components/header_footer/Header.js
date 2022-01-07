@@ -3,7 +3,7 @@ import searchImage from '../../assets/magnifier.png'
 import userImage from '../../assets/user1.png'
 import menuImage from '../../assets/squares.png'
 import styles from './CSS/HeaderCSS.module.css'
-import axiosConfig from '../../config/axiosConfig';
+import { getUserInformation } from "../../api/userApi";
 import Cookies from "js-cookie";
 import {useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
@@ -50,14 +50,12 @@ function Header() {
         setVisibleMenuTop(x1+x2-window.scrollY)
       }
     }
-    axiosConfig.get('/users/get-user-info', {
-      headers: {"Authorization":`Bearer ${Cookies.get("access_token")}`}
-    }).then(res => {
-        console.log(res.data);
-        setUsername(res.data.data.nick_name);
-    }).catch((err) => {
-        console.log(err);
-    });
+    let token = Cookies.get("access_token");
+    if(token != null){
+      getUserInformation(token).then(
+        res => setUsername(res.data.nick_name)
+      )
+    }
     window.addEventListener('scroll',handlleScroll)
   },[])
 
@@ -90,7 +88,7 @@ function Header() {
             
         <a className={styles.divUser}>
             <img src ={userImage} className={styles.userIcon} onClick={()=> Cookies.get('access_token')==null ? navigatePath('/login'):navigatePath('/user-information')} />
-            <p className={styles.textColor} onClick={()=>navigatePath('/login')}>{Cookies.get('access_token')==null ? "Đăng nhập": username}</p>
+            <p className={styles.textColor} onClick={()=>Cookies.get('access_token')==null ? navigatePath('/login'):navigatePath('/user-information')}>{Cookies.get('access_token')==null ? "Đăng nhập": username}</p>
 
         </a>
 

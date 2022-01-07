@@ -12,9 +12,6 @@ import axios from 'axios';
 
 function ViewLater(){
 
-
-
-
     return (
         <div className={styles.TimKiem}>
             <Header/>

@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-    baseURL:'http://localhost:9091/api'
+    baseURL:'https://news-web-aps.herokuapp.com/api'
 });
 
 export default instance;

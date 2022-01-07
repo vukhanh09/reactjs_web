@@ -5,19 +5,15 @@ import styles from './CSS/UserInformation.module.css'
 import UserDisplay from "../components/userDisplay";
 import AccountInformation from "../components/AccountInformation";
 import { useEffect, useState } from "react";
-import axiosConfig from "../config/axiosConfig";
+import { getUserInformation } from "../api/userApi";
 import Cookies from "js-cookie";
 function UserInformation(){
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState();
     
     useEffect(() => {
-        axiosConfig.get('/users/get-user-info', {
-            headers: {"Authorization":`Bearer ${Cookies.get("access_token")}`}
-        }).then(res => {
-            setUser(res.data.data);
-        }).catch((err) => {
-            console.log(err);
-        })
+        getUserInformation(Cookies.get("access_token")).then(
+            res => setUser(res.data)
+        )
     }, []);
     return (
         <div className={styles.container}>
@@ -27,7 +23,7 @@ function UserInformation(){
                     user_name={user?.nick_name}
                     user_age ={user?.date_of_birth}
                 />
-                <AccountInformation/>
+                <AccountInformation user={user}/>
             </div>
             <Footer/>
         </div>

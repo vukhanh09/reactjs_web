@@ -4,23 +4,18 @@ import SubStory from "./SubStory";
 import styles from './CSS/BodyHome.module.css'
 import clsx from "clsx";
 import MediaStory from "./MediaStory";
-
+import { getHotNews } from "../../api/newsApi";
 import {subData,middleData} from './data.js'
-
 import XemNhieu from "./XemNhieu";
 import rightArrow from '../../assets/rightnext.png'
 import leftArrow from '../../assets/leftnext.png'
-import axiosConfig from '../../config/axiosConfig';
 import Topic from "./Topic";
 
 function BodyHome(){
     const [hotNews, setHotNews] = useState();
     useEffect(() => {
-        axiosConfig.get('/news/get-hot-news').then(res => {
-            // console.log(res.data.data[0]);
-            setHotNews(res.data.data[0]);
-        }).catch((err) => {
-            console.log(err);
+        getHotNews().then(res => {
+            setHotNews(res.data[0]);
         });
     },[])
     const middle3Data = middleData.filter(item=>item.id !==0)

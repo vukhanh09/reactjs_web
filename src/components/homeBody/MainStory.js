@@ -8,15 +8,12 @@ function MainStory({data,classType,op}){
         [styles.container_1]:op,
         [styles.container_2] :!op
     })
-    var url_post = data?.title.split(' ')
-    url_post = url_post?.join('-')
-    console.log(data)
     return (
         <>
            {
                !classType &&  
-               <div className={styles.main_story} href={`/view-post/${url_post}`}>
-                    <h3 className={styles.title}><a href={`/view-post/${url_post}`}>{data?.title}</a></h3>
+               <div className={styles.main_story} href={`/view-post/${data?.url}`}>
+                    <h3 className={styles.title}><a href={`/view-post/${data?.url}`}>{data?.title}</a></h3>
                     <img src={data?.url_image[0]} />
                     <p className={styles.description}>{data?.description}</p>
                     <p className={styles.extend_description}>{data?.extend_description}</p>
@@ -33,7 +30,6 @@ function MainStory({data,classType,op}){
                 </div>
            }
         </>
-        
 
     )
 

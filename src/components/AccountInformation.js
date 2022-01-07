@@ -2,8 +2,8 @@ import React from "react";
 import styles from './CSS/AccountInformation.module.css'
 import clsx from "clsx";
 
-function AccountInformation(){
-
+function AccountInformation(props){
+    const user = props.user;
     const displayUpdate = (id)=>{
         const res = document.getElementById(id)
         if (res.style.display === 'flex'){
@@ -20,7 +20,7 @@ function AccountInformation(){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Tài khoản</label>
-                        <label className={styles.midColumn}>vukhanh09</label>
+                        <label className={styles.midColumn}>{user?.username}</label>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(0)}
                         >Thay đổi</label>
@@ -39,7 +39,7 @@ function AccountInformation(){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Mật khẩu</label>
-                        <input type="text" disabled="disabled" value="***********"  className={styles.midColumn}/>
+                        <input type="password" disabled="disabled" value={user?.password}  className={styles.midColumn}/>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(1)}
                         >Thay đổi</label>
@@ -60,7 +60,7 @@ function AccountInformation(){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Họ và tên</label>
-                        <label className={styles.midColumn}>Vũ Xuân Khánh</label>
+                        <label className={styles.midColumn}>{user?.nick_name}</label>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(2)}
                         >Thay đổi</label>
@@ -80,7 +80,7 @@ function AccountInformation(){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Email</label>
-                        <label className={styles.midColumn}>vukhanh0920@gmail.com</label>
+                        <label className={styles.midColumn}>{user?.email}</label>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(3)}
                         >Thay đổi</label>

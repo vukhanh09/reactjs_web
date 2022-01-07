@@ -1,9 +1,9 @@
 
 import React, { useState } from 'react';
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
-import axiosConfig from '../../config/axiosConfig';
 import styles from './CSS/about.module.css';
 import Cookies from 'js-cookie';
+import { loginUser } from '../../api/authApi';
 
 
 function About() {
@@ -11,16 +11,15 @@ function About() {
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
     const login = () => {
-        axiosConfig.post('/auth/signin', {
-            username: username,
-            password: password,
-        }).then(res => {
-            Cookies.set('access_token', res.data.data.accessToken,{expires: 1, sameSite:'Strict', path:'/'});
-            console.log(res.data.data.accessToken);
-            navigate('/');
-        }).catch((err) => {
-            console.log(err);
-        })
+        loginUser(username, password).then(
+            res => {
+                console.log(res);
+                Cookies.set('access_token', res.data.accessToken, {expires: 1, path:'/', sameSite:'Strict'});
+                navigate('/');
+            }
+        ).catch(() => {
+            alert('Username or password incorrect!');
+        });
     };
     return (
         <>
@@ -75,6 +74,7 @@ function About() {
                             <div className={styles.group}>
                                 <label for="pass" className={styles.label}>Password</label>
                                 <input id="pass" type="password" className={styles.input} data-type="password" />
+                                <label>incorrect</label>
                             </div>
                             <div className={styles.group}>
                                 <label for="date" className={styles.label}>Birth Date</label>

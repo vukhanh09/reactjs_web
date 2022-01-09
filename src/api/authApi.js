@@ -4,7 +4,9 @@ function loginUser(username, password){
     return axiosConfig.post('/auth/signin', {
         username: username,
         password: password,
-    }).then(res => res.data
+    }).then(res => {
+        return res.data
+    }
     ).catch((err) => {
         console.log(err);
     })

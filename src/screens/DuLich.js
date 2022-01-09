@@ -1,9 +1,16 @@
+import Header from '../components/header_footer/Header';
+import Footer from '../components/header_footer/Footer';
+import Dulich from '../components/DuLich/Dulich';
+function DuLich() {
+  return (
 
-
-function DuLich(){
-    return (
-        <div>
-
-        </div>
-    )
+    <div className="Gocnhin">
+      <Header/>
+      <Dulich/>
+      <Footer/>
+      
+    </div>
+  );
 }
+
+export default DuLich;

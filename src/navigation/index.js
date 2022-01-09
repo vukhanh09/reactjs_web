@@ -36,9 +36,8 @@ function RootRoutes(){
             <Route path="/admin/manager-account" element={<ManageAcc />} />
             <Route path="/admin/manager-post" element={<ManagePost />} />
             <Route path="/admin/add-post" element={<AddPost />} />
-            <Route path="/admin/view-post" element={<AdminViewPost />} >
-                <Route path=":postId" element={<ViewPost />} />
-            </Route>
+
+            <Route path="/admin/view-post/:postId" element={<AdminViewPost />} />
 
 
       </Routes>

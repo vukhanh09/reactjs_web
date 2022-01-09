@@ -1,6 +1,9 @@
 import AdminTool from "../components/AdminTool"
 import { useEffect,useState } from 'react';
 import styles from "./CSS/AddPost.module.css"
+import Cookies from 'js-cookie';
+import axiosConfig from '../config/axiosConfig';
+
 
 function AddPost(){
     const [topic,setTopic] = useState('')
@@ -10,13 +13,40 @@ function AddPost(){
     const [extend_des,setExtend_des] = useState('')
     const [content,setContent] = useState('')
     const [urlImg,setUrlImg] = useState('')
-    console.log(topic)
-    console.log(author)
-    console.log(title)
-    console.log(description)
-    console.log(extend_des)
-    console.log(content)
-    console.log(urlImg)
+    const token = Cookies.get('access_token_admin')
+    
+    const uploadPost = ()=>{
+        const upContent = content.split("\n")
+        const upUrlImg = content.split("\n")
+        var upUrl = title.split(" ")
+        upUrl = upUrl.join('-')
+        axiosConfig.post('/admin/add-post',{
+            data:{
+                url:'upUrl',
+                title:title,
+                content: upContent,
+                url_image:upUrlImg,
+                description:description,
+                extend_description: extend_des,
+                topic:topic,
+                views:0
+            }
+        },{headers: {"Authorization" : `Bearer ${token}`}})
+        .then(res=>{
+            if(res.status == 200){
+                alert("Upload post successfully!");
+            }
+            else{
+                alert("Failed to upload the post!");
+            }
+        })
+        .catch(err =>{
+            alert("Failed to upload the post!");
+        })
+        
+
+
+    }
 
     return (
         <div className={styles.container}>
@@ -69,7 +99,7 @@ function AddPost(){
                     </div>
 
                 </div>
-                <button className={styles.searchBtn}>Thêm sản phẩm</button>
+                <button className={styles.searchBtn} onClick={uploadPost}>Thêm sản phẩm</button>
     
             </div>
 

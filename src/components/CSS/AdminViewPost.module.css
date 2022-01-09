@@ -1,7 +1,7 @@
 .container{
     margin-top: 5%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 10%;
 }
 .group{
@@ -34,11 +34,11 @@
     height: 20px;
 } */
 .column{
-    width: 30%;
+    width: 15%;
     color: blue;
 }
 .midColumn{
-    width: 50%;
+    width: 70%;
 }
 .lastColumn{
     width: 10%;
@@ -65,4 +65,17 @@
     color: green;
     font-size: 30px;
     margin-bottom: 20px;
+}
+.updatePost{
+    margin-top: 30px;
+    margin-left: 40%;
+    height: 5vh;
+    width: 20vw;
+    font-size: 20px;
+    border-color: yellow;
+    
+    z-index: 9999;
+
+    background: linear-gradient(to right, #7fa2d1, #06ff4b);
+    cursor: pointer;
 }

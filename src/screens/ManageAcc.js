@@ -3,14 +3,31 @@ import {dataAcc} from './users.js'
 import { useEffect,useState } from 'react';
 import styles from "./CSS/ManageAcc.module.css"
 import AdminTool from "../components/AdminTool"
+import Cookies from 'js-cookie';
+import axiosConfig from '../config/axiosConfig';
 
 function ManageAcc(){
     const cols = ['username','email','nick_name','address','date_of_birth']
     const [searchUser,setSearchUser] = useState('')
     const [searchFullName,setSearchFullName] = useState('')
+    const [listUser,setListUser] = useState([])
 
+    const token = Cookies.get('access_token_admin')
     useEffect(()=>{
+        
+        axiosConfig.get('/users/get-list-users',{ headers: {"Authorization" : `Bearer ${token}`} })
+        .then(res=>{
+            const dataAcc = res.data.data.list_user
+            console.log(dataAcc)
+            setListUser(dataAcc)
+            renderUser(dataAcc)
+        })
+        .catch(err=>console.log(err))
+    },[])
+
+    const renderUser = (dataAcc)=>{
         var table = document.getElementById("tableAccount");
+        // table.innerHTML = ''
         for(let i = 0; i < dataAcc.length;i++){
             var row = table.insertRow(1);
             for(let num_row = 0; num_row < cols.length;num_row ++){
@@ -18,7 +35,72 @@ function ManageAcc(){
                 cell.innerHTML = dataAcc[i][cols[num_row]];
             }
         }
-    },[dataAcc])
+    }
+
+    // useEffect(()=>{
+    //     var table = document.getElementById("tableAccount");
+    //     // table.innerHTML = ''
+    //     for(let i = 0; i < listUser.length;i++){
+    //         table.deleteRow(0);
+    //     }
+    //     renderUser(listUser)
+    // },[listUser])
+
+    
+
+    const findUser = ()=>{
+        var username
+        var fullname
+        if(!searchUser.length && !searchFullName.length){
+            username = ''
+            fullname = ''
+            var table = document.getElementById("tableAccount");
+            // table.innerHTML = ''
+            for(let i = 0; i < listUser.length;i++){
+                table.deleteRow(-1);
+            }
+            const token = Cookies.get('access_token_admin')
+            axiosConfig.get('/users/get-list-users',{ headers: {"Authorization" : `Bearer ${token}`} })
+            .then(res=>{
+                const dataAcc = res.data.data.list_user
+                console.log(dataAcc)
+                setListUser(dataAcc)
+                renderUser(dataAcc)
+            })
+            .catch(err=>console.log(err))
+            return 0;
+        }
+        else if (!searchUser.length){
+            username = '/end'
+            fullname =  searchFullName
+        }
+        else if (!searchFullName.length){
+            username = searchUser
+            fullname =  '/end'
+        }
+        axiosConfig.get('/admin/find-user',{
+            params:{
+                username:username,
+                fullname:fullname
+            },
+            headers: {"Authorization" : `Bearer ${token}`}
+        })
+        .then(res=> {
+            var table = document.getElementById("tableAccount");
+            // table.innerHTML = ''
+            for(let i = 0; i < listUser.length;i++){
+                table.deleteRow(-1);
+            }
+            const dataAcc = res.data.data
+            renderUser(dataAcc)
+            setListUser(dataAcc)
+        })
+
+    }
+
+
+
+
 
 
     return (
@@ -41,7 +123,7 @@ function ManageAcc(){
                         <input type='text' id ='fullName' className={styles.searchArea} onChange={e=> setSearchFullName(e.target.value)}/>
                     </div>
 
-                    <button className={styles.searchBtn}>Tìm kiếm</button>
+                    <button className={styles.searchBtn} onClick={()=>findUser()}>Tìm kiếm</button>
 
                 </div>
 

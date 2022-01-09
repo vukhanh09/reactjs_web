@@ -3,11 +3,26 @@ import styles from "./CSS/ManagePost.module.css"
 
 import { useEffect,useState } from "react"
 import ItemAdmin from "../components/ItemAdmin"
+import Cookies from 'js-cookie';
+import axiosConfig from '../config/axiosConfig';
 
 function ManagePost(){
     const url = 'https://static01.nyt.com/images/2020/11/25/dining/23leftoversrex1-copy/merlin_179868645_ccb9d1b4-9544-4368-afa4-c5fa354aa794-threeByTwoSmallAt2X.jpg?format=pjpg&quality=75&auto=webp&disable=upscale'
     const title = 'Best Thanksgiving Leftovers Sandwich'
     const [searchTitle,setTitle] = useState('')
+    const [listNews,setListNews] = useState([])
+
+    useEffect(()=>{
+        axiosConfig.get('/news/get-all-news')
+        .then(res=>{
+            // var lsNews = res.data.data.listNews
+            setListNews(res.data.data.listNews)
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+
+    },[])
     
     const middleData = [
         {
@@ -80,16 +95,16 @@ function ManagePost(){
                 </div>
                 <div className={styles.parentPost}>
                     {
-                        middleData.map((item,id) =>{
-                            return <ItemAdmin key={id} url = {item.src} title={item.title} />
+                        listNews.map((item,id) =>{
+                            return <ItemAdmin key={id} url_image = {item.url_image[0]} title={item.title} url={item.url} />
                         })
                     }
 
+                    {/* <ItemAdmin url = {url} title={title} />
                     <ItemAdmin url = {url} title={title} />
                     <ItemAdmin url = {url} title={title} />
                     <ItemAdmin url = {url} title={title} />
-                    <ItemAdmin url = {url} title={title} />
-                    <ItemAdmin url = {url} title={title} />
+                    <ItemAdmin url = {url} title={title} /> */}
 
                 </div>
     

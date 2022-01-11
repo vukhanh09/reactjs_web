@@ -10,9 +10,21 @@
 .leftElement{
     width: 15%;
 }
+@media screen and (max-width: 1129px){
+    .leftElement {
+        width: 20%;
+        margin-left: 1%;
+    }
+}
 .rightElement{
     width: 85%;
     margin-left: 1%;
+}
+@media screen and (max-width: 1129px){
+    .rightElement {
+        width: 180%;
+        margin-left: 1%;
+    }
 }
 .inner{
     border-right: solid 1px black;
@@ -30,6 +42,7 @@
     background-color: green;
     float: left
 }
+
 .searchAcc{
     display: flex;
     justify-content: space-around;

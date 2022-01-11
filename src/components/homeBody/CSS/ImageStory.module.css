@@ -27,6 +27,10 @@
     width: auto;
     margin-top: 15px;
 }
+.col_2 .title a{
+    text-decoration: none!important;
+    outline: 1!important;
+}
 
 @media screen and (max-width: 800px) {
     .col_1 .image{

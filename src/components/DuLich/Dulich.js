@@ -2,6 +2,68 @@ import React from "react";
 import styles from './CSS/dulich.module.css'
 
 function Dulich(){
+
+    const Headdulich = [
+        { 
+            id: '01',
+            title: 'Ngôi nhà đơn độc nhất thế giới',
+            url_image: 'https://i1-dulich.vnecdn.net/2022/01/07/191064420-848486432415800-5825401786878743553-n-1641523283.jpg?w=1200&h=0&q=100&dpr=1&fit=crop&s=gqIORkjfMF8uBhMhPqENLw',
+            description: 'Nhiều du khách thậm chí không nhận ra ngôi nhà ở sườn núi hẻo lánh, chứ đừng nói đến việc bước vào.Nhiều du khách thậm chí không nhận ra ngôi nhà ở sườn núi hẻo lánh, chứ đừng nói đến việc bước vào.Nhiều du khách thậm chí không nhận ra ngôi nhà ở sườn núi hẻo lánh, chứ đừng nói đến việc bước vào.Nhiều du khách thậm chí không nhận ra ngôi nhà ở sườn núi hẻo lánh, chứ đừng nói đến việc bước vào.Nhiều du khách thậm chí không nhận ra ngôi nhà ở sườn núi hẻo lánh, chứ đừng nói đến việc bước vào.',
+        },
+    ];
+
+    const dulich_content = [
+        {
+            id: '01',
+            title_news: 'Phở bò vào top các món ăn có nước ngon nhất thế giới ',
+            url_image: 'https://i1-dulich.vnecdn.net/2022/01/09/270612122133566505688238653348-9564-5324-1641737845.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=gXVeLSXtZfMgssKtkx3cqw',
+        },
+        {
+            id: '02',
+            title_news: 'Đường Hậu Giang ở TP HCM thành phố ẩm thực ',
+            url_image: 'https://i1-dulich.vnecdn.net/2022/01/10/tuyenphoamthuccholon02jpg-1641-8142-3437-1641788476.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=xRasGKUGg2PfvTgfTXKv2g',
+        },
+        {
+            id: '03',
+            title_news: '10 điều nên biết để không thất vọng khi đến châu Âu',
+            url_image: 'https://i1-dulich.vnecdn.net/2022/01/09/ban-cong-juliet-jpeg-3872-1641-9065-8282-1641699599.jpg?w=680&h=408&q=100&dpr=1&fit=crop&s=iJnmCwxRNDSwE1KVqCjS7w',
+        },
+      
+    ];
+
+    const dulich_xemthem = [
+        {
+            id: '01',
+            title: ' 1Thành Đô - thành phố hạnh phúc nhất Trung Quốc',
+            description: 'Thành Đô là thành phố hạnh phúc nhất đất nước tỷ dân trong 12 năm liên tiếp, đồng thời cũng là kinh đô ẩm thực thế giới.',
+            url_image: 'https://i1-dulich.vnecdn.net/2022/01/06/xiaolongkan-1641462165-6767-1641462225.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=I7qRFRCnOwph1wzXHYYcsg',
+        },
+        {
+            id: '02',
+            title: 'Mai anh đào nở rộ ở Măng Đen',
+            description: 'KON TUMĐầu năm mới, hàng nghìn cây mai anh đào khoe sắc, nhiều khách du lịch đổ lên thị thị trấn Măng Đen, huyện Kon Plông ngắm hoa.',
+            url_image: 'https://i1-vnexpress.vnecdn.net/2022/01/06/6d7951da-deed-4365-9593-fd4d8ed31378-jpeg-1641289802-1641451637.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=J76c8C9VolAM4s6arP1A_w',
+        },
+        {
+            id: '03',
+            title: 'Cô gái lang thang khắp nước Mỹ bằng xe cứu thương',
+            description: 'MỸDanielle Gross có cuộc hôn nhân không thể lạ lùng hơn và hiện có cuộc sống chu du khắp nơi không thể hạnh phúc hơn.',
+            url_image: 'https://i1-dulich.vnecdn.net/2022/01/06/2-2286-1641442304-1641442680-4271-1641442688.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=05CkybWrnnzZcWzpBXfE2g',
+        },
+        {
+            id: '04',
+            title: '10 chuyến tàu xa xỉ nhất thế giới',
+            description: 'Chuyến tàu Rovos Rail (Nam Phi), Seven Stars (Nhật Bản)... đầy đủ tiện nghi như resort 5 sao, đem đến trải nghiệm độc đáo cho những du khách chịu chi.',
+            url_image: 'https://i1-dulich.vnecdn.net/2022/01/05/75f4ed1a-3212-11e3-a16d-00144feab7de-1641286426-1641360094.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=tr5CJP7lxVAiBlSiyM8hOg',
+        },
+        {
+            id: '05',
+            title: 'Chuyến leo núi nhớ đời của cô gái mê chụp ảnh',
+            description: 'ÁONghĩ rằng ôtô lên đến gần đỉnh, không chuẩn bị trước tinh thần phải leo bộ, Thanh Thảo không đi giày chuyên dụng, chưa kể cô còn mặc váy ngắn.',
+            url_image: 'https://i1-dulich.vnecdn.net/2022/01/04/olperer-1-7386-1640840292-1641-9301-4062-1641261705.png?w=220&h=132&q=100&dpr=1&fit=crop&s=SisE_sWxe-5B33NqwpoIhQ',
+        },
+    ];
+      
     return (
         <div className={styles.body}>
             <section className={`${styles.section} ${styles.top_header} ${styles.top_header_folder}`}>
@@ -16,152 +78,38 @@ function Dulich(){
                 <div className={`${styles.container} ${styles.flexbox}`}>
                     <div className={styles.col_left_top}>
                         <div className={`${styles.wrapper_topstory_folder} ${styles.wrapper_topstory_folder_v2} ${styles.flexbox}`}>
-                            <article className={`${styles.item_news} ${styles.full_thumb} ${styles.article_topstory} ${styles.article_style}`}>
-                                <div className={styles.thumb_art}>
-                                    <a
-                                        href="https://vnexpress.net/nhung-doi-co-o-tay-nguyen-ruc-ro-dip-cuoi-nam-4382068.html"
-                                        className={`${styles.thumb} ${styles.thumb_5x3}`}
-                                        title="Những đồi cỏ ở Tây Nguyên rực rỡ dịp cuối năm"
-                                    >
-                                        <picture>
-                                            <img
-                                                itemprop="contentUrl"
-                                                loading="lazy"
-                                                intrinsicsize="680x408"
-                                                alt="Những đồi cỏ ở Tây Nguyên rực rỡ dịp cuối năm"
-                                                className={styles.lazy}
-                                                src="https://i1-dulich.vnecdn.net/2021/11/08/icgystmngxhi03-1636340962-1636-9223-3257-1636357125.jpg?w=680&amp;h=408&amp;q=100&amp;dpr=1&amp;fit=crop&amp;s=_nXXlfqSJVqz_3tF7Lk8Lw"
-                                            />
-                                        </picture>
-                                    </a>
-                                </div>
-                                <h3 className={styles.title_news}>
-                                    <a
-                                        href="https://vnexpress.net/nhung-doi-co-o-tay-nguyen-ruc-ro-dip-cuoi-nam-4382068.html"
-                                        title="Những đồi cỏ ở Tây Nguyên rực rỡ dịp cuối năm"
-                                    >
-                                        Những đồi cỏ ở Tây Nguyên rực rỡ dịp cuối năm
-                                    </a>
-                                </h3>
-                                <p className={styles.description}>
-                                    <a
-                                        href="https://vnexpress.net/nhung-doi-co-o-tay-nguyen-ruc-ro-dip-cuoi-nam-4382068.html"
-                                        title="Những đồi cỏ ở Tây Nguyên rực rỡ dịp cuối năm"
-                                    >
-                                        Tháng 11 là thời điểm cỏ hồng, cỏ lau ở Đà Lạt và Pleiku vào mùa, hút du khách đến chụp ảnh.
-                                        Tháng 11 là thời điểm cỏ hồng, cỏ lau ở Đà Lạt và Pleiku vào mùa, hút du khách đến chụp ảnh.
-                                        Tháng 11 là thời điểm cỏ hồng, cỏ lau ở Đà Lạt và Pleiku vào mùa, hút du khách đến chụp ảnh.
-                                        Tháng 11 là thời điểm cỏ hồng, cỏ lau ở Đà Lạt và Pleiku vào mùa, hút du khách đến chụp ảnh.
-                                        Tháng 11 là thời điểm cỏ hồng, cỏ lau ở Đà Lạt và Pleiku vào mùa, hút du khách đến chụp ảnh.
-                                    </a>
-                                </p>
-                                <p className={styles.meta_news}>
-                                    <span className={styles.time_public}>
-                                        <span className={styles.time_ago}>2h trước</span>
-                                    </span>
-                                    <a className={styles.count_cmt} href="https://vnexpress.net/nhung-doi-co-o-tay-nguyen-ruc-ro-dip-cuoi-nam-4382068.html#box_comment_vne" 
-                                    // style="white-space: nowrap; display: none;"
-                                    >
-                                        <span
-                                            className={`${styles.txt_num_comment} ${styles.font_icon}`}
-                                        ></span>
-                                    </a>
-                                </p>
-                            </article>
-                            <div className={styles.sub_news_top}>
-                                <div className={styles.inner_sub_news_top}>
-                                    <div className={styles.scroll_sub_featured}>
-                                        <ul className={styles.list_sub_feature}>
-                                            <li>
-                                                <h3 className={styles.title_news}>
-                                                    <a
-                                                        href="https://vnexpress.net/bo-viec-luong-120-trieu-dong-de-du-lich-khap-the-gioi-4382770.html"
-                                                        title="Bỏ việc lương 120 triệu đồng để du lịch khắp thế giới"
-                                                    >
-                                                        Bỏ việc lương 120 triệu đồng để du lịch khắp thế giới
-                                                    </a>
-                                                </h3>
-                                                <p className={styles.description}>
-                                                    <a
-                                                        href="https://vnexpress.net/bo-viec-luong-120-trieu-dong-de-du-lich-khap-the-gioi-4382770.html"
-                                                        title="Bỏ việc lương 120 triệu đồng để du lịch khắp thế giới"
-                                                    >
-                                                        Ở tuổi 30, nghỉ làm giám đốc kinh doanh, Nguyễn Thanh Tùng (Tony Balo) đã du lịch 20 quốc gia và thực hiện sở thích làm travel blogger.
-                                                        Ở tuổi 30, nghỉ làm giám đốc kinh doanh, Nguyễn Thanh Tùng (Tony Balo) đã du lịch 20 quốc gia và thực hiện sở thích làm travel blogger.
-                                                    </a>
-                                                </p>
-                                                <p className={styles.meta_news}>
-                                                    <a className={styles.count_cmt} href="https://vnexpress.net/bo-viec-luong-120-trieu-dong-de-du-lich-khap-the-gioi-4382770.html#box_comment_vne" 
-                                                    // style="white-space: nowrap; display: none;"
-                                                    >
-                                                        <span
-                                                            className={`${styles.txt_num_comment} ${styles.font_icon}`}
-                                                        ></span>
-                                                    </a>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <h3 className={styles.title_news}>
-                                                    <a
-                                                        href="https://vnexpress.net/afghanistan-don-du-khach-dau-tien-tu-khi-taliban-nam-quyen-4383256.html"
-                                                        title="Afghanistan đón du khách đầu tiên từ khi Taliban nắm quyền"
-                                                    >
-                                                        Afghanistan đón du khách đầu tiên từ khi Taliban nắm quyền
-                                                    </a>
-                                                </h3>
-                                                <p className={styles.description}>
-                                                    <a
-                                                        href="https://vnexpress.net/afghanistan-don-du-khach-dau-tien-tu-khi-taliban-nam-quyen-4383256.html"
-                                                        title="Afghanistan đón du khách đầu tiên từ khi Taliban nắm quyền"
-                                                    >
-                                                        Hai khách nước ngoài đã đến du lịch kể từ Taliban lên nắm quyền nước này hồi tháng 8.
-                                                        Hai khách nước ngoài đã đến du lịch kể từ Taliban lên nắm quyền nước này hồi tháng 8.
-                                                    </a>
-                                                </p>
-                                                <p className={styles.meta_news}>
-                                                    <a className={styles.count_cmt} href="https://vnexpress.net/afghanistan-don-du-khach-dau-tien-tu-khi-taliban-nam-quyen-4383256.html#box_comment_vne" 
-                                                    // style="white-space: nowrap; display: none;"
-                                                    >
-                                                        <span
-                                                            className={`${styles.txt_num_comment} ${styles.font_icon}`}
-                                                            
-                                                        ></span>
-                                                    </a>
-                                                </p>
-                                            </li>
-                                            <li>
-                                                <h3 className={styles.title_news}>
-                                                    <a
-                                                        href="https://vnexpress.net/afghanistan-don-du-khach-dau-tien-tu-khi-taliban-nam-quyen-4383256.html"
-                                                        title="Afghanistan đón du khách đầu tiên từ khi Taliban nắm quyền"
-                                                    >
-                                                        Hai từ không bao giờ nên nói với tiếp viên
-                                                    </a>
-                                                </h3>
-                                                <p className={styles.description}>
-                                                    <a
-                                                        href="https://vnexpress.net/afghanistan-don-du-khach-dau-tien-tu-khi-taliban-nam-quyen-4383256.html"
-                                                        title="Afghanistan đón du khách đầu tiên từ khi Taliban nắm quyền"
-                                                    >
-                                                        Dù thật lòng hay trêu đùa, chỉ cần tiếp viên nghe thấy khách nói "Tôi say", họ có thể đuổi bạn khỏi máy bay.
-                                                        Dù thật lòng hay trêu đùa, chỉ cần tiếp viên nghe thấy khách nói "Tôi say", họ có thể đuổi bạn khỏi máy bay.
-                                                    </a>
-                                                </p>
-                                                <p className={styles.meta_news}>
-                                                    <a className={styles.count_cmt} href="https://vnexpress.net/afghanistan-don-du-khach-dau-tien-tu-khi-taliban-nam-quyen-4383256.html#box_comment_vne" 
-                                                    // style="white-space: nowrap; display: none;"
-                                                    >
-                                                        <span
-                                                            className={`${styles.txt_num_comment} ${styles.font_icon}`}
-                                                            
-                                                        ></span>
-                                                    </a>
-                                                </p>
-                                            </li>
-                                        </ul>
+                            {Headdulich.map((data) => (
+                                <article key={data.id} className={`${styles.item_news} ${styles.full_thumb} ${styles.article_topstory} ${styles.article_style}`}>
+                                    <div className={styles.thumb_art}>
+                                        <a className={`${styles.thumb} ${styles.thumb_5x3}`}>
+                                            <picture>
+                                                <img
+                                                    loading="lazy"
+                                                    intrinsicsize="680x408"
+                                                    className={styles.lazy}
+                                                    src = {data.url_image}
+                                                />
+                                            </picture>
+                                        </a>
                                     </div>
-                                </div>
-                            </div>
+                                    <h3 className={styles.title_news}>
+                                        <a>{data.title}</a>
+                                    </h3>
+                                    <p className={styles.description}>
+                                        <a>{data.description}</a>
+                                    </p>
+                                    <p className={styles.meta_news}>
+                                        <span className={styles.time_public}>
+                                            <span className={styles.time_ago}>2h trước</span>
+                                        </span>
+                                        <a className={styles.count_cmt}>
+                                            <span
+                                                className={`${styles.txt_num_comment} ${styles.font_icon}`}
+                                            ></span>
+                                        </a>
+                                    </p>
+                                </article>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -171,122 +119,46 @@ function Dulich(){
                 <div className={`${styles.container} ${styles.Border}`}>     
                     <div className={`${styles.list_news_five} ${styles.width_common}`}>
                         <div className={`${styles.inner_list_news_five} ${styles.flexbox}`}>
-                            <article className={`${styles.item_news} ${styles.full_thumb}`}>
+                            <article className={`${styles.item_news} ${styles.full_thumb} ${styles.item_news_no_border}`}>
                                 <div className={`${styles.inner_item_news_five} ${styles.width_common}`}>
                                     <div className={styles.thumb_art}>
-                                        <a
-                                            title="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                            href="https://vnexpress.net/khu-pho-mang-huong-vi-bac-giua-sai-gon-4381328.html"
-                                            className={`${styles.thumb} ${styles.thumb_5x3}`}
-                                        >
+                                        <a className={`${styles.thumb} ${styles.thumb_5x3}`}>
                                             <picture>
                                                 <img
-                                                    itemprop="contentUrl"
-                                                    // style="transform: translateX(-50%); left: 50%;"
                                                     loading="lazy"
                                                     intrinsicsize="220x132"
-                                                    alt="Khu phố mang hương vị Bắc giữa Sài Gòn"
                                                     className={styles.lazy}
-                                                    src="https://i1-dulich.vnecdn.net/2021/11/05/gianhngmanothcnysignjpg-163609-7472-3326-1636095745.jpg?w=220&amp;h=132&amp;q=100&amp;dpr=1&amp;fit=crop&amp;s=o80RTAfd7x8TK-A4bSdJ_g"
+                                                    src="https://i1-dulich.vnecdn.net/2022/01/08/1628136812939thenarrowestplace-7226-9237-1641619665.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=JxbVp6NeWOK7ndQOL7DE9w"
                                                 />
                                             </picture>
                                         </a>
                                     </div>
                                     <h3 className={styles.title_news}>
-                                        <a
-                                            title="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                            href="https://vnexpress.net/khu-pho-mang-huong-vi-bac-giua-sai-gon-4381328.html"
-                                        >Khu phố mang hương vị Bắc giữa Sài Gòn</a>
+                                        <a>Thành phố hẹp nhất thế giới ở đâu?</a>
                                     </h3>
                                 </div>
                             </article>
-                            <article className={`${styles.item_news} ${styles.full_thumb} ${styles.item_news_border}`}>
-                                <div className={`${styles.inner_item_news_five} ${styles.width_common}`}>
-                                    <div className={styles.thumb_art}>
-                                        <a
-                                            title="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                            href="https://vnexpress.net/khu-pho-mang-huong-vi-bac-giua-sai-gon-4381328.html"
-                                            className={`${styles.thumb} ${styles.thumb_5x3}`}
-                                        >
-                                            <picture>
-                                                <img
-                                                    itemprop="contentUrl"
-                                                    // style="transform: translateX(-50%); left: 50%;"
-                                                    loading="lazy"
-                                                    intrinsicsize="220x132"
-                                                    alt="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                                    className={styles.lazy}
-                                                    src="https://i1-dulich.vnecdn.net/2021/11/05/gianhngmanothcnysignjpg-163609-7472-3326-1636095745.jpg?w=220&amp;h=132&amp;q=100&amp;dpr=1&amp;fit=crop&amp;s=o80RTAfd7x8TK-A4bSdJ_g"
-                                                />
-                                            </picture>
-                                        </a>
+                            {dulich_content.map((data) => (
+                                <article key={data.id} className={`${styles.item_news} ${styles.full_thumb} ${styles.item_news_border}`}>
+                                    <div className={`${styles.inner_item_news_five} ${styles.width_common}`}>
+                                        <div className={styles.thumb_art}>
+                                            <a className={`${styles.thumb} ${styles.thumb_5x3}`}>
+                                                <picture>
+                                                    <img
+                                                        loading="lazy"
+                                                        intrinsicsize="220x132"
+                                                        className={styles.lazy}
+                                                        src = {data.url_image}
+                                                    />
+                                                </picture>
+                                            </a>
+                                        </div>
+                                        <h3 className={styles.title_news}>
+                                            <a>{data.title_news}</a>
+                                        </h3>
                                     </div>
-                                    <h3 className={styles.title_news}>
-                                        <a
-                                            title="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                            href="https://vnexpress.net/khu-pho-mang-huong-vi-bac-giua-sai-gon-4381328.html"
-                                        >Khu phố mang hương vị Bắc giữa Sài Gòn</a>
-                                    </h3>
-                                </div>
-                            </article>
-                            <article className={`${styles.item_news} ${styles.full_thumb} ${styles.item_news_border}`}>
-                                <div className={`${styles.inner_item_news_five} ${styles.width_common}`}>
-                                    <div className={styles.thumb_art}>
-                                        <a
-                                            title="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                            href="https://vnexpress.net/khu-pho-mang-huong-vi-bac-giua-sai-gon-4381328.html"
-                                            className={`${styles.thumb} ${styles.thumb_5x3}`}
-                                        >
-                                            <picture>
-                                                <img
-                                                    itemprop="contentUrl"
-                                                    // style="transform: translateX(-50%); left: 50%;"
-                                                    loading="lazy"
-                                                    intrinsicsize="220x132"
-                                                    alt="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                                    className={styles.lazy}
-                                                    src="https://i1-dulich.vnecdn.net/2021/11/05/gianhngmanothcnysignjpg-163609-7472-3326-1636095745.jpg?w=220&amp;h=132&amp;q=100&amp;dpr=1&amp;fit=crop&amp;s=o80RTAfd7x8TK-A4bSdJ_g"
-                                                />
-                                            </picture>
-                                        </a>
-                                    </div>
-                                    <h3 className={styles.title_news}>
-                                        <a
-                                            title="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                            href="https://vnexpress.net/khu-pho-mang-huong-vi-bac-giua-sai-gon-4381328.html"
-                                        >Khu phố mang hương vị Bắc giữa Sài Gòn</a>
-                                    </h3>
-                                </div>
-                            </article>
-                            <article className={`${styles.item_news} ${styles.full_thumb} ${styles.item_news_border}`}>
-                                <div className={`${styles.inner_item_news_five} ${styles.width_common}`}>
-                                    <div className={styles.thumb_art}>
-                                        <a
-                                            title="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                            href="https://vnexpress.net/khu-pho-mang-huong-vi-bac-giua-sai-gon-4381328.html"
-                                            className={`${styles.thumb} ${styles.thumb_5x3}`}
-                                        >
-                                            <picture>
-                                                <img
-                                                    itemprop="contentUrl"
-                                                    // style="transform: translateX(-50%); left: 50%;"
-                                                    loading="lazy"
-                                                    intrinsicsize="220x132"
-                                                    alt="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                                    className={styles.lazy}
-                                                    src="https://i1-dulich.vnecdn.net/2021/11/05/gianhngmanothcnysignjpg-163609-7472-3326-1636095745.jpg?w=220&amp;h=132&amp;q=100&amp;dpr=1&amp;fit=crop&amp;s=o80RTAfd7x8TK-A4bSdJ_g"
-                                                />
-                                            </picture>
-                                        </a>
-                                    </div>
-                                    <h3 className={styles.title_news}>
-                                        <a
-                                            title="Khu phố mang hương vị Bắc giữa Sài Gòn"
-                                            href="https://vnexpress.net/khu-pho-mang-huong-vi-bac-giua-sai-gon-4381328.html"
-                                        >Khu phố mang hương vị Bắc giữa Sài Gòn</a>
-                                    </h3>
-                                </div>
-                            </article>
+                                </article>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -296,194 +168,33 @@ function Dulich(){
                 <div className={`${styles.container} ${styles.has_border} ${styles.flexbox} ${styles.col_style}`}>
                     <div className={styles.col_left_folder_v2}>
                         <div className={`${styles.width_common} ${styles.list_news_subfolder}`}>
-                            <article className={`${styles.item_news} ${styles.item_news_common}`}>
-                                <div className={styles.thumb_art}>
-                                    <a
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                        className={`${styles.thumb} ${styles.thumb_5x3}`}
-                                    >
-                                        <picture>
-                                        
-                                            <img
-                                                itemprop="contentUrl"
-                                                // style="transform: translateX(-50%); left: 50%;"
-                                                loading="lazy"
-                                                intrinsicsize="220x132"
-                                                alt="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                                className={styles.lazy}
-                                                src="https://i1-dulich.vnecdn.net/2021/12/28/7-camping-in-binh-chau-forest-8339-2656-1640680648.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=asbUz-BP5Qh4pNrIcAQAPw"
-                                            />
-                                        </picture>
-                                    </a>
-                                </div>
-                                <h3 className={styles.title_news}>
-                                    <a
-                                    
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                    >10 khách sạn miền Bắc có bể bơi nước nóng</a>
-                                </h3>
-                                <p className={styles.description}>
-                                    <a
-                                    
-                                    
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                    >Thư giãn trong làn nước ấm khi bên ngoài nhiệt độ xuống thấp, khung cảnh sương phủ bồng bềnh... là trải nghiệm hấp dẫn trong mùa đông.</a>
-                                    <span className={styles.meta_news}>
-                                        <a className={styles.count_cmt} href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html#box_comment_vne" 
-                                        // style="white-space: nowrap; display: none;"
-                                        >
-                                            <span
-                                                className={`${styles.txt_num_comment} ${styles.font_icon}`}
-                                            ></span>
+                            {dulich_xemthem.map((data) => (
+                                <article key={data.id}  className={`${styles.item_news} ${styles.item_news_common}`}>
+                                    <div className={styles.thumb_art}>
+                                        <a className={`${styles.thumb} ${styles.thumb_5x3}`}>
+                                            <picture>
+                                                <img
+                                                    loading="lazy"
+                                                    intrinsicsize="220x132"
+                                                    className={styles.lazy}
+                                                    src = {data.url_image}
+                                                />
+                                            </picture>
                                         </a>
-                                    </span>
-                                </p>
-                            </article>
-                            <article className={`${styles.item_news} ${styles.item_news_common}`}>
-                                <div className={styles.thumb_art}>
-                                    <a
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                        className={`${styles.thumb} ${styles.thumb_5x3}`}
-                                    >
-                                        <picture>
-                                        
-                                            <img
-                                                itemprop="contentUrl"
-                                                // style="transform: translateX(-50%); left: 50%;"
-                                                loading="lazy"
-                                                intrinsicsize="220x132"
-                                                alt="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                                className={styles.lazy}
-                                                src="https://i1-dulich.vnecdn.net/2021/12/28/mainqimg263d3a6d29d6db48e7a009-2786-4277-1640678006.png?w=220&h=132&q=100&dpr=1&fit=crop&s=v3aNfeRpjNaBPQxGrRESUg"
-                                            />
-                                        </picture>
-                                    </a>
-                                </div>
-                                <h3 className={styles.title_news}>
-                                    <a
-                                    
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                    >10 khách sạn miền Bắc có bể bơi nước nóng</a>
-                                </h3>
-                                <p className={styles.description}>
-                                    <a
-                                    
-                                    
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                    >Thư giãn trong làn nước ấm khi bên ngoài nhiệt độ xuống thấp, khung cảnh sương phủ bồng bềnh... là trải nghiệm hấp dẫn trong mùa đông.</a>
-                                    <span className={styles.meta_news}>
-                                        <a className={styles.count_cmt} href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html#box_comment_vne" 
-                                        // style="white-space: nowrap; display: none;"
-                                        >
-                                            <span
-                                                className={`${styles.txt_num_comment} ${styles.font_icon}`}
-                                            ></span>
-                                        </a>
-                                    </span>
-                                </p>
-                            </article>
-                        </div>
-                    </div>
-                    <div className={styles.col_right_folder_v2}>
-                        <div className={`${styles.width_common} ${styles.list_news_subfolder}`}>
-                            <article className={`${styles.item_news} ${styles.item_news_common}`}>
-                                <div className={styles.thumb_art}>
-                                    <a
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                        className={`${styles.thumb} ${styles.thumb_5x3}`}
-                                    >
-                                        <picture>
-                                        
-                                            <img
-                                                itemprop="contentUrl"
-                                                // style="transform: translateX(-50%); left: 50%;"
-                                                loading="lazy"
-                                                intrinsicsize="220x132"
-                                                alt="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                                className={styles.lazy}
-                                                src="https://i1-dulich.vnecdn.net/2021/12/28/baikal-2-8115-1640312850-16406-2819-1228-1640662289.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=z3eLKKQcDE6WNkzSAxMakw"
-                                            />
-                                        </picture>
-                                    </a>
-                                </div>
-                                <h3 className={styles.title_news}>
-                                    <a
-                                    
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                    >10 khách sạn miền Bắc có bể bơi nước nóng</a>
-                                </h3>
-                                <p className={styles.description}>
-                                    <a
-                                    
-                                    
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                    >Thư giãn trong làn nước ấm khi bên ngoài nhiệt độ xuống thấp, khung cảnh sương phủ bồng bềnh... là trải nghiệm hấp dẫn trong mùa đông.</a>
-                                    <span className={styles.meta_news}>
-                                        <a className={styles.count_cmt} href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html#box_comment_vne" 
-                                        // style="white-space: nowrap; display: none;"
-                                        >
-                                            <span
-                                                className={`${styles.txt_num_comment} ${styles.font_icon}`}
-                                            ></span>
-                                        </a>
-                                    </span>
-                                </p>
-                            </article>
-                            <article className={`${styles.item_news} ${styles.item_news_common}`}>
-                                <div className={styles.thumb_art}>
-                                    <a
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                        className={`${styles.thumb} ${styles.thumb_5x3}`}
-                                    >
-                                        <picture>
-                                        
-                                            <img
-                                                itemprop="contentUrl"
-                                                // style="transform: translateX(-50%); left: 50%;"
-                                                loading="lazy"
-                                                intrinsicsize="220x132"
-                                                alt="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                                className={styles.lazy}
-                                                src="https://i1-dulich.vnecdn.net/2021/12/28/amsterdam-mua-dong-1640659753-1640680763.jpg?w=220&h=132&q=100&dpr=1&fit=crop&s=7B6WETw6zY-LMEydzWk7Ng"
-                                            />
-                                        </picture>
-                                    </a>
-                                </div>
-                                <h3 className={styles.title_news}>
-                                    <a
-                                    
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                    >10 khách sạn miền Bắc có bể bơi nước nóng</a>
-                                </h3>
-                                <p className={styles.description}>
-                                    <a
-                                    
-                                    
-                                        title="10 khách sạn miền Bắc có bể bơi nước nóng"
-                                        href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html"
-                                    >Thư giãn trong làn nước ấm khi bên ngoài nhiệt độ xuống thấp, khung cảnh sương phủ bồng bềnh... là trải nghiệm hấp dẫn trong mùa đông.</a>
-                                    <span className={styles.meta_news}>
-                                        <a className={styles.count_cmt} href="https://vnexpress.net/10-khach-san-mien-bac-co-be-boi-nuoc-nong-4382461.html#box_comment_vne" 
-                                        // style="white-space: nowrap; display: none;"
-                                        >
-                                            <span
-                                                className={`${styles.txt_num_comment} ${styles.font_icon}`}
-                                            ></span>
-                                        </a>
-                                    </span>
-                                </p>
-                            </article>
+                                    </div>
+                                    <h3 className={styles.title_news}>
+                                        <a> {data.title}</a>
+                                    </h3>
+                                    <p className={styles.description}>
+                                        <a >{data.description}</a>
+                                        <span className={styles.meta_news}>
+                                            <a className={styles.count_cmt}>
+                                                <span className={`${styles.txt_num_comment} ${styles.font_icon}`} ></span>
+                                            </a>
+                                        </span>
+                                    </p>
+                                </article>
+                            ))}
                         </div>
                     </div>
                 </div>

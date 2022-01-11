@@ -12,3 +12,11 @@
     padding-left: 16px;
     border-left: solid 1px black;
 }
+.container_2 a{
+    text-decoration: none!important;
+    outline: 1!important;
+}
+.container_1 a{
+    text-decoration: none!important;
+    outline: 1!important;
+} 

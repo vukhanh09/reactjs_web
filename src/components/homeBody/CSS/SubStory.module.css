@@ -19,3 +19,8 @@
 .title{
     height: 35px;
 }
+
+.title a{
+    text-decoration: none!important;
+    outline: 1!important;
+}

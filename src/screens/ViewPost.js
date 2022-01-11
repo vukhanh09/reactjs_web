@@ -96,11 +96,9 @@ function ViewPost(){
                     </div>
 
                 </div>
-                
-                <SectionComment/>
-
-
             </div>
+            
+            <SectionComment/>
             <Footer/>
         </div>
     )

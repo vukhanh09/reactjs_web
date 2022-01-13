@@ -75,7 +75,7 @@ function AdminViewPost(){
         axiosConfig.post('/news/update-news',{
             data:{
                 title:up_title,
-                content: up_content.split('\n'),
+                content: up_content.split('\n\n'),
                 author:up_author,
                 url_image:up_urlImg.split('\n'),
                 description:up_description,

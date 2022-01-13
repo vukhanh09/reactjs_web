@@ -5,15 +5,19 @@ import { useEffect,useState } from "react"
 import ItemAdmin from "../components/ItemAdmin"
 import Cookies from 'js-cookie';
 import axiosConfig from '../config/axiosConfig';
+import { setListPostState } from "../redux/actions/postAction";
+import { useSelector, useDispatch } from 'react-redux';
 
 function ManagePost(){
+    const dispatch = useDispatch();
     const url = 'https://static01.nyt.com/images/2020/11/25/dining/23leftoversrex1-copy/merlin_179868645_ccb9d1b4-9544-4368-afa4-c5fa354aa794-threeByTwoSmallAt2X.jpg?format=pjpg&quality=75&auto=webp&disable=upscale'
     const title = 'Best Thanksgiving Leftovers Sandwich'
     const [searchTitle,setTitle] = useState('')
-    const [listNews,setListNews] = useState([])
+    // const [listNews,setListNews] = useState([])
     const [topicRender,setTopicRender] = useState('')
     const [optionRender,setOptionRender] = useState('')
     const dictTopic = {'thoisu':'Thời sự','gocnhin':'Góc nhìn','thegioi':'Thế giới','kinhdoanh':'Kinh doanh','dulich':'Du lịch','none':''}
+    const { listPosts } = useSelector(state => state.userReducer);
 
     useEffect(()=>{
         // console.log(optionRender)
@@ -21,11 +25,12 @@ function ManagePost(){
             axiosConfig.get('/news/get-all-news')
             .then(res=>{
                 // var lsNews = res.data.data.listNews
-                setListNews(res.data.data.listNews)
+                console.log(res.data.data.listNews)
+                dispatch(setListPostState(res.data.data.listNews))
             })
             .catch(err=>{
                 console.log(err)
-                setListNews([])
+                dispatch(setListPostState([]))
             })
         else {
             console.log(topicRender)
@@ -37,10 +42,10 @@ function ManagePost(){
             })
             .then(res=>{
                 // var lsNews = res.data.data.listNews
-                setListNews(res.data.data.listNews)
+                dispatch(setListPostState(res.data.data.listNews))
             })
             .catch(err=>{
-                setListNews([])
+                dispatch(setListPostState([]))
                 console.log(err)
             })
 
@@ -50,8 +55,8 @@ function ManagePost(){
 
 
     const deleteNews = (id)=>{
-        const newList = listNews.filter(item=>item.news_id!=id)
-        setListNews(newList)
+        const newList = listPosts.filter(item=>item.news_id!=id)
+        dispatch(setListPostState(newList))
     }
     
     
@@ -94,8 +99,8 @@ function ManagePost(){
                 </div>
                 <div className={styles.parentPost}>
                     {
-                        listNews.map((item,id) =>{
-                            return <ItemAdmin key={id} url_image = {item.url_image[0]} title={item.title} url={item.url} news_id = {item.news_id} deleteNews={deleteNews}/>
+                        listPosts.map((item,id) =>{
+                            return <ItemAdmin key={item.news_id} url_image = {item.url_image[0]} title={item.title} url={item.url} news_id = {item.news_id} deleteNews={deleteNews}/>
                         })
                     }
                 </div>

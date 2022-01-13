@@ -11,7 +11,7 @@ function AdminLogin(){
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
     const adminLogin = () => {
-        axiosConfig.post('/auth/signin', {
+        axiosConfig.post('/admin/auth/signin', {
             username: username,
             password: password,
         }).then(res => {

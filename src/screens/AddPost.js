@@ -17,20 +17,16 @@ function AddPost(){
     
     const uploadPost = ()=>{
         const upContent = content.split("\n")
-        const upUrlImg = content.split("\n")
-        var upUrl = title.split(" ")
-        upUrl = upUrl.join('-')
-        axiosConfig.post('/admin/add-post',{
-            data:{
-                url:'upUrl',
-                title:title,
-                content: upContent,
-                url_image:upUrlImg,
-                description:description,
-                extend_description: extend_des,
-                topic:topic,
-                views:0
-            }
+        const upUrlImg = urlImg.split("\n")
+        axiosConfig.post('/news/add-news',{
+            title:title,
+            content: upContent,
+            url_image:upUrlImg,
+            author:author,
+            description:description,
+            extend_description: extend_des,
+            topic:topic,
+
         },{headers: {"Authorization" : `Bearer ${token}`}})
         .then(res=>{
             if(res.status == 200){

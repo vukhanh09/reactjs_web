@@ -31,8 +31,8 @@ function RootRoutes(){
             </Route>
             <Route path="/xem-sau" element={<ViewLater />} />
 
-            <Route path="/login-admin" element={<AdminLogin />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="admin/login" element={<AdminLogin />} />
             <Route path="/admin/manager-account" element={<ManageAcc />} />
             <Route path="/admin/manager-post" element={<ManagePost />} />
             <Route path="/admin/add-post" element={<AddPost />} />

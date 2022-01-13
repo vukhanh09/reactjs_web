@@ -4,7 +4,7 @@ import SubStory from "./SubStory";
 import styles from './CSS/BodyHome.module.css'
 import clsx from "clsx";
 import MediaStory from "./MediaStory";
-import { getHotNews } from "../../api/newsApi";
+import { getHotNews, getHotNewsByTopic } from "../../api/newsApi";
 import {subData,middleData} from './data.js'
 import XemNhieu from "./XemNhieu";
 import rightArrow from '../../assets/rightnext.png'
@@ -13,12 +13,15 @@ import Topic from "./Topic";
 
 function BodyHome(){
     const [hotNews, setHotNews] = useState();
+    const [hotNewsListByTopic, setHotNewsListByTopic] = useState([]);
     useEffect(() => {
         getHotNews().then(res => {
             setHotNews(res.data[0]);
         });
+        getHotNewsByTopic().then(res => {
+            setHotNewsListByTopic(res.data);
+        });
     },[])
-    const middle3Data = middleData.filter(item=>item.id !==0)
     return (
         <div className={styles.container}>
             <div className={styles.section_1}>
@@ -41,7 +44,7 @@ function BodyHome(){
 
                 <div className={styles.inner_middle}>
                     {
-                        middle3Data.map(item=>{
+                        hotNewsListByTopic.map(item=>{
                             return <MainStory data={item} op={item.id===1?1:0} classType = {true}/>
                         })
                     }

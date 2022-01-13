@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import SectionComment from "../components/SectionComment"
 import styles from './CSS/ViewPost.module.css'
 import Header from "../components/header_footer/Header"
@@ -9,24 +9,41 @@ import RenderText from "../components/RenderText"
 import red_love from '../assets/red_love.png'
 import black_love from '../assets/black_love.png'
 import bookmarkImage from '../assets/bookmark.png'
-
+import { getIdPost } from "../utils/helper"
+import {getNewsById} from "../api/newsApi"
+import { addNewsToWatchLater } from "../api/watchLaterApi"
+import Cookies from "js-cookie"
 
 function ViewPost(){
-    const post = posts[0]
-    const author = 'Tuấn Nguyễn'
-    let date = new Date()
-    const dateCurr = date.toLocaleString();
-    const splitContent = ()=>{
-        const listSrcImage = post.url_image
-        const content = post.content
+    const targetId = getIdPost(window.location.pathname);
+    const [news, setNews] = useState('');
+    useEffect(() => {
+        getNewsById(targetId).then(
+            res => {
+                // console.log(res);
+                const new_data = splitContent(res.data)
+                console.log('news_data',new_data);
+                setNews(new_data);
+                
+            }
+        )
+        
+    },[]);
+    const splitContent = (news) =>{
+        const content = news.content
         const lenContent = content.length
         const midContent = Math.floor(lenContent/2)
         const contA = content.slice(0,midContent)
         const contB = content.slice(midContent,lenContent)
-        return [listSrcImage,contA,contB]
+        news.contA = contA
+        news.contB = contB
+        return news
     }
-    const [listSrcImage,contA,contB] = splitContent()
 
+    const addToWatchLater = (newsId, topic) => {
+        addNewsToWatchLater(Cookies.get('access_token'),newsId, topic)
+        .then(res => console.log(res))
+    }
 
     const [likePostImg,setLikePostImg] = useState([black_love,'black'])
 
@@ -39,8 +56,6 @@ function ViewPost(){
         }
     }
 
-
-
     return (
         <div className={styles.container}>
             <Header/>
@@ -48,7 +63,7 @@ function ViewPost(){
                 <div className={styles.firstContent}>
                     <div className={styles.utilitiesArea}>
                         <div className={styles.storePostArea}>
-                            <img src={bookmarkImage} className={styles.imagelikePost}/>
+                            <img src={bookmarkImage} className={styles.imagelikePost} />
                             <p>Xem sau</p>
                         </div>
 
@@ -61,32 +76,31 @@ function ViewPost(){
                     </div>
 
                     <div className={styles.contentPost}>
-                        <h1>{post.title}</h1>
+                        <h1>{news.title}</h1>
                         <div className={styles.inforPost}>
-                            <p>Tác giả: <Link className={styles.authors} to='/view-post'>{author}</Link></p>
+                            <p>Tác giả: <Link className={styles.authors} to='/view-post'>{news?.author}</Link></p>
                             <div className={styles.extendInfor}>
-                                <p>Ngày đăng: {dateCurr}</p>
-                                <p className={styles.totalView}>Lượt xem: {5}</p>
+                                <p>Ngày đăng: {news?.add_time}</p>
+                                <p className={styles.totalView}>Lượt xem: {news?.views}</p>
                             </div>
                         </div>
 
-                        <p className={styles.description}>{post.description}</p>
-
+                        <p className={styles.description}>{news.description}</p>
                         {
-                            listSrcImage.length<2 && 
+                            news.url_image?.length<2 && 
                             <div>
-                                <RenderText content={contA}/>
-                                <img src={listSrcImage[0]} className={styles.image}/>
-                                <RenderText content={contB}/>
+                                <RenderText content={news.contA}/>
+                                <img src={news.url_image[0]} className={styles.image}/>
+                                <RenderText content={news.contB}/>
                             </div>
                         }
                         {
-                            listSrcImage.length >= 2 && 
+                            news.url_image?.length >= 2 && 
                             <div>
-                                <img src={listSrcImage[0]} className={styles.image}/>
-                                <RenderText content={contA}/>
-                                <img src={listSrcImage[1]} className={styles.image}/>
-                                <RenderText content={contB}/>
+                                <img src={news.url_image[0]} className={styles.image}/>
+                                <RenderText content={news.contA}/>
+                                <img src={news.url_image[1]} className={styles.image}/>
+                                <RenderText content={news.contB}/>
                             </div>
                         }
                         

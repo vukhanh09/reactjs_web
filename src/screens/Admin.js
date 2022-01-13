@@ -2,10 +2,17 @@
 import AdminTool from "../components/AdminTool"
 import styles from "./CSS/Admin.module.css"
 import XemNhieu from "../components/homeBody/XemNhieu"
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 
 function Admin(){
     const peopleOnl = 5;
     const numPost = 10;
+    const navigate = useNavigate();
+    console.log("token",Cookies.get("access_token_admin"));
+    if(typeof Cookies.get("access_token_admin") === undefined){
+        navigate("/login-admin");
+    }
     return (
         <div className={styles.container}>
             <div className={styles.leftElement}>

@@ -41,7 +41,6 @@ function ViewPost(){
 
 
 
-
     return (
         <div className={styles.container}>
             <Header/>

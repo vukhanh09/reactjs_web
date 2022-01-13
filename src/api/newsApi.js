@@ -15,4 +15,18 @@ function getHotNewsByTopic() {
     });
 }
 
-export {getHotNews, getHotNewsByTopic};
+function getNewsById(id){
+    return axiosConfig.get('/news/get-news-by-id',{
+        params: {
+            news_id : id
+        }
+    })
+    .then(res => {
+        console.log("res", res.data);
+        return res.data
+    })
+    .catch((err) => {
+        console.log(err);
+    }); 
+}
+export {getHotNews, getHotNewsByTopic, getNewsById};

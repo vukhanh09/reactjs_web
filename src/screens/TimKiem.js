@@ -49,9 +49,9 @@ function TimKiem(){
                 <SearchView handleInput={handleInput} searchInput={searchInput} handleSearch={handleSearch} />
 
                 <div className={styles.mainSection}>
+                    
                     <div className={styles.leftSection}>
                         <FormSearch/>
-
                     </div>
                     <div className={styles.rightSection}>
                         <h2>Kết quả tìm kiếm</h2>
@@ -59,10 +59,7 @@ function TimKiem(){
                             data.length!=0 && data.map((item,index)=> <ItemSearch key={index} 
                                 data={item} op1 ={index+1!==data.length?1:0}/>)
                         }
-                        
-
                     </div>
-
 
                 </div>
             </div>

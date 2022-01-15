@@ -1,15 +1,34 @@
 import axiosConfig from '../config/axiosConfig';
 
-function addNewsToWatchLater(access_token, newsId, topic) {
-    return axiosConfig.post('/api/watch-later/add-news', {
+function addNewsToWatchLater(accessToken, newsId, topic) {
+    return axiosConfig.post('/watch-later/add-news', {
         news_id: newsId,
         topic: topic
     },{
-        headers: {"Authorization":`Bearer ${access_token}`}
+        headers: {"Authorization":`Bearer ${accessToken}`}
     }).then(res => res.data)
     .catch((err) => {
         console.log(err);
     });
 }
 
-export {addNewsToWatchLater};
+function checkExistNewsInListWatchLater(accessToken, newsId){
+    return axiosConfig.post('/watch-later/check-exist', {
+        news_id: newsId
+    },{
+        headers: {"Authorization":`Bearer ${accessToken}`}
+    }).then(res => res.data)
+    .catch((err) => {
+        console.log(err);
+    });
+}
+
+function getListWatchLaterNews(accessToken){
+    return axiosConfig.get('/watch-later/get-list',{
+        headers: {"Authorization":`Bearer ${accessToken}`}
+    }).then(res => res.data)
+    .catch((err) => {
+        console.log(err);
+    });
+}
+export {addNewsToWatchLater, checkExistNewsInListWatchLater, getListWatchLaterNews};

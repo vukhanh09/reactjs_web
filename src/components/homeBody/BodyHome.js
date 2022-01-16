@@ -66,8 +66,7 @@ function BodyHome(){
 
             <div className={styles.section_3}>
                 
-                <MediaStory/>
-
+                <MediaStory subDataTopic={'Thế giới'}/>
 
             </div>
 
@@ -79,8 +78,7 @@ function BodyHome(){
 
             <div className={styles.section_3}>
                 
-                <MediaStory/>
-
+                <MediaStory subDataTopic={'Kinh doanh'}/>
 
             </div>
 
@@ -98,7 +96,6 @@ function BodyHome(){
                     <img src ={rightArrow} className={styles.arrowIcon} />
                 </div>
 
-
             </div>
 
             <div className={styles.section_5}>
@@ -109,7 +106,6 @@ function BodyHome(){
                 <XemNhieu/>
             </div>
             
-
         </div>
     )
 }

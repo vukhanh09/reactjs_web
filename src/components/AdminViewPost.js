@@ -42,7 +42,7 @@ function AdminViewPost(){
         setNewsId(targetId)
         axiosConfig.get('/news/get-news-by-id',{
             params: {
-                newsId : targetId
+                news_id : targetId
             }
         })
         .then(res =>{

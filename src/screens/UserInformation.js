@@ -24,6 +24,11 @@ function UserInformation(){
                     user_age ={user?.date_of_birth}
                 />
                 <AccountInformation user={user}/>
+                
+                <div className = {styles.wrapLogout}>
+
+                    <button className = {styles.logout}>Đăng xuất</button>
+                </div>
             </div>
             <Footer/>
         </div>

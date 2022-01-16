@@ -31,11 +31,13 @@ function SectionComment({newsId}){
             addCommentForNews(Cookies.get('access_token'), newsId, inputComment)
             .then(res => {
                 console.log(res.data);
-                let svResponse = res.data['list_comment']
-                setListComment(prev => [...prev,svResponse[svResponse.length - 1]])
-            }).catch((err) => {
-                console.log(err);
+
+                let svResponse = res.data[0]['list_comment']
+                // console.log('hi',svResponse)
+                setListComment(svResponse)
+
             })
+            .catch(err=>console.log(err))
             setInputComment('')
         }
     }

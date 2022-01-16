@@ -1,7 +1,19 @@
-.container{
+/* .container{
     margin-left: 18%;
     margin-right: 18%;
 
+} */
+
+.container {
+    width: 100%;
+    max-width: 1130px;
+    padding: 0 15px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    text-rendering: optimizeLegibility
 }
 .section_1{
     display: flex;
@@ -12,12 +24,19 @@
 }
 .sub_story{
     margin-top: 5px;
-    width: 30%;
+    width: 43%;
     display: block;
     height: inherit;
     justify-content: space-between;
 
 }
+
+@media screen and (max-width: 1129px){ 
+    .sub_story {
+        width: 38%;
+    }
+}
+
 .section_2{
     padding-top: 10px;
     padding-bottom: 10px;

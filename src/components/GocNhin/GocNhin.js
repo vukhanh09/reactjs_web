@@ -50,13 +50,23 @@ function GocNhin() {
           description: 'Một ngày mưa tầm tã hiếm thấy ở Hà Nội, chúng tôi lắng nghe các ý kiến về khôi phục nhịp đập kinh tế trong bình thường mới.',
           name: 'Lê Đăng Doanh',
           category: 'Kinh doanh & quản trị',
+          url_image: 'https://i1-vnexpress.vnecdn.net/2019/12/16/ledangdoanhpng-1576437381.png?w=100&h=100&q=100&dpr=2&fit=crop&s=q58nFlDAY3eKdcoijf8m2w',
         },
         {
             id: '02',
             title: 'Học thôi, đừng sợ',
             description: 'Cháu tôi, đang học lớp 9, đã được đến trường hơn một tuần qua: vui vẻ và rất hào hứng; khác hẳn khoảng thời gian phải đút chân vào gầm bàn học online.',
+            url_image: 'https://i1-vnexpress.vnecdn.net/2021/12/28/IMG31422JPG-1640702351.jpg?w=100&h=100&q=100&dpr=2&fit=crop&s=yp_B4cxWsHWcK9xecqRZ1g',
             name: 'Trương Hữu Khanh ',
             category: 'Giáo dục & tri thức',
+        },
+        {
+            id: '03',
+            title: 'Những người thiện tâm',
+            description: 'Một linh mục Dòng Chúa Cứu Thế ở trong khu cách ly đảm nhận việc dâng thánh lễ mỗi ngày. Ông cũng quét nhà, đổ rác, chăm sóc F0.',
+            url_image: 'https://i1-vnexpress.vnecdn.net/2017/07/06/nguyendongokpng-1499298246.png?w=100&h=100&q=100&dpr=2&fit=crop&s=mxROAfncRhBuQQv2mGTA8Q',
+            name: 'Nguyễn Đông' ,
+            category: 'Văn hóa & lối sống',
         },
       ];
   
@@ -103,6 +113,7 @@ function GocNhin() {
             name: 'Bùi Phú Châu',
         },
       ];
+      
       const  box_binhluannhieu = [ 
         {
           id: '01',
@@ -144,7 +155,6 @@ return (
             </div>
             <div className={`${styles.col_left_folder_v2} ${styles.col_center_home_gn}`}>
                 <div className={`${styles.width_common} ${styles.list_news_subfolder} ${styles.list_stream_gocnhin}`} id="paging" data-url="/ajax/goc-nhin" data-container="paging" data-category="1003450" data-page="2" data-error="1" data-exclude="3">
-                
                     {item_news_author.map((data) => (
                         <article onClick={()=>navigatePath('/view-post')} key={data.id} className={`${styles.item_news} ${styles.item_news_common} ${styles.item_1} ${styles.art_top}`}>
                             <div  className={styles.thumb_art}>
@@ -168,7 +178,7 @@ return (
                         <article className={`${styles.item_news} ${styles.item_news_common} ${styles.item_2}`}>
                             <div className={styles.thumb_art}>
                                 <a className={`${styles.thumb} ${styles.thumb_1x1} ${styles.thumb_circle}`} href="tac-gia/le-dang-doanh-1278.html" title="Lê Đăng Doanh">
-                                    <img src="https://i1-vnexpress.vnecdn.net/2019/12/16/ledangdoanhpng-1576437381.png?w=100&h=100&q=100&dpr=2&fit=crop&s=q58nFlDAY3eKdcoijf8m2w" alt="Lê Đăng Doanh" />
+                                    <img src={data.url_image}  />
                                 </a>
                             </div>
                             <h3 className={styles.title_news}><a data-medium="Item-2" data-thumb="0" href="nang-luc-khang-thuong-4382608.html" title="Năng lực kháng thương">{data.title}</a></h3>

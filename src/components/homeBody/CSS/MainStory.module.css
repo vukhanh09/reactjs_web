@@ -1,6 +1,12 @@
 .main_story{
-    width :68%;
+    width :55%;
     justify-content: center;
+}
+
+@media screen and (max-width: 1129px){ 
+    .main_story {
+        width: 60%;
+    }
 }
 .main_story img{
     width: 100%;
@@ -25,6 +31,16 @@
 .middle_col_3 .title{
     height: 55px;
 }
+
+.main_story .title a{
+    text-decoration: none!important;
+    outline: 1!important;
+}
+.middle_col_3 .title a{
+    text-decoration: none!important;
+    outline: 1!important;
+}
+
 .middle_col_3 img{
     width: 100%;
     display:block;

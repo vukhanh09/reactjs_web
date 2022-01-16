@@ -3,11 +3,20 @@
 }
 
 .first_section{
-    width: 30%;
-    
+    width: 30%;  
+}
+@media screen and (max-width: 1129px){ 
+    .first_section {
+        width: 35%;
+    }
 }
 .second_section{
     width: 65%;
+}
+@media screen and (max-width: 1129px){ 
+    .second_section {
+        width: 60%;
+    }
 }
 .innerDiv{
     border-right-style: solid;

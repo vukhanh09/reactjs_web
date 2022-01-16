@@ -6,6 +6,13 @@
     background-color: rgb(15, 165, 170);
     margin-bottom: 2vh;
 }
+@media screen and (max-width: 1129px){
+    .container {
+        width: 22%;
+        height: 50vh;
+    }
+}
+
 .image{
     height: 20vh;
     width: 100%;
@@ -15,11 +22,13 @@
     padding-left: 5px;
 
 }
+
 .optionArea{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
+
 .option{
     cursor: pointer;
     background-color: rgb(85, 162, 182);
@@ -29,6 +38,7 @@
     text-align: center;
     padding-top: 5px;
 }
+
 .option:hover{
     background-color: rgb(187, 22, 36);
 }

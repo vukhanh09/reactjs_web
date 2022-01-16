@@ -42,4 +42,14 @@ function updateAddress(newAddress, accessToken){
     })
 }
 
-export {getUserInformation, updateNickName, updateEmail, updateAddress};
+function updatePassword(newPassword, accessToken){
+    return axiosConfig.post('/users/change-password', {
+        newPassword: newPassword
+    },{
+        headers: {"Authorization":`Bearer ${accessToken}`}
+    }).then(res => res.data)
+    .catch((err) => {
+        console.log(err);
+    })
+}
+export {getUserInformation, updateNickName, updateEmail, updateAddress, updatePassword};

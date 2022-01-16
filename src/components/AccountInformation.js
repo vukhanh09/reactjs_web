@@ -62,7 +62,7 @@ function AccountInformation(props){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Mật khẩu</label>
-                        <input type="password" disabled="disabled" value={currentUser?.password}  className={styles.midColumn}/>
+                        <input type="password" disabled="disabled" value={"aaaaaa"}  className={styles.midColumn}/>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(1)}
                         >Thay đổi</label>

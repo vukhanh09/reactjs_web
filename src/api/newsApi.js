@@ -36,6 +36,17 @@ function get3NewestNews() {
         console.log(err);
     });
 }
+function get3NewestNewsOfTopic(topic) {
+    return axiosConfig.get('/news/get-3-newest-news-topic',{
+        params:{
+            topic: topic
+        }
+    })
+    .then(res => res.data)
+    .catch((err) => {
+        console.log(err);
+    });
+}
 function getTop3NewsTopic(topic){
     return axiosConfig.get('/news/get-top3-news-topic',{
         params: {
@@ -43,7 +54,6 @@ function getTop3NewsTopic(topic){
         }
     })
     .then(res => {
-        console.log("res", res.data);
         return res.data
     })
     .catch((err) => {
@@ -51,4 +61,4 @@ function getTop3NewsTopic(topic){
     }); 
 }
 
-export {getHotNews, getHotNewsByTopic, getNewsById, get3NewestNews};
+export {getHotNews, getHotNewsByTopic, getNewsById, get3NewestNews, getTop3NewsTopic, get3NewestNewsOfTopic};

@@ -4,11 +4,13 @@ import DisplayComment from './DisplayComment'
 import styles from './CSS/SectionComment.module.css'
 import { addCommentForNews, getListCommentOfNews } from '../api/commentAPi'
 import Cookies from 'js-cookie'
+import { useNavigate } from 'react-router-dom'
 
 function SectionComment({newsId}){
     // console.log(newsId)
     const [inputComment,setInputComment] = useState('')
     const [listComment,setListComment] = useState([])
+    const navigate = useNavigate();
     useEffect(() => {
         console.log(newsId)
         getListCommentOfNews(newsId)
@@ -17,17 +19,23 @@ function SectionComment({newsId}){
             setListComment(res.data['list_comment']);
         })
         .catch((err)=>{
-            console.log("exception");
+            console.log(err);
         })
     },[newsId]);
-    const updateListComment = ()=>{
+    const updateListComment = () =>{
+        if(!Cookies.get('access_token')){
+            alert('You must log in!')
+            navigate('/login')
+        }
         if(inputComment!==''){
             addCommentForNews(Cookies.get('access_token'), newsId, inputComment)
             .then(res => {
                 console.log(res.data);
+
                 let svResponse = res.data[0]['list_comment']
                 // console.log('hi',svResponse)
                 setListComment(svResponse)
+
             })
             .catch(err=>console.log(err))
             setInputComment('')

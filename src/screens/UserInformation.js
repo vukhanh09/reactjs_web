@@ -7,14 +7,24 @@ import AccountInformation from "../components/AccountInformation";
 import { useEffect, useState } from "react";
 import { getUserInformation } from "../api/userApi";
 import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 function UserInformation(){
     const [user, setUser] = useState();
+    const navigator = useNavigate();
     
     useEffect(() => {
         getUserInformation(Cookies.get("access_token")).then(
             res => setUser(res.data)
-        )
+        ).catch((err) => {
+            console.log(err);
+        })
     }, []);
+
+    const handleLogout = () => {
+        Cookies.remove('access_token');
+        alert('Bạn đã đăng xuất thành công');
+        navigator('/');
+    }
     return (
         <div className={styles.container}>
             <Header/>
@@ -27,7 +37,7 @@ function UserInformation(){
                 
                 <div className = {styles.wrapLogout}>
 
-                    <button className = {styles.logout}>Đăng xuất</button>
+                    <button className = {styles.logout} onClick={handleLogout}>Đăng xuất</button>
                 </div>
             </div>
             <Footer/>

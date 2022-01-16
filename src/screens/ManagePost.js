@@ -7,8 +7,20 @@ import Cookies from 'js-cookie';
 import axiosConfig from '../config/axiosConfig';
 import { setListPostState } from "../redux/actions/postAction";
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 function ManagePost(){
+
+     // check token
+    let navigate = useNavigate();
+    const adminIsLogin = ()=>{
+        if(!Cookies.get('access_token_admin')){
+            alert('You must log in!')
+            navigate('/admin/login')
+        }
+    }
+
+
     const dispatch = useDispatch();
     const url = 'https://static01.nyt.com/images/2020/11/25/dining/23leftoversrex1-copy/merlin_179868645_ccb9d1b4-9544-4368-afa4-c5fa354aa794-threeByTwoSmallAt2X.jpg?format=pjpg&quality=75&auto=webp&disable=upscale'
     const title = 'Best Thanksgiving Leftovers Sandwich'
@@ -20,6 +32,10 @@ function ManagePost(){
     const { listPosts } = useSelector(state => state.userReducer);
 
     useEffect(()=>{
+        
+        adminIsLogin()
+
+
         // console.log(optionRender)
         if(topicRender === '' && searchTitle === '')
             axiosConfig.get('/news/get-all-news')

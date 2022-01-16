@@ -3,9 +3,25 @@ import { useEffect,useState } from 'react';
 import styles from "./CSS/AddPost.module.css"
 import Cookies from 'js-cookie';
 import axiosConfig from '../config/axiosConfig';
+import { useNavigate } from "react-router-dom";
 
 
 function AddPost(){
+
+    // check token
+    let navigate = useNavigate();
+    const adminIsLogin = ()=>{
+        if(!Cookies.get('access_token_admin')){
+            alert('You must log in!')
+            navigate('/admin/login')
+        }
+    }
+    useEffect(()=>{
+        adminIsLogin()
+    },[])
+
+
+
     const [topic,setTopic] = useState('')
     const [author,setAuthor] = useState('')
     const [title,setTitle] = useState('')

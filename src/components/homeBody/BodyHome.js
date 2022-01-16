@@ -4,7 +4,7 @@ import SubStory from "./SubStory";
 import styles from './CSS/BodyHome.module.css'
 import clsx from "clsx";
 import MediaStory from "./MediaStory";
-import { getHotNews, getHotNewsByTopic } from "../../api/newsApi";
+import { getHotNews, getHotNewsByTopic, get3NewestNews } from "../../api/newsApi";
 import {subData,middleData} from './data.js'
 import XemNhieu from "./XemNhieu";
 import rightArrow from '../../assets/rightnext.png'
@@ -14,12 +14,22 @@ import Topic from "./Topic";
 function BodyHome(){
     const [hotNews, setHotNews] = useState();
     const [hotNewsListByTopic, setHotNewsListByTopic] = useState([]);
+    const [top3News, setTop3News] = useState([]);
     useEffect(() => {
         getHotNews().then(res => {
             setHotNews(res.data[0]);
+        }).catch((err) => {
+            console.log(err);
         });
         getHotNewsByTopic().then(res => {
             setHotNewsListByTopic(res.data);
+        }).catch((err) => {
+            console.log(err);
+        });
+        get3NewestNews().then(res => {
+            setTop3News(res.data);
+        }).catch((err) => {
+            console.log(err);
         });
     },[])
     return (
@@ -29,11 +39,11 @@ function BodyHome(){
 
                 <div className={styles.sub_story}>
                     {
-                        subData.map(item=>{
+                        top3News.map(item=>{
                             if(item.id!=3)
-                                return <SubStory title={item.title} op1 description={item.description}/>
+                                return <SubStory title={item.title} op1 description={item.description} url_post={item.url}/>
                             else{
-                                return <SubStory title={item.title} op2 description={item.description}/>
+                                return <SubStory title={item.title} op2 description={item.description} url_post={item.url}/>
                             }
                         })
                     }

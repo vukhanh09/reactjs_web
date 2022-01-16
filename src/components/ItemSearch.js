@@ -15,10 +15,9 @@ function ItemSearch({data,op1}){
                 <img src={data.url_image[0]} className={styles.image} />
             </div>
             <div className={styles.col_2}>
-                <h3 className={styles.title}><a>{data.title}</a></h3>
+                <h3 className={styles.title}><a href={`/view-post/${data?.url}`}>{data.title}</a></h3>
                 <p className={styles.description}>{data.description}</p>
             </div>
-
         </div>
     )
 }

@@ -1,0 +1,1 @@
+export const SET_LIST_POST = 'SET_LIST_POST';

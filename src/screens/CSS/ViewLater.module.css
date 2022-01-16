@@ -2,10 +2,12 @@
     margin-left: 13%;
     margin-right: 13%;
     margin-bottom: 200px;
+    min-height: 60vh;
 }
 .mainSection{
     display: flex;
     margin-top: 20px;
+
 }
 .leftSection{
     width: 20%;
@@ -18,6 +20,9 @@
     align-items: center;
     margin-right: 20px;
     margin-top: 50px;
+}
+.rightSection{
+    width: 75%;
 }
 .optionRow{
     display: flex;

@@ -8,7 +8,8 @@ import styles from './CSS/TimKiem.module.css'
 import clsx from "clsx"
 import ItemSearch from "../components/ItemSearch";
 import {middleData} from '../components/homeBody/data.js'
-import axios from 'axios';
+import axiosConfig from '../config/axiosConfig';
+
 
 function TimKiem(){
 
@@ -21,14 +22,8 @@ function TimKiem(){
 
     const handleSearch = (condition)=>{
         if(condition){
-            // const res = middleData.filter(item=>{
-            //     const listTitle = item.title.toLowerCase().split(' ')
-            //     const input = searchInput.toLowerCase()
-            //     return listTitle.includes(input)
-
-            // })
-            const url = 'http://localhost:9091/api/search/searchByTitle'
-            axios.post(url, {
+            const url = '/search/searchByTitle'
+            axiosConfig.post(url, {
                 q: searchInput,
               })
               .then(function (response) {
@@ -49,9 +44,9 @@ function TimKiem(){
                 <SearchView handleInput={handleInput} searchInput={searchInput} handleSearch={handleSearch} />
 
                 <div className={styles.mainSection}>
+                    
                     <div className={styles.leftSection}>
                         <FormSearch/>
-
                     </div>
                     <div className={styles.rightSection}>
                         <h2>Kết quả tìm kiếm</h2>
@@ -59,10 +54,7 @@ function TimKiem(){
                             data.length!=0 && data.map((item,index)=> <ItemSearch key={index} 
                                 data={item} op1 ={index+1!==data.length?1:0}/>)
                         }
-                        
-
                     </div>
-
 
                 </div>
             </div>

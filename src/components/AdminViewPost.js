@@ -1,7 +1,10 @@
 
-
+import { getIdPost } from '../utils/helper';
 import styles from './CSS/AdminViewPost.module.css'
 import clsx from 'clsx'
+import { useEffect, useState } from 'react/cjs/react.development'
+import Cookies from 'js-cookie';
+import axiosConfig from '../config/axiosConfig';
 function AdminViewPost(){
     const displayUpdate = (id)=>{
         const res = document.getElementById(id)
@@ -13,13 +16,85 @@ function AdminViewPost(){
         }
     }
 
-    const contet = `Các điểm quan trắc của Hà Nội, Đại sứ quán Mỹ đều hiển thị chất lượng không khí thủ đô ở mức xấu đến rất xấu.
+    // const [newsView,setNewsView] = useState([])
+    const [newsId,setNewsId] = useState()
+    const [topic,setTopic] = useState('')
+    const [author,setAuthor] = useState('')
+    const [title,setTitle] = useState('')
+    const [description,setDescription] = useState('')
+    const [extend_des,setExtend_des] = useState('')
+    const [content,setContent] = useState('')
+    const [urlImg,setUrlImg] = useState('')
 
-    12h ngày 12/12, chỉ có bốn trên tổng số hơn 30 trạm quan trắc ô nhiễm không khí của Sở Tài nguyên và Môi trường Hà Nội hiện thị chỉ số. Ba trong bốn trạm này chỉ số chất lượng không khí (AQI) trên 200, ở mức rất xấu, cảnh báo mọi người bị ảnh hưởng sức khỏe nghiêm trọng.
-    
-    Cụ thể, trạm đo tại Tây Mỗ, huyện Bắc Từ Liêm có chỉ số AQI là 232; tại công viên hồ Thành Công, quận Ba Đình là 231; tại Kim Liên, quận Đống Đa là 211, Trung Hòa, quận Cầu Giấy là 134.
-    
-    Cùng lúc này, trạm quan trắc tại đường Nguyễn Văn Cừ quận Long Biên hiển thị chỉ số AQI 132. Trạm của Đại sứ quán Mỹ ở Hoàn Kiếm là 176.`
+    // update information
+    const [up_topic,setUpTopic] = useState('')
+    const [up_author,setUpAuthor] = useState('')
+    const [up_title,setUpTitle] = useState('')
+    const [up_description,setUpDescription] = useState('')
+    const [up_extend_des,setUpExtend_des] = useState('')
+    const [up_content,setUpContent] = useState('')
+    const [up_urlImg,setUpUrlImg] = useState('')
+    const token = Cookies.get('access_token_admin')
+
+    useEffect(()=>{
+
+        var targetId = getIdPost(window.location.pathname)
+        setNewsId(targetId)
+        axiosConfig.get('/news/get-news-by-id',{
+            params: {
+                news_id : targetId
+            }
+        })
+        .then(res =>{
+            const data = res.data.data
+            console.log(data)
+            setTopic(data.topic)
+            setAuthor(data.author)
+            setTitle(data.title)
+            setDescription(data.description)
+            setExtend_des(data.extend_description)
+            setContent(data.content.join('\n\n'))
+            setUrlImg(data.url_image.join('\n'))
+            // setNewsView(res.data.data)
+
+        })
+        .catch(err=> console.log(err))
+
+    },[])
+
+
+    const updatePost = ()=>{
+        console.log(up_topic)
+        axiosConfig.post('/news/update-news',{
+            data:{
+                title:up_title,
+                content: up_content.split('\n\n'),
+                author:up_author,
+                url_image:up_urlImg.split('\n'),
+                description:up_description,
+                extend_description: up_extend_des,
+                topic:up_topic
+            },
+            news_id:{
+                news_id:newsId
+
+            }
+        },
+        {headers: {"Authorization" : `Bearer ${token}`}})
+        .then(res=>{
+            if(res.status == 200){
+                alert("Upload post successfully!");
+                window.location.reload();
+            }
+            else{
+                alert("Failed to upload the post!");
+            }
+        })
+        .catch(err =>{
+            alert("Failed to upload the post!");
+        })
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.title}>Thông tin bài báo</div>
@@ -27,7 +102,7 @@ function AdminViewPost(){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Chủ để</label>
-                        <label className={styles.midColumn}>vukhanh09</label>
+                        <label className={styles.midColumn}>{topic}</label>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(0)}
                         >Thay đổi</label>
@@ -38,6 +113,7 @@ function AdminViewPost(){
                         </lable>
                         <input placeholder='Nhập thông tin...'
                             className={clsx(styles.midColumn,styles.inputUpdate)}
+                            onChange={e=>setUpTopic(e.target.value)}
                         />
                         <lable className={clsx(styles.lastColumn,styles.replaceInfor)}>Lưu thay đổi</lable>
 
@@ -48,7 +124,7 @@ function AdminViewPost(){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Tác giả</label>
-                        <label className={styles.midColumn}>Vũ Khánh</label>
+                        <label className={styles.midColumn}>{author}</label>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(1)}
                         >Thay đổi</label>
@@ -59,6 +135,7 @@ function AdminViewPost(){
                         </lable>
                         <input placeholder='Nhập thông tin...' 
                             className={clsx(styles.midColumn,styles.inputUpdate)}
+                            onChange={e=>setUpAuthor(e.target.value)}
                         />
                         <lable className={clsx(styles.lastColumn,styles.replaceInfor)}>Lưu thay đổi</lable>
 
@@ -69,7 +146,7 @@ function AdminViewPost(){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Tiêu đề</label>
-                        <label className={styles.midColumn}>Vũ Xuân Khánh</label>
+                        <label className={styles.midColumn}>{title}</label>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(2)}
                         >Thay đổi</label>
@@ -80,6 +157,7 @@ function AdminViewPost(){
                         </lable>
                         <input placeholder='Nhập thông tin...'
                             className={clsx(styles.midColumn,styles.inputUpdate)}
+                            onChange={e=>setUpTitle(e.target.value)}
                         />
                         <lable className={clsx(styles.lastColumn,styles.replaceInfor)}>Lưu thay đổi</lable>
 
@@ -89,7 +167,7 @@ function AdminViewPost(){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Mô tả</label>
-                        <label className={styles.midColumn}>vukhanh0920@gmail.com</label>
+                        <label className={styles.midColumn}>{description}</label>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(3)}
                         >Thay đổi</label>
@@ -100,6 +178,7 @@ function AdminViewPost(){
                         </lable>
                         <textarea type='text' placeholder='Nhập thông tin...' 
                             className={clsx(styles.midColumn,styles.inputUpdate,styles.desArea)}
+                            onChange={e=>setUpDescription(e.target.value)}
                         />
                         <lable className={clsx(styles.lastColumn,styles.replaceInfor)}>Lưu thay đổi</lable>
 
@@ -110,7 +189,7 @@ function AdminViewPost(){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Mô tả phụ</label>
-                        <label className={styles.midColumn}>vukhanh0920@gmail.com</label>
+                        <label className={styles.midColumn}>{extend_des}</label>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(4)}
                         >Thay đổi</label>
@@ -121,6 +200,7 @@ function AdminViewPost(){
                         </lable>
                         <textarea type='text' placeholder='Nhập thông tin...' 
                             className={clsx(styles.midColumn,styles.inputUpdate,styles.desArea)}
+                            onChange={e=>setUpExtend_des(e.target.value)}
                         />
                         <lable className={clsx(styles.lastColumn,styles.replaceInfor)}>Lưu thay đổi</lable>
 
@@ -132,7 +212,7 @@ function AdminViewPost(){
                         <label className={styles.column}>Nội dung</label>
                         <textarea type='text' placeholder='Nhập thông tin...' 
                             className={clsx(styles.midColumn,styles.contentPost,styles.disablePost)}
-                            value={contet}
+                            value={content}
                             disabled={true}
                         />
                         {/* <label className={styles.midColumn}>vukhanh0920@gmail.com</label> */}
@@ -146,6 +226,7 @@ function AdminViewPost(){
                         </lable>
                         <textarea type='text' placeholder='Nhập thông tin...' 
                             className={clsx(styles.midColumn,styles.inputUpdate,styles.contentPost)}
+                            onChange={e=>setUpContent(e.target.value)}
                         />
                         <lable className={clsx(styles.lastColumn,styles.replaceInfor)}>Lưu thay đổi</lable>
 
@@ -155,7 +236,7 @@ function AdminViewPost(){
                 <div className={styles.group}>
                     <div className={styles.infor}>
                         <label className={styles.column}>Đính kèm url của ảnh</label>
-                        <label className={styles.midColumn}>vukhanh0920@gmail.com</label>
+                        <label className={styles.midColumn}>{urlImg}</label>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(6)}
                         >Thay đổi</label>
@@ -166,6 +247,7 @@ function AdminViewPost(){
                         </lable>
                         <textarea type='text' placeholder='Nhập thông tin...' 
                             className={clsx(styles.midColumn,styles.inputUpdate)}
+                            onChange={e=>setUpUrlImg(e.target.value)}
                         />
                         <lable className={clsx(styles.lastColumn,styles.replaceInfor,styles.desArea)}>Lưu thay đổi</lable>
 
@@ -173,6 +255,7 @@ function AdminViewPost(){
                     </div>
                 </div>
             </div>
+            <button className={styles.updatePost} onClick={updatePost}>Cập nhật thông tin</button>
         </div>
     )
 }

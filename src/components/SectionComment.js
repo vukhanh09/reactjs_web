@@ -1,17 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 import DisplayComment from './DisplayComment'
 import styles from './CSS/SectionComment.module.css'
+import { addCommentForNews, getListCommentOfNews } from '../api/commentAPi'
+import Cookies from 'js-cookie'
 
-function SectionComment(){
+function SectionComment({newsId}){
+    // console.log(newsId)
     const [inputComment,setInputComment] = useState('')
     const [listComment,setListComment] = useState([])
-
+    useEffect(() => {
+        console.log(newsId)
+        getListCommentOfNews(newsId)
+        .then(res => {
+            console.log("ressss: ",res.data)
+            setListComment(res.data['list_comment']);
+        })
+        .catch((err)=>{
+            console.log("exception");
+        })
+    },[newsId]);
     const updateListComment = ()=>{
         if(inputComment!==''){
-            let date = new Date()
-            const dateCurr = date.toLocaleString();
-            setListComment(prev=> [...prev,[inputComment,dateCurr]])
+            addCommentForNews(Cookies.get('access_token'), newsId, inputComment)
+            .then(res => {
+                console.log(res.data);
+                let svResponse = res.data[0]['list_comment']
+                // console.log('hi',svResponse)
+                setListComment(svResponse)
+            })
+            .catch(err=>console.log(err))
             setInputComment('')
         }
     }
@@ -30,12 +48,12 @@ function SectionComment(){
             <div className={styles.secondSection}>
                 {
                     listComment.map((item,key)=>{
-                        return <DisplayComment key={key} user_name='vukhanh' timestamp={item[1]}
-                                user_comment = {item[0]}
+                        let dateTime = new Date(item['timestamp'])
+                        return <DisplayComment key={key} user_name={item['nick_name']} timestamp={dateTime.toLocaleDateString()+" "+dateTime.toLocaleTimeString()}
+                                user_comment = {item['content']}
                                 />
                     })
                 }
-
             </div>
         </div>
     )

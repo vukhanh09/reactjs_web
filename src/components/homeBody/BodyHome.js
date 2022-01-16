@@ -4,7 +4,7 @@ import SubStory from "./SubStory";
 import styles from './CSS/BodyHome.module.css'
 import clsx from "clsx";
 import MediaStory from "./MediaStory";
-import { getHotNews } from "../../api/newsApi";
+import { getHotNews, getHotNewsByTopic, get3NewestNews } from "../../api/newsApi";
 import {subData,middleData} from './data.js'
 import XemNhieu from "./XemNhieu";
 import rightArrow from '../../assets/rightnext.png'
@@ -13,12 +13,25 @@ import Topic from "./Topic";
 
 function BodyHome(){
     const [hotNews, setHotNews] = useState();
+    const [hotNewsListByTopic, setHotNewsListByTopic] = useState([]);
+    const [top3News, setTop3News] = useState([]);
     useEffect(() => {
         getHotNews().then(res => {
             setHotNews(res.data[0]);
+        }).catch((err) => {
+            console.log(err);
+        });
+        getHotNewsByTopic().then(res => {
+            setHotNewsListByTopic(res.data);
+        }).catch((err) => {
+            console.log(err);
+        });
+        get3NewestNews().then(res => {
+            setTop3News(res.data);
+        }).catch((err) => {
+            console.log(err);
         });
     },[])
-    const middle3Data = middleData.filter(item=>item.id !==0)
     return (
         <div className={styles.container}>
             <div className={styles.section_1}>
@@ -26,11 +39,11 @@ function BodyHome(){
 
                 <div className={styles.sub_story}>
                     {
-                        subData.map(item=>{
-                            if(item.id!=3)
-                                return <SubStory title={item.title} op1 description={item.description}/>
+                        top3News.map((item,id)=>{
+                            if(id!==2)
+                                return <SubStory title={item.title} op1 description={item.description} url_post={item.url}/>
                             else{
-                                return <SubStory title={item.title} op2 description={item.description}/>
+                                return <SubStory title={item.title} op2 description={item.description} url_post={item.url}/>
                             }
                         })
                     }
@@ -41,8 +54,9 @@ function BodyHome(){
 
                 <div className={styles.inner_middle}>
                     {
-                        middle3Data.map(item=>{
-                            return <MainStory data={item} op={item.id===1?1:0} classType = {true}/>
+                        hotNewsListByTopic.map((item,id)=>{
+                            // console.log(id)
+                            return <MainStory data={item} op={id===0?1:0} classType = {true} key={item.id}/>
                         })
                     }
                 </div>

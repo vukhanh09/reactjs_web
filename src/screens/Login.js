@@ -1,12 +1,12 @@
 
 import React, { useState } from 'react';
 import { Routes, Route, Link, useNavigate } from "react-router-dom";
-import styles from './CSS/about.module.css';
+import styles from './CSS/login.module.css';
 import Cookies from 'js-cookie';
-import { loginUser } from '../../api/authApi';
+import { loginUser } from '../api/authApi';
 
 
-function About() {
+function Login() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     let navigate = useNavigate();
@@ -111,4 +111,4 @@ function About() {
     );
 }
 
-export default About
+export default Login

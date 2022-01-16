@@ -1,7 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Home from "../screens/Home";
 import Gocnhin from "../screens/GocNhin";
-import ABout from "../screens/About";
+import Login from "../screens/Login";
 import Dulich from "../screens/DuLich";
 import TimKiem from "../screens/TimKiem";
 import UserInformation from "../screens/UserInformation";
@@ -20,7 +20,7 @@ function RootRoutes(){
         <Routes>
             <Route path="/" element={<Home />} />
             
-            <Route path="/login" element={<ABout />} /> 
+            <Route path="/login" element={<Login />} /> 
             <Route path="/goc-nhin" element={<Gocnhin />} /> 
             <Route path="/du-lich" element={<Dulich />} />
             <Route path="/tim-kiem" element={<TimKiem />} />
@@ -31,14 +31,13 @@ function RootRoutes(){
             </Route>
             <Route path="/xem-sau" element={<ViewLater />} />
 
-            <Route path="/login-admin" element={<AdminLogin />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="admin/login" element={<AdminLogin />} />
             <Route path="/admin/manager-account" element={<ManageAcc />} />
             <Route path="/admin/manager-post" element={<ManagePost />} />
             <Route path="/admin/add-post" element={<AddPost />} />
-            <Route path="/admin/view-post" element={<AdminViewPost />} >
-                <Route path=":postId" element={<ViewPost />} />
-            </Route>
+
+            <Route path="/admin/view-post/:postId" element={<AdminViewPost />} />
 
 
       </Routes>

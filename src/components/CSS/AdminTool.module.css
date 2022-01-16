@@ -7,29 +7,37 @@
     cursor: pointer;
 }
 .opGeneral{
-    margin-top: 60px;
+    margin-top: 50px;
     background-color: #1f45ec;
     font-size: 20px;
     height: 10vh;
 }
 .opManageAcc{
-    margin-top: 60px;
+    margin-top: 50px;
     background-color: #4caf50;
     height: 10vh;
     font-size: 20px;
 }
 .opAddPost{
-    margin-top: 60px;
+    margin-top: 50px;
     background-color: #cecb09;
     height: 10vh;
     font-size: 20px;
 
 }
 .opManagePost{
-    margin-top: 60px;
+    margin-top: 50px;
     background-color: rgb(184, 24, 162);
     height: 10vh;
     font-size: 20px;
+}
+.onLogOut{
+    margin-top: 50px;
+    background-color: rgb(160, 28, 28);
+    height: 10vh;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
 }
 .textInfo{
     text-align: center;

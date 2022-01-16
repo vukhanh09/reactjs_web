@@ -23,8 +23,8 @@ function MainStory({data,classType,op}){
                classType &&  
                <div className={clsx(styles.middle_col_3,classes)}>
                     <h3 className={styles.topic}>{data?.topic}</h3>
-                    <h3 className={styles.title}><a href=''>{data?.title}</a></h3>
-                    <img src={data?.src} />
+                    <h3 className={styles.title}><a href={`/view-post/${data?.url}`}>{data?.title}</a></h3>
+                    <img src={data?.url_image[0]} />
                     <p className={styles.description}>{data?.description}</p>
                     <p className={styles.extend_description}>{data?.extend_description}</p>
                 </div>

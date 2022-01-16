@@ -7,10 +7,26 @@ import react, {useState,useEffect} from "react"
 import styles from './CSS/ViewLater.module.css'
 import clsx from "clsx"
 import ItemSearch from "../components/ItemSearch";
-import {middleData} from '../components/homeBody/data.js'
-import axios from 'axios';
+import { getListWatchLaterNews } from '../api/watchLaterApi';
+import Cookies from 'js-cookie';
+import { getNewsById } from '../api/newsApi';
 
 function ViewLater(){
+    const [listNews, setListNews] = useState([]);
+    useEffect(() => {
+        getListWatchLaterNews(Cookies.get('access_token'))
+        .then(res => {
+            console.log(res.data);
+            let listNewsId = res.data;
+            for(let i in listNewsId){
+                console.log(listNewsId[i]['news_id'])
+                getNewsById(listNewsId[i]['news_id'])
+                .then(res => {
+                    setListNews((prev) => [...prev,res.data]);
+                })
+            }
+        })
+    },[]);
 
     return (
         <div className={styles.TimKiem}>
@@ -39,7 +55,10 @@ function ViewLater(){
                     </div>
                     <div className={styles.rightSection}>
                         <h2>Nội dung đã lưu</h2>
-
+                        {
+                            listNews.length!=0 && listNews.map((item,index)=> <ItemSearch key={index} 
+                                data={item} op1 ={index+1!==listNews.length?1:0}/>)
+                        }
 
                     </div>
 

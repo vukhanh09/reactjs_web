@@ -7,5 +7,26 @@ function getHotNews() {
         console.log(err);
     });
 }
+function getHotNewsByTopic() {
+    return axiosConfig.get('/news/get-hot-news-by-topic')
+    .then(res => res.data)
+    .catch((err) => {
+        console.log(err);
+    });
+}
 
-export {getHotNews};
+function getNewsById(id){
+    return axiosConfig.get('/news/get-news-by-id',{
+        params: {
+            news_id : id
+        }
+    })
+    .then(res => {
+        console.log("res", res.data);
+        return res.data
+    })
+    .catch((err) => {
+        console.log(err);
+    }); 
+}
+export {getHotNews, getHotNewsByTopic, getNewsById};

@@ -1,5 +1,5 @@
 
-
+import { getIdPost } from '../utils/helper';
 import styles from './CSS/AdminViewPost.module.css'
 import clsx from 'clsx'
 import { useEffect, useState } from 'react/cjs/react.development'
@@ -36,16 +36,9 @@ function AdminViewPost(){
     const [up_urlImg,setUpUrlImg] = useState('')
     const token = Cookies.get('access_token_admin')
 
-    const getUserPost = (url)=>{
-        let targetId = url.split('/').at(-1)
-        targetId = targetId.split('-').at(-1)
-        targetId = targetId.split('.').at(0)
-        return targetId
-    }
-
     useEffect(()=>{
 
-        var targetId = getUserPost(window.location.pathname)
+        var targetId = getIdPost(window.location.pathname)
         setNewsId(targetId)
         axiosConfig.get('/news/get-news-by-id',{
             params: {

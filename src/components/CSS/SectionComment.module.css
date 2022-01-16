@@ -5,7 +5,7 @@
 }
 
 .container {
-    width: 100%;
+    width: 62%;
     max-width: 1130px;
     padding: 0 15px;
     margin: 0 auto;
@@ -13,7 +13,8 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
-    text-rendering: optimizeLegibility
+    text-rendering: optimizeLegibility;
+    margin-bottom: 50px;
 }
 
 @media screen and (max-width: 1129px){
@@ -23,14 +24,14 @@
 }
 @media screen and (max-width: 1129px){
     .firstSection .submitComment {
-        width: 20%;
+        width: 18%;
     }
 }
 .formComment {
 	padding: 20px 25px;
 	border-radius: 5px;
  	border: 1px solid #CAD3DB;
-	width: 800px;
+	width: 80%;
 	font-size: 18px;
 	color: #0F121F;
 }
@@ -43,7 +44,7 @@
 	background: #3D9FFF;
 	padding: 10px;
 	border: none;
-	width: 200px;
+	width: 12%;
 	height: 65px;
 	border-radius: 5px;
 	font-size: 18px;

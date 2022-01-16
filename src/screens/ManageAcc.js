@@ -5,15 +5,24 @@ import styles from "./CSS/ManageAcc.module.css"
 import AdminTool from "../components/AdminTool"
 import Cookies from 'js-cookie';
 import axiosConfig from '../config/axiosConfig';
+import { useNavigate } from "react-router-dom";
 
 function ManageAcc(){
+    let navigate = useNavigate();
     const cols = ['username','email','nick_name','address','date_of_birth']
     const [searchUser,setSearchUser] = useState('')
     const [searchFullName,setSearchFullName] = useState('')
     const [listUser,setListUser] = useState([])
-
+    
     const token = Cookies.get('access_token_admin')
+    const adminIsLogin = ()=>{
+        if(!token){
+            navigate('/admin/login')
+        }
+    }
+
     useEffect(()=>{
+        adminIsLogin()
         
         axiosConfig.get('/users/get-list-users',{ headers: {"Authorization" : `Bearer ${token}`} })
         .then(res=>{

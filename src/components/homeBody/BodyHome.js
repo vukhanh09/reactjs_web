@@ -54,8 +54,9 @@ function BodyHome(){
 
                 <div className={styles.inner_middle}>
                     {
-                        hotNewsListByTopic.map(item=>{
-                            return <MainStory data={item} op={item.id===1?1:0} classType = {true}/>
+                        hotNewsListByTopic.map((item,id)=>{
+                            // console.log(id)
+                            return <MainStory data={item} op={id===0?1:0} classType = {true} key={item.id}/>
                         })
                     }
                 </div>

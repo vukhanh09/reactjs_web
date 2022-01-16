@@ -1,6 +1,7 @@
 .container{
     margin-left: 13%;
     margin-right: 13%;
+    min-height: 600px;
 }
 .mainSection{
     display: flex;

@@ -39,8 +39,8 @@ function BodyHome(){
 
                 <div className={styles.sub_story}>
                     {
-                        top3News.map(item=>{
-                            if(item.id!=3)
+                        top3News.map((item,id)=>{
+                            if(id!==2)
                                 return <SubStory title={item.title} op1 description={item.description} url_post={item.url}/>
                             else{
                                 return <SubStory title={item.title} op2 description={item.description} url_post={item.url}/>

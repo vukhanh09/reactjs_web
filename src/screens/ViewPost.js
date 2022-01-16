@@ -26,7 +26,9 @@ function ViewPost() {
                 setNews(new_data);
 
             }
-        )
+        ).catch((err) => {
+            console.log(err);
+        })
 
     }, []);
     const splitContent = (news) => {

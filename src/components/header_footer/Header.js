@@ -40,8 +40,9 @@ function Header() {
   useEffect(()=>{
     const handlleScroll = ()=>{
       // console.log(document.querySelector(`.${styles.narBar}`))
-      let x1 = document.querySelector(`.${styles.narBar}`).clientHeight
-      let x2 = document.querySelector(`.${styles.toolBar}`).clientHeight
+      let x1 = document.querySelector(`.${styles.narBar}`)?.clientHeight
+      let x2 = document.querySelector(`.${styles.toolBar}`)?.clientHeight
+
       if(window.scrollY>71){
         setIsScroll('fixed')
         setVisibleMenuTop(x1)

@@ -21,8 +21,8 @@ function MediaStory({subDataTopic}){
                     
             <div className={styles.first_section}>
                 {
-                    top3NewestNews.map(item=>{
-                        if(item.id!==3)
+                    top3NewestNews.map((item,id)=>{
+                        if(id!==2)
                             return <SubStory title={item.title} op1 description={item.description}/>
                         else{
                             return <SubStory title={item.title} op2 description={item.description}/>

@@ -45,17 +45,17 @@
 }
 .opGeneral:hover{
     background-color:  #5a76f0;
-    transform: rotate(-20deg);
+    /* transform: rotate(-20deg); */
 }
 .opManageAcc:hover{
     background-color:  #73b174;
-    transform: rotate(20deg);
+    /* transform: rotate(20deg); */
 }
 .opManagePost:hover{
     background-color: rgb(182, 85, 169);
-    transform: rotate(-20deg);
+    /* transform: rotate(-20deg); */
 }
 .opAddPost:hover{
     background-color: #b9b85b;
-    transform: rotate(20deg);
+    /* transform: rotate(20deg); */
 }

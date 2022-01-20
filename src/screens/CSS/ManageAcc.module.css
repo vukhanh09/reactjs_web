@@ -1,8 +1,9 @@
 .tableAcc{
-    width: 100%;
+    width: 95%;
     text-align: center;
     border: 1px solid black;
     margin-top: 20px;
+    margin-left: 2%;
 }
 .tableAcc td,th{
     border: 1px solid black;
@@ -52,6 +53,7 @@
     text-align: center;
     color: white;
 }
+
 
 .searchAcc .fieldSearch{
     width: 20%;

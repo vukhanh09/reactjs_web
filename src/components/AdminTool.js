@@ -1,12 +1,17 @@
 import { Link, useNavigate } from 'react-router-dom'
 import styles from './CSS/AdminTool.module.css'
 import Cookies from 'js-cookie'
+import { useSelector, useDispatch } from 'react-redux';
+import { setListPostState } from '../redux/actions/postAction';
+
 function AdminTool(){
     const navigator = useNavigate()
+    const dispatch = useDispatch();
 
     const hanldLogOut = () => {
         Cookies.remove('access_token_admin')
         alert('Đăng xuất thành công!')
+        dispatch(setListPostState([]))
         navigator('/admin/login')
     }
 

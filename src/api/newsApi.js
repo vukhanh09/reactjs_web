@@ -61,4 +61,21 @@ function getTop3NewsTopic(topic){
     }); 
 }
 
-export {getHotNews, getHotNewsByTopic, getNewsById, get3NewestNews, getTop3NewsTopic, get3NewestNewsOfTopic};
+const submitFile = ()=>{
+    var formFile = new FormData();
+    var imagefile = document.getElementById('formFile');
+    formFile.append("formFile", imagefile.files[0]);
+    return axiosConfig.post('/uploadFile', formFile, {
+        headers: {
+        'Content-Type': 'multipart/form-data'
+        }
+    })
+    .then(res=>{
+        return res.data.data
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+}
+
+export {submitFile,getHotNews, getHotNewsByTopic, getNewsById, get3NewestNews, getTop3NewsTopic, get3NewestNewsOfTopic};

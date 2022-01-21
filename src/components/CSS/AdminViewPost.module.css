@@ -79,3 +79,12 @@
     background: linear-gradient(to right, #7fa2d1, #06ff4b);
     cursor: pointer;
 }
+.imgInner{
+    object-fit: cover;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 250px;
+    margin: auto;
+    display: block;
+}

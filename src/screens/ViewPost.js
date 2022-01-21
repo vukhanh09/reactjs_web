@@ -20,71 +20,6 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ViewPost() {
 
-    const pushNotification = (type,message)=>{
-        switch(type){
-            case 'info':{
-                return toast.info(message, {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored" 
-                });
-            }
-            case 'success':{
-                return toast.success(message, {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored" 
-                });
-            }
-            case 'warn':{
-                return toast.warn(message, {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored" 
-                });
-            }
-            case 'error':{
-                return toast.error(message, {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored" 
-                });
-            }
-            default:
-                return toast(message, {
-                    position: "top-right",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "colored" 
-                });
-    
-        }
-    }
-
     const targetId = getIdPost(window.location.pathname);
     const [news, setNews] = useState('');
     useEffect(() => {
@@ -119,17 +54,16 @@ function ViewPost() {
             .then(res => {
                 console.log(res)
                 if (res === true) {
-                    pushNotification('info','Bài viết đã tồn tại trong mục xem sau!')
+                    toast.info('Bài viết đã tồn tại trong mục xem sau!',{theme: "colored" })
                     // alert('Bài viết đã tồn tại trong mục xem sau');
                 } else {
                     addNewsToWatchLater(Cookies.get('access_token'), news?.news_id, news?.topic)
                         .then(res => {
                             console.log(res.data);
                             if(res.code == 400){
-                                pushNotification('info','Bài viết đã tồn tại trong mục xem sau!')
-                                // alert('Bài viết đã tồn tại trong mục xem sau!');
+                                toast.info('Bài viết đã tồn tại trong mục xem sau!',{theme: "colored" })
                             }else{
-                                pushNotification('success','Đã thêm bài viết vào mục xem sau!')
+                                toast.success('Đã thêm bài viết vào mục xem sau!',{theme: "colored" })
                             }
                         })
                         .catch((err) => {

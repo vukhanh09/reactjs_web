@@ -49,7 +49,7 @@
     margin-bottom: 10px;
 }
 .contentPost{
-    height: 33vh;
+    min-height: 33vh;
     margin-bottom: 8px;
 
 }

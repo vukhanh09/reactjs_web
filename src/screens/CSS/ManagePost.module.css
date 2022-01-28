@@ -28,7 +28,7 @@
 }
 .inner{
     border-right: solid 1px black;
-    height: auto;
+    height: 100vh;
     margin-left: 10px;
 }
 .parentPost{

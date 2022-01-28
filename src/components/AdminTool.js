@@ -1,6 +1,15 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './CSS/AdminTool.module.css'
+import Cookies from 'js-cookie'
 function AdminTool(){
+    const navigator = useNavigate()
+
+    const hanldLogOut = () => {
+        Cookies.remove('access_token_admin')
+        alert('Đăng xuất thành công!')
+        navigator('/admin/login')
+    }
+
     return (
         <div className={styles.container}>
             <h2>Time News</h2>
@@ -29,6 +38,10 @@ function AdminTool(){
                         <p className={styles.textInfo}>Quản lý bài viết</p>
                     </div>
                 </Link>
+
+                <div className={styles.onLogOut} onClick={hanldLogOut}>
+                    <p className={styles.textInfo}>Đăng xuất</p>
+                </div>
 
             </div>
         </div>

@@ -12,6 +12,7 @@
 }
 .rightElement{
     width: 85%;
+    margin-left: 1%;
 }
 .inner{
     border-right: solid 1px black;

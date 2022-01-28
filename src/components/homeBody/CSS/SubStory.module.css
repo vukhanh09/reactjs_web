@@ -6,6 +6,15 @@
 
     /* margin-bottom: 40px; */
 }
+@media screen and (max-width: 1129px){ 
+    .item_story{
+        width: 100%;
+        border-bottom-style: solid;
+        border-width: 2px;
+        height: 28%;
+    }
+}
+
 .item_story_last{
     width: 100%;
     /* border-bottom-style: solid;
@@ -13,9 +22,17 @@
     height: 30%;
 
 }
+
+
+.item_story_last .title{
+    height: 35px;
+    margin-bottom: 45px;
+}
+
 .col_2_item{
     /* width: 90%; */
 }
+
 .title{
     height: 35px;
 }

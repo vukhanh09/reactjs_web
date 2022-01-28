@@ -29,11 +29,11 @@ function AccountInformation(props){
         }else{
             updateEmail(newEmail, Cookies.get('access_token')).then(res => {
                 console.log("Update info: ", res.data);
+                window.location.reload();
             }).catch(() => {
                 alert('Email này đã được sử dụng!');
             })
-            window.location.reload();
-            window.location.reload();
+            // window.location.reload();
         }
     }
     return (
@@ -172,7 +172,6 @@ function AccountInformation(props){
                     </div>
 
                 </div>
-                <div><button >Đăng xuất</button></div>
             </div>
 
             

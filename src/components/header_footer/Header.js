@@ -7,6 +7,7 @@ import { getUserInformation } from "../../api/userApi";
 import Cookies from "js-cookie";
 import {useState,useEffect} from 'react'
 import { useNavigate } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 
 function Header() {
@@ -100,7 +101,7 @@ function Header() {
         <ul className={`${styles.textColor} ${styles.narMenu}`}>
 
           {
-            listTopic.map(topic => <li ><a href={`/${topic[1]}`} >{topic[0]}</a></li>)
+            listTopic.map(topic => <li ><Link to={`/${topic[1]}`} >{topic[0]}</Link></li>)
           }
           <li >
             <div className={styles.divUser} onClick={handlleVisibleMenu}>

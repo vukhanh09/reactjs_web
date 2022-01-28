@@ -14,6 +14,9 @@ import ManageAcc from "../screens/ManageAcc";
 import ManagePost from "../screens/ManagePost";
 import AddPost from "../screens/AddPost";
 import AdminViewPost from "../components/AdminViewPost";
+import KinhDoanh from "../screens/KinhDoanh";
+import TheGioi from "../screens/TheGioi";
+import ThoiSu from "../screens/ThoiSu";
 
 function RootRoutes(){
     return(
@@ -24,6 +27,10 @@ function RootRoutes(){
             <Route path="/goc-nhin" element={<Gocnhin />} /> 
             <Route path="/du-lich" element={<Dulich />} />
             <Route path="/tim-kiem" element={<TimKiem />} />
+            <Route path="/the-gioi" element={<TheGioi />} />
+            <Route path="/kinh-doanh" element={<KinhDoanh />} />
+            <Route path="/thoi-su" element={<ThoiSu />} />
+
             <Route path="/user-information" element={<UserInformation />} />
             <Route path="/comment" element={<SectionComment />} />
             <Route path="/view-post" element={<ViewPost />} >

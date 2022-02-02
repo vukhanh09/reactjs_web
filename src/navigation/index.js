@@ -17,11 +17,14 @@ import AdminViewPost from "../components/AdminViewPost";
 import KinhDoanh from "../screens/KinhDoanh";
 import TheGioi from "../screens/TheGioi";
 import ThoiSu from "../screens/ThoiSu";
+import UploadFile from "../screens/UploadFile";
 
 function RootRoutes(){
     return(
         <Routes>
             <Route path="/" element={<Home />} />
+
+            <Route path="/upload-file" element={<UploadFile />} /> 
             
             <Route path="/login" element={<Login />} /> 
             <Route path="/goc-nhin" element={<Gocnhin />} /> 

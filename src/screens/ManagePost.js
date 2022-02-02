@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 
 function ManagePost(){
 
+
      // check token
     let navigate = useNavigate();
     const adminIsLogin = ()=>{
@@ -66,7 +67,6 @@ function ManagePost(){
             })
 
         }
-
     },[optionRender])
 
 

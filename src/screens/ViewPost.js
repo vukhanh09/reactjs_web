@@ -3,7 +3,7 @@ import SectionComment from "../components/SectionComment"
 import styles from './CSS/ViewPost.module.css'
 import Header from "../components/header_footer/Header"
 import Footer from "../components/header_footer/Footer"
-import { posts } from "./data.js"
+
 import { Link } from "react-router-dom"
 import RenderText from "../components/RenderText"
 import red_love from '../assets/red_love.png'
@@ -14,7 +14,12 @@ import { getNewsById } from "../api/newsApi"
 import { addNewsToWatchLater, checkExistNewsInListWatchLater } from "../api/watchLaterApi"
 import Cookies from "js-cookie"
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 function ViewPost() {
+
     const targetId = getIdPost(window.location.pathname);
     const [news, setNews] = useState('');
     useEffect(() => {
@@ -42,21 +47,23 @@ function ViewPost() {
         return news
     }
 
+    
     const addToWatchLater = () => {
 
         checkExistNewsInListWatchLater(Cookies.get('access_token'), news?.news_id)
             .then(res => {
                 console.log(res)
                 if (res === true) {
-                    alert('Bài viết đã tồn tại trong mục xem sau');
+                    toast.info('Bài viết đã tồn tại trong mục xem sau!',{theme: "colored" })
+                    // alert('Bài viết đã tồn tại trong mục xem sau');
                 } else {
                     addNewsToWatchLater(Cookies.get('access_token'), news?.news_id, news?.topic)
                         .then(res => {
                             console.log(res.data);
                             if(res.code == 400){
-                                alert('Bài viết đã tồn tại trong mục xem sau!');
+                                toast.info('Bài viết đã tồn tại trong mục xem sau!',{theme: "colored" })
                             }else{
-                                alert('Đã thêm bài viết vào mục xem sau!');
+                                toast.success('Đã thêm bài viết vào mục xem sau!',{theme: "colored" })
                             }
                         })
                         .catch((err) => {
@@ -140,6 +147,7 @@ function ViewPost() {
                 </div>
                 <SectionComment newsId={news?.news_id}/>
             </div>
+            <ToastContainer />
             <Footer />
         </div>
     )

@@ -3,7 +3,7 @@ import SectionComment from "../components/SectionComment"
 import styles from './CSS/ViewPost.module.css'
 import Header from "../components/header_footer/Header"
 import Footer from "../components/header_footer/Footer"
-import { posts } from "./data.js"
+
 import { Link } from "react-router-dom"
 import RenderText from "../components/RenderText"
 import red_love from '../assets/red_love.png'

@@ -145,9 +145,12 @@ function ViewPost() {
                     </div>
 
                 </div>
-                <SectionComment newsId={news?.news_id}/>
             </div>
+
+            <SectionComment newsId={news?.news_id}/>
+
             <ToastContainer />
+
             <Footer />
         </div>
     )

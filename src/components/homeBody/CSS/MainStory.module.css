@@ -36,6 +36,12 @@
     text-decoration: none!important;
     outline: 1!important;
 }
+@media screen and (max-width: 1129px){ 
+    .main_story .title a{
+        text-decoration: none!important;
+        outline: 1!important;
+    }
+}
 .middle_col_3 .title a{
     text-decoration: none!important;
     outline: 1!important;

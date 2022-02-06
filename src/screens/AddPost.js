@@ -4,7 +4,7 @@ import styles from "./CSS/AddPost.module.css"
 import Cookies from 'js-cookie';
 import axiosConfig from '../config/axiosConfig';
 import { useNavigate } from "react-router-dom";
-
+import { submitFile } from "../api/newsApi";
 
 function AddPost(){
 
@@ -32,28 +32,36 @@ function AddPost(){
     const token = Cookies.get('access_token_admin')
     
     const uploadPost = ()=>{
-        const upContent = content.split("\n")
-        const upUrlImg = urlImg.split("\n")
-        axiosConfig.post('/news/add-news',{
-            title:title,
-            content: upContent,
-            url_image:upUrlImg,
-            author:author,
-            description:description,
-            extend_description: extend_des,
-            topic:topic,
-
-        },{headers: {"Authorization" : `Bearer ${token}`}})
+        var url_image;
+        submitFile()
         .then(res=>{
-            if(res.status == 200){
-                alert("Upload post successfully!");
-            }
-            else{
+            url_image = res
+            const upContent = content.split("\n\n")
+            axiosConfig.post('/news/add-news',{
+                title:title,
+                content: upContent,
+                url_image:url_image,
+                author:author,
+                description:description,
+                extend_description: extend_des,
+                topic:topic,
+    
+            },{headers: {"Authorization" : `Bearer ${token}`}})
+            .then(res=>{
+                if(res.status == 200){
+                    alert("Upload post successfully!");
+                }
+                else{
+                    alert("Failed to upload the post!");
+                }
+            })
+            .catch(err =>{
                 alert("Failed to upload the post!");
-            }
+            })
+
         })
         .catch(err =>{
-            alert("Failed to upload the post!");
+            alert("Failed to upload the image!");
         })
         
 
@@ -103,8 +111,9 @@ function AddPost(){
                             <textarea type='text' className={styles.contentPost} onChange={e=> setContent(e.target.value)}/>
                         </div>
                         <div className={styles.fieldSearch}>
-                            <label>Đính kèm url của ảnh</label>
-                            <textarea type='text' className={styles.desArea} onChange={e=> setUrlImg(e.target.value)}/>
+                            <label>Đính kèm ảnh</label>
+                            <input class="form-control" type="file" id="formFile" name="formFile"/>
+                            {/* <button value="Upload a file" onClick={submitFile}>Upload a file</button> */}
                         </div>
 
 

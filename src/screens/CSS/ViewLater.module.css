@@ -12,7 +12,7 @@
 .leftSection{
     width: 20%;
     border: solid rgb(151, 1, 1) 1px;
-    /* margin: auto; */
+    max-height: 40vh;
 
     display: flex;
     justify-content: center;

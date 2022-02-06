@@ -5,6 +5,11 @@ import clsx from 'clsx'
 import { useEffect, useState } from 'react/cjs/react.development'
 import Cookies from 'js-cookie';
 import axiosConfig from '../config/axiosConfig';
+import { submitFile } from "../api/newsApi";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 function AdminViewPost(){
     const displayUpdate = (id)=>{
         const res = document.getElementById(id)
@@ -54,7 +59,7 @@ function AdminViewPost(){
             setDescription(data.description)
             setExtend_des(data.extend_description)
             setContent(data.content.join('\n\n'))
-            setUrlImg(data.url_image.join('\n'))
+            setUrlImg(data.url_image)
             // setNewsView(res.data.data)
 
         })
@@ -64,34 +69,42 @@ function AdminViewPost(){
 
 
     const updatePost = ()=>{
-        console.log(up_topic)
-        axiosConfig.post('/news/update-news',{
-            data:{
-                title:up_title,
-                content: up_content.split('\n\n'),
-                author:up_author,
-                url_image:up_urlImg.split('\n'),
-                description:up_description,
-                extend_description: up_extend_des,
-                topic:up_topic
-            },
-            news_id:{
-                news_id:newsId
-
-            }
-        },
-        {headers: {"Authorization" : `Bearer ${token}`}})
+        var url_image;
+        submitFile()
         .then(res=>{
-            if(res.status == 200){
-                alert("Upload post successfully!");
-                window.location.reload();
-            }
-            else{
-                alert("Failed to upload the post!");
-            }
+            url_image = res
+            axiosConfig.post('/news/update-news',{
+                data:{
+                    title:up_title,
+                    content: up_content.split('\n\n'),
+                    author:up_author,
+                    url_image:url_image,
+                    description:up_description,
+                    extend_description: up_extend_des,
+                    topic:up_topic
+                },
+                news_id:{
+                    news_id:newsId
+                }
+            },
+            {headers: {"Authorization" : `Bearer ${token}`}})
+            .then(res=>{
+                if(res.status == 200){
+                    toast.success("Upload post successfully!",{theme: "colored" })
+                    setTimeout(() => {
+                        window.location.reload();
+                    }, 2000);
+                }
+                else{
+                    toast.error("Failed to upload the post!",{theme: "colored" })
+                }
+            })
+            .catch(err =>{
+                toast.error("Failed to upload the post!",{theme: "colored" })
+            })
         })
         .catch(err =>{
-            alert("Failed to upload the post!");
+            toast.error("Failed to upload the image!",{theme: "colored" })
         })
     }
 
@@ -235,27 +248,28 @@ function AdminViewPost(){
                 </div>
                 <div className={styles.group}>
                     <div className={styles.infor}>
-                        <label className={styles.column}>Đính kèm url của ảnh</label>
-                        <label className={styles.midColumn}>{urlImg}</label>
+                        <label className={styles.column}>Ảnh đính kèm</label>
+                        <div className={styles.midColumn}>
+
+                            <img src={urlImg[0]} className={styles.imgInner}/>
+                        </div>
                         <label className={clsx(styles.lastColumn,styles.replaceInfor)}
                             onClick={()=>displayUpdate(6)}
                         >Thay đổi</label>
                     </div>
                     <div className={styles.update} id={6}>
                         <lable className={styles.column}>
-                            Cập nhật thông tin
+                            Đính kèm ảnh
                         </lable>
-                        <textarea type='text' placeholder='Nhập thông tin...' 
-                            className={clsx(styles.midColumn,styles.inputUpdate)}
-                            onChange={e=>setUpUrlImg(e.target.value)}
-                        />
-                        <lable className={clsx(styles.lastColumn,styles.replaceInfor,styles.desArea)}>Lưu thay đổi</lable>
+                        <input class="form-control" type="file" id="formFile" name="formFile"/>
+                        <lable className={clsx(styles.lastColumn,styles.replaceInfor)}>Lưu thay đổi</lable>
 
 
                     </div>
                 </div>
             </div>
             <button className={styles.updatePost} onClick={updatePost}>Cập nhật thông tin</button>
+            <ToastContainer/>
         </div>
     )
 }

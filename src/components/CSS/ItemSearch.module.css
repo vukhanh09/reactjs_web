@@ -29,7 +29,16 @@
     margin-top: 15px;
 
 }
-
+.utilElement{
+    display: flex;
+    justify-content: space-between;
+}
+.rmButton{
+    height: 32px;
+    width: 32px;
+    margin-top: 5px;
+    cursor: pointer;
+}
 @media screen and (max-width: 800px) {
     .col_1 .image{
         height: 80px;

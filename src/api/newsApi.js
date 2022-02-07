@@ -60,6 +60,41 @@ function getTop3NewsTopic(topic){
         console.log(err);
     }); 
 }
+function getTop10News(){
+    return axiosConfig.get('/news/get-top10-hot-news')
+    .then(res => {
+        return res.data
+    }).catch((err) => {
+        console.log(err);
+    })
+}
+
+function getTop4Tourism(){
+    return axiosConfig.get('/news/get-top4-tourism')
+    .then(res => res.data)
+    .catch((err) => {
+        console.log(err);
+    })
+}
+
+function getHotNewsOfEachTopic(topic){
+    return axiosConfig.get('/news/get-hot-news-each-topic', {
+        params: {
+            topic: topic
+        }
+    }).then(res => res.data)
+    .catch((err) => {
+        console.log(err);
+    })
+}
+
+
+function getTop4NewestNewsOfEachTopic(topic){
+    return axiosConfig.get('/news/get-top4-newest-news-each-topic', {
+        params: {
+            topic: topic
+        }
+    }).then(res => res.data)
 
 const submitFile = ()=>{
     var formFile = new FormData();
@@ -73,9 +108,21 @@ const submitFile = ()=>{
     .then(res=>{
         return res.data.data
     })
+
     .catch((err) => {
         console.log(err);
     })
 }
 
-export {submitFile,getHotNews, getHotNewsByTopic, getNewsById, get3NewestNews, getTop3NewsTopic, get3NewestNewsOfTopic};
+export {getHotNews, 
+        getHotNewsByTopic, 
+        getNewsById, 
+        get3NewestNews, 
+        getTop3NewsTopic, 
+        get3NewestNewsOfTopic, 
+        getTop10News, 
+        getTop4Tourism,
+        getHotNewsOfEachTopic,
+        getTop4NewestNewsOfEachTopic,
+        submitFile
+    };

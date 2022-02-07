@@ -31,4 +31,13 @@ function getListWatchLaterNews(accessToken){
         console.log(err);
     });
 }
-export {addNewsToWatchLater, checkExistNewsInListWatchLater, getListWatchLaterNews};
+
+function getListWatchLaterByTopic(accessToken, topic){
+    return axiosConfig.get(`/watch-later/get-list-by-topic?topic=${topic}`,{
+        headers: {"Authorization":`Bearer ${accessToken}`}
+    }).then(res => res.data)
+    .catch((err) => {
+        console.log(err);
+    }) 
+}
+export {addNewsToWatchLater, checkExistNewsInListWatchLater, getListWatchLaterNews, getListWatchLaterByTopic};

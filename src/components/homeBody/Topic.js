@@ -1,19 +1,29 @@
-import { dataToppic } from "./dataTopic"
 import styles from './CSS/Topic.module.css'
 import SubTopic from "./SubTopic"
+import { useEffect, useState } from "react"
+import { getTop4Tourism } from "../../api/newsApi"
 
 function Topic(){
+    const [dataTopic, setDataTopic] = useState([])
+    useEffect(() => {
+        getTop4Tourism()
+        .then( res => {
+            setDataTopic(res.data)
+        }).catch((err) => {
+            console.log(err);
+        })
+    }, [])
     return(
         <div className={styles.container}>
             <h3>
                 
-                {dataToppic.topic}
+                {dataTopic[0]?.topic}
             
             </h3>
             <div className={styles.content}>
                 {
-                    dataToppic.content.map(item=>{
-                        return <SubTopic key={item.id} data={item} op={item.id===1?1:0}/>
+                    dataTopic?.map((item, index)=>{
+                        return <SubTopic key={index} data={item} op={index===0?1:0}/>
                     })
                 }
 

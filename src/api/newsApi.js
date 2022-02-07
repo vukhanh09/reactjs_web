@@ -88,16 +88,32 @@ function getHotNewsOfEachTopic(topic){
     })
 }
 
+
 function getTop4NewestNewsOfEachTopic(topic){
     return axiosConfig.get('/news/get-top4-newest-news-each-topic', {
         params: {
             topic: topic
         }
     }).then(res => res.data)
+
+const submitFile = ()=>{
+    var formFile = new FormData();
+    var imagefile = document.getElementById('formFile');
+    formFile.append("formFile", imagefile.files[0]);
+    return axiosConfig.post('/uploadFile', formFile, {
+        headers: {
+        'Content-Type': 'multipart/form-data'
+        }
+    })
+    .then(res=>{
+        return res.data.data
+    })
+
     .catch((err) => {
         console.log(err);
     })
 }
+
 export {getHotNews, 
         getHotNewsByTopic, 
         getNewsById, 
@@ -107,5 +123,6 @@ export {getHotNews,
         getTop10News, 
         getTop4Tourism,
         getHotNewsOfEachTopic,
-        getTop4NewestNewsOfEachTopic
+        getTop4NewestNewsOfEachTopic,
+        submitFile
     };

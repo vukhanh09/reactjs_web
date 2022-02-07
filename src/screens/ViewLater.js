@@ -109,12 +109,10 @@ function ViewLater() {
           </div>
           <div className={styles.rightSection}>
             <h2>Nội dung đã lưu</h2>
-            {listNews.length != 0 &&
-              listNews.map((item, index) => (
-                <ItemSearch
-                  key={index}
-                  data={item}
-                  op1={index + 1 !== listNews.length ? 1 : 0}
+            {
+              listNews.length!=0 && listNews.map((item,index)=> <ItemSearch key={index} 
+                      data={item} op1 ={index+1!==listNews.length?1:0} isViewLater={1}/>)
+            }
                 />
               ))}
           </div>

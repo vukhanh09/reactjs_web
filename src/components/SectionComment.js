@@ -15,7 +15,7 @@ function SectionComment({newsId}){
         console.log(newsId)
         getListCommentOfNews(newsId)
         .then(res => {
-            console.log("ressss: ",res.data)
+            // console.log("ressss: ",res.data)
             setListComment(res.data['list_comment']);
         })
         .catch((err)=>{

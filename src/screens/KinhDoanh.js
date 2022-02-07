@@ -6,7 +6,7 @@ function KinhDoanh() {
 
     <div className="Gocnhin">
       <Header/>
-      <Dulich/>
+      <Dulich topic={'Kinh doanh'}/>
       <Footer/>
       
     </div>

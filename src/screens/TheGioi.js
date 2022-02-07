@@ -6,7 +6,7 @@ function TheGioi() {
 
     <div className="Gocnhin">
       <Header/>
-      <Dulich/>
+      <Dulich topic={'Thế giới'}/>
       <Footer/>
       
     </div>

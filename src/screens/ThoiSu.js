@@ -6,7 +6,7 @@ function ThoiSu() {
 
     <div className="Gocnhin">
       <Header/>
-      <Dulich/>
+      <Dulich topic={'Thời sự'}/>
       <Footer/>
       
     </div>

@@ -6,7 +6,7 @@ function DuLich() {
 
     <div className="Gocnhin">
       <Header/>
-      <Dulich/>
+      <Dulich topic={'Du lịch'}/>
       <Footer/>
       
     </div>

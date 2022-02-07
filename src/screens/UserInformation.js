@@ -29,7 +29,7 @@ function UserInformation(){
         <div className={styles.container}>
             <Header/>
             <div className={styles.content}>
-                <UserDisplay user_url='//a.vnecdn.net/avatar/tmp/2021/12/10/6037330351_1639147755.jpg' 
+                <UserDisplay user_url={user?.avt_url.length == 0 ? "avt_default.png" : user?.avt_url} 
                     user_name={user?.nick_name}
                     user_age ={user?.date_of_birth}
                 />

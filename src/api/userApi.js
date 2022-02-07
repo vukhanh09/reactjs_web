@@ -52,4 +52,15 @@ function updatePassword(newPassword, accessToken){
         console.log(err);
     })
 }
-export {getUserInformation, updateNickName, updateEmail, updateAddress, updatePassword};
+
+function updateAvatarImage(newUrl, accessToken){
+    return axiosConfig.post('/users/update-avatar', {
+        newUrl: newUrl
+    },{
+        headers: {"Authorization":`Bearer ${accessToken}`}
+    }).then(res => res.data)
+    .catch((err) => {
+        console.log(err);
+    })
+}
+export {getUserInformation, updateNickName, updateEmail, updateAddress, updatePassword, updateAvatarImage};

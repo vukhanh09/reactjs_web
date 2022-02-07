@@ -55,8 +55,10 @@ function Header() {
     let token = Cookies.get("access_token");
     if(token != null){
       getUserInformation(token).then(
-        res => setUsername(res.data.nick_name)
-      )
+        res => setUsername(res.data?.nick_name)
+      ).catch((err) => {
+        console.log(err)
+      })
     }
     window.addEventListener('scroll',handlleScroll)
   },[])

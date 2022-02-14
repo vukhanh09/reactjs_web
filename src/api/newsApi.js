@@ -95,6 +95,7 @@ function getTop4NewestNewsOfEachTopic(topic){
             topic: topic
         }
     }).then(res => res.data)
+}
 
 const submitFile = ()=>{
     var formFile = new FormData();

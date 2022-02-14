@@ -17,6 +17,11 @@ import { getNewsById } from "../api/newsApi";
 function ViewLater() {
   const [listNews, setListNews] = useState([]);
   useEffect(() => {
+    getAllWatchLater();
+  }, []);
+
+  const getAllWatchLater = () => {
+    setListNews([])
     getListWatchLaterNews(Cookies.get("access_token"))
       .then((res) => {
         console.log(res.data);
@@ -33,10 +38,11 @@ function ViewLater() {
         }
       })
       .catch((err) => console.log(err));
-  }, []);
+  }
 
   const topicFilter = (topic) => {
     getListWatchLaterByTopic(Cookies.get("access_token"), topic).then((res) => {
+      if(res.data.length == 0) setListNews([])
       let listNewsId = res.data;
       for (let i in listNewsId) {
         console.log(listNewsId[i]["news_id"]);
@@ -46,8 +52,9 @@ function ViewLater() {
           })
           .catch((err) => {
             console.log(err);
-          }).catch((err) => {
-              console.log(err);
+          })
+          .catch((err) => {
+            console.log(err);
           });
       }
     });
@@ -101,7 +108,7 @@ function ViewLater() {
 
               <p
                 className={styles.fieldOption}
-                // onClick={topicFilter("Du lịch")}
+                onClick={getAllWatchLater}
               >
                 Tất cả
               </p>
@@ -109,10 +116,13 @@ function ViewLater() {
           </div>
           <div className={styles.rightSection}>
             <h2>Nội dung đã lưu</h2>
-            {
-              listNews.length!=0 && listNews.map((item,index)=> <ItemSearch key={index} 
-                      data={item} op1 ={index+1!==listNews.length?1:0} isViewLater={1}/>)
-            }
+            {listNews.length != 0 &&
+              listNews.map((item, index) => (
+                <ItemSearch
+                  key={index}
+                  data={item}
+                  op1={index + 1 !== listNews.length ? 1 : 0}
+                  isViewLater={1}
                 />
               ))}
           </div>

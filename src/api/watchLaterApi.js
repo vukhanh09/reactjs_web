@@ -35,9 +35,20 @@ function getListWatchLaterNews(accessToken){
 function getListWatchLaterByTopic(accessToken, topic){
     return axiosConfig.get(`/watch-later/get-list-by-topic?topic=${topic}`,{
         headers: {"Authorization":`Bearer ${accessToken}`}
+    }).then(res => {
+        if(res.status === 204) return {data: []}
+        return res.data
+    })
+    .catch((err) => {
+        console.log(err);
+    }) 
+}
+function removeNewsFromWatchLater(accessToken, newsId){
+    return axiosConfig.delete(`/watch-later/delete-news?news_id=${newsId}`,{
+        headers: {"Authorization":`Bearer ${accessToken}`}
     }).then(res => res.data)
     .catch((err) => {
         console.log(err);
     }) 
 }
-export {addNewsToWatchLater, checkExistNewsInListWatchLater, getListWatchLaterNews, getListWatchLaterByTopic};
+export {addNewsToWatchLater, checkExistNewsInListWatchLater, getListWatchLaterNews, getListWatchLaterByTopic, removeNewsFromWatchLater};

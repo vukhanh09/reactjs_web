@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from './CSS/gocnhin.module.css';
 import { useNavigate } from 'react-router-dom';
+import { getTop5Author } from "../../api/authorApi";
+import { getTop10Perspective } from "../../api/perspectiveApi";
 
 function GocNhin() {
+    const [top5Author, setTop5Author] = useState([])
+    const [itemNews, setItemNews] = useState([])
+    const [listNewsSubfolder, setListNewsSubfolder] = useState([])
+    const [manyComments, setManyComments] = useState([])
+
     const navigate = useNavigate();
     const navigatePath = function(path){
         if (window.location.pathname !== path){
@@ -11,29 +18,22 @@ function GocNhin() {
     
       }
 
-    const author = [
-        {
-            id: '01',
-            name: 'Nguyễn Lân Dũng',
-        },
-        {
-            id: '02',
-            name: 'Nguyễn Lân Thái',
-        },
-        {
-            id: '03',
-            name: 'Nguyễn Lân Chiến',
-        },
-        {
-            id: '04',
-            name: 'Nguyễn Hải Anh',
-        },
-        {
-            id: '05',
-            name: 'Nguyễn Văn Long',
-        },
-      ];
-    
+    useEffect(() => {
+        getTop5Author()
+        .then(res => {
+            setTop5Author(res.data)
+        }).catch((err) => {
+            console.log(err)
+        })
+
+        getTop10Perspective()
+        .then(res => {
+            setItemNews(res.data.filter((item, index) => index < 6))
+            setListNewsSubfolder(res.data.filter((item, index) => index >= 6 && index < 8))
+            setManyComments(res.data.filter((item, index) => index < 10 && index >= 8))
+        })
+    },[])
+
       const item_news_author = [ 
         {
           title: 'Tầm nhìn điện gió',
@@ -142,20 +142,20 @@ return (
         <div className={`${styles.container} ${styles.flexbox}`}>
             <div className={styles.col_left_home_gn}>
                 <div className={`${styles.box_category} ${styles.box_author_home} ${styles.sticky}`}>
-                    <h2 className={`${styles.width_common} ${styles.title_box_category}`}><a href="goc-nhin/tac-gia.html" title="Tác giả"  className={styles.inner_title}>Tác giả</a></h2>
+                    <h2 className={`${styles.width_common} ${styles.title_box_category}`}><a href="#" title="Tác giả"  className={styles.inner_title}>Tác giả</a></h2>
                     <ul className={styles.list_author_home}>
-                        {author.map((data) => (
-                            <li key={data.id}>
-                                <a href="tac-gia/nguyen-lan-dung-1203.html" title="Nguyễn Lân Dũng">{data.name}</a>
+                        {top5Author.map((data) => (
+                            <li key={data.author_id}>
+                                <a href="#">{data.name}</a>
                             </li>
                         ))}
                     </ul>
-                    <p className={`${styles.view_all} ${styles.width_common}`}><a href="goc-nhin/tac-gia.html">Xem thêm »</a></p>
+                    <p className={`${styles.view_all} ${styles.width_common}`}><a href="#">Xem thêm »</a></p>
                 </div>
             </div>
             <div className={`${styles.col_left_folder_v2} ${styles.col_center_home_gn}`}>
                 <div className={`${styles.width_common} ${styles.list_news_subfolder} ${styles.list_stream_gocnhin}`} id="paging" data-url="/ajax/goc-nhin" data-container="paging" data-category="1003450" data-page="2" data-error="1" data-exclude="3">
-                    {item_news_author.map((data) => (
+                    {/* {item_news_author.map((data) => (
                         <article onClick={()=>navigatePath('/view-post')} key={data.id} className={`${styles.item_news} ${styles.item_news_common} ${styles.item_1} ${styles.art_top}`}>
                             <div  className={styles.thumb_art}>
                                 <a className={`${styles.thumb} ${styles.thumb_1x1} ${styles.thumb_circle}`} href="" title="Nguyễn Đăng Anh Thi">
@@ -172,23 +172,23 @@ return (
                                 <a href="" className={`${styles.cat} ${styles.name_author}`}  title="Nguyễn Đăng Anh Thi">{data.name}</a>
                             </p>
                         </article>
-                    ))}
+                    ))} */}
                   
-                    {item_news.map((data) => (
+                    {itemNews.map((data) => (
                         <article className={`${styles.item_news} ${styles.item_news_common} ${styles.item_2}`}>
                             <div className={styles.thumb_art}>
                                 <a className={`${styles.thumb} ${styles.thumb_1x1} ${styles.thumb_circle}`} href="tac-gia/le-dang-doanh-1278.html" title="Lê Đăng Doanh">
-                                    <img src={data.url_image}  />
+                                    <img src={data.author_image}  />
                                 </a>
                             </div>
                             <h3 className={styles.title_news}><a data-medium="Item-2" data-thumb="0" href="nang-luc-khang-thuong-4382608.html" title="Năng lực kháng thương">{data.title}</a></h3>
                             <p className={styles.description}>
-                                <a data-medium="Item-2" data-thumb="0" href="nang-luc-khang-thuong-4382608.html" title="Năng lực kháng thương">{data.description}</a>
+                                <a data-medium="Item-2" data-thumb="0" href="nang-luc-khang-thuong-4382608.html" title="Năng lực kháng thương">{data.content[0]}</a>
                             </p>
 
                             <p className={styles.meta_news}>
-                                <a href="/goc-nhin/kinh-doanh-quan-tri" className={`${styles.cat} ${styles.parsed_cate}`} data-cate-id="1004932" title="Kinh doanh &amp; quản trị">{data.category}</a>
-                                <a href="tac-gia/le-dang-doanh-1278.html" className={`${styles.cat} ${styles.name_author}`} title="Lê Đăng Doanh">{data.name}</a>
+                                <a href="/goc-nhin/kinh-doanh-quan-tri" className={`${styles.cat} ${styles.parsed_cate}`} data-cate-id="1004932" title="Kinh doanh &amp; quản trị">{data.description}</a>
+                                <a href="tac-gia/le-dang-doanh-1278.html" className={`${styles.cat} ${styles.name_author}`} title="Lê Đăng Doanh">{data.author}</a>
                             </p>
                         </article>
                     ))} 
@@ -207,12 +207,12 @@ return (
                 <div className={`${styles.box_category} ${styles.box_quantamnhieu}`}>
                     <h2 className={`${styles.width_common} ${styles.title_box_category}`}><span className={styles.inner_title}>Đọc nhiều</span></h2>
                     <div className={styles.list_news_subfolder}> 
-                        {list_news_subfolder.map((data) => (
+                        {listNewsSubfolder.map((data) => (
                             <article key={data.id} className={`${styles.item_news} ${styles.item_news_common}`} data-campaign="Box-QuanTamNhieu">
                                 <h3 className={styles.title_news}><a href="triet-ly-lam-bong-da-4370904.html" data-medium="Item-1" data-thumb="0" title="Triết lý làm bóng đá">{data.title}</a></h3>
-                                <p className={styles.description}><a href="triet-ly-lam-bong-da-4370904.html" data-medium="Item-1" data-thumb="0" title="Triết lý làm bóng đá">{data.description}</a></p>
+                                <p className={styles.description}><a href="triet-ly-lam-bong-da-4370904.html" data-medium="Item-1" data-thumb="0" title="Triết lý làm bóng đá">{data.content[0]}</a></p>
                                 <p className={styles.meta_news}>
-                                    <a href="tac-gia/ha-quang-minh-1465.html" className={`${styles.cat} ${styles.name_author} ${styles.right}`} title="Hà Quang Minh">{data.name}</a>
+                                    <a href="tac-gia/ha-quang-minh-1465.html" className={`${styles.cat} ${styles.name_author} ${styles.right}`} title="Hà Quang Minh">{data.author}</a>
                                 </p>
                             </article>
                         ))}
@@ -222,12 +222,12 @@ return (
                 <div className={`${styles.box_category} ${styles.box_quantamnhieu} ${styles.box_binhluannhieu}`}>
                     <h2 className={`${styles.width_common} ${styles.title_box_category}`}><a href="goc-nhin/binh-luan-nhieu.html" title="Bình luận nhiều" className={styles.inner_title}>Bình luận nhiều</a></h2>
                     <div className={styles.list_news_subfolder}>
-                        {box_binhluannhieu.map((data) => (
+                        {manyComments.map((data) => (
                             <article key={data.id} className={`${styles.item_news} ${styles.item_news_common}`} data-campaign="Box-QuanTamNhieu">
                                 <h3 className={styles.title_news}><a href="triet-ly-lam-bong-da-4370904.html" data-medium="Item-1" data-thumb="0" title="Triết lý làm bóng đá">{data.title}</a></h3>
-                                <p className={styles.description}><a href="triet-ly-lam-bong-da-4370904.html" data-medium="Item-1" data-thumb="0" title="Triết lý làm bóng đá">{data.description}</a></p>
+                                <p className={styles.description}><a href="triet-ly-lam-bong-da-4370904.html" data-medium="Item-1" data-thumb="0" title="Triết lý làm bóng đá">{data.content[0]}</a></p>
                                 <p className={styles.meta_news}>
-                                    <a href="tac-gia/ha-quang-minh-1465.html" className={`${styles.cat} ${styles.name_author} ${styles.right}`} title="Hà Quang Minh">{data.name}</a>
+                                    <a href="tac-gia/ha-quang-minh-1465.html" className={`${styles.cat} ${styles.name_author} ${styles.right}`} title="Hà Quang Minh">{data.author}</a>
                                 </p>
                             </article>
                         ))}

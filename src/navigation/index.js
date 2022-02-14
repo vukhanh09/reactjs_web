@@ -39,6 +39,7 @@ function RootRoutes(){
             <Route path="/view-post" element={<ViewPost />} >
                 <Route path=":postId" element={<ViewPost />} />
             </Route>
+            
             <Route path="/xem-sau" element={<ViewLater />} />
 
             <Route path="/admin" element={<Admin />} />

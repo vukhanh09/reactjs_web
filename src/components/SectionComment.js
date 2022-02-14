@@ -57,7 +57,7 @@ function SectionComment({newsId}){
                 {
                     listComment.map((item,key)=>{
                         let dateTime = new Date(item['timestamp'])
-                        return <DisplayComment key={key} user_name={item['nick_name']} timestamp={dateTime.toLocaleDateString()+" "+dateTime.toLocaleTimeString()}
+                        return <DisplayComment key={key} user_name={item['nick_name']} user_avt={item['user_avt']} timestamp={dateTime.toLocaleDateString()+" "+dateTime.toLocaleTimeString()}
                                 user_comment = {item['content']}
                                 />
                     })

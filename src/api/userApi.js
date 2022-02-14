@@ -63,4 +63,7 @@ function updateAvatarImage(newUrl, accessToken){
         console.log(err);
     })
 }
+
+
+
 export {getUserInformation, updateNickName, updateEmail, updateAddress, updatePassword, updateAvatarImage};

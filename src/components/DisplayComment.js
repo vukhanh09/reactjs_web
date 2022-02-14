@@ -7,23 +7,26 @@ function DisplayComment(props){
     const user_avt = props.user_avt
     return (
         <div className={styles.container}>
-            <div className={styles.leftElement}>
-                <div className={styles.userElement}> 
-                    <img src={user_avt} className={styles.userAvatar}/>
-                    <h3 className={styles.userName}>{user_name}</h3>
+            <div className={styles.comment_thread}>
+                <div className={styles.comment_heading}>
+                    <div className={styles.comment_info}>
+                        <a href="#" className={styles.comment_author}>
+                            <img src={user_avt} className={styles.userAvatar}/>
+                            {user_name}
+                        </a>
+                        <p className={styles.m_0}>
+                            {timestamp}
+                        </p>
+                    </div>
                 </div>
-                <p>{timestamp}</p>
-
+                
+                <div className={styles.comment_body}>
+                    <p>
+                        {user_comment}
+                    </p>
+                    <button type="button" className={styles.button}>Reply</button>
+                </div>
             </div>
-
-            <div className={styles.innerDiv}>
-
-            </div>
-
-            <div className={styles.rightElement}>
-                <p className={styles.userComment}>{user_comment}</p>
-            </div>
-
 
         </div>
     )

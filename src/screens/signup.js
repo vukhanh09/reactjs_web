@@ -25,7 +25,6 @@ function SignUp() {
       dateOfBirth: dateOfBirth,
     })
       .then((res) => {
-          console.log(res)
         if (res.code === 201) {
           console.log("sign up successfully!");
           toast.success('Đăng kí tài khoản thành công!',{theme: "colored" })
@@ -34,9 +33,18 @@ function SignUp() {
           setPasswordRes('')
           setDateOfBirth('')
 
-          setTimeout(() => {
-            navigate('/login')
-        }, 2000);
+            setTimeout(() => {
+              navigate('/login')
+          }, 2000);
+        }
+        if(res.code === 400 ){
+          toast.error('Email đã tồn tại!',{theme: "colored" })
+
+          setUsernameRes('')
+          setEmail('')
+          setPasswordRes('')
+          setDateOfBirth('')
+
         }
       })
       .catch((err) => {

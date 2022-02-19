@@ -6,6 +6,9 @@ import { addCommentForNews, getListCommentOfNews } from '../api/commentAPi'
 import Cookies from 'js-cookie'
 import { useNavigate } from 'react-router-dom'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function SectionComment({newsId}){
     // console.log(newsId)
     const [inputComment,setInputComment] = useState('')
@@ -31,10 +34,16 @@ function SectionComment({newsId}){
             addCommentForNews(Cookies.get('access_token'), newsId, inputComment)
             .then(res => {
                 console.log(res.data);
+                if(res.message !== 'bad word'){
+                    let svResponse = res.data[0]['list_comment']
+                    // console.log('hi',svResponse)
+                    setListComment(svResponse)
+                    toast.success('Đã thêm bài viết vào mục xem sau!',{theme: "colored" })
+                }
+                else{
+                    toast.error('Bình luận có từ nhạy cảm. Vui lòng bình luận lại!',{theme: "colored" })
 
-                let svResponse = res.data[0]['list_comment']
-                // console.log('hi',svResponse)
-                setListComment(svResponse)
+                }
 
             })
             .catch(err=>console.log(err))
@@ -63,6 +72,7 @@ function SectionComment({newsId}){
                     })
                 }
             </div>
+            <ToastContainer />
         </div>
     )
 

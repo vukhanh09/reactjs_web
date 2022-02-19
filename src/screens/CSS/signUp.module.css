@@ -29,6 +29,17 @@
     box-shadow: 0 12px 15px 0 rgba(69, 4, 245, 0.24), 0 17px 50px 0 rgba(65, 17, 240, 0.19);
 }
 
+.loginHtml .signInHtm,
+.loginHtml .signUpHtm {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+    transition: all .4s linear;
+}
 
 .loginHtml .signIn,
 .loginHtml .signUp,

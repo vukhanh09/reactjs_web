@@ -20,7 +20,7 @@ function addCommentForNews(accessToken, newsId, content){
         content: content
     },{
         headers: {"Authorization":`Bearer ${accessToken}`}
-    }).then(res => res.data)
+    }).then(res => res?.data)
     .catch((err) => {
         console.log(err);
     })

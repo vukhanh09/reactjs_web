@@ -29,25 +29,7 @@ function Login() {
         alert("Username or password incorrect!");
       });
   };
-  const register = () => {
-    registration({
-      username: usernameRes,
-      email: email,
-      password: passwordRes,
-      address: "Việt Nam",
-      dateOfBirth: dateOfBirth,
-    })
-      .then((res) => {
-        if (res.code === 200) {
-          console.log("sign up successfully!");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
   return (
-    <>
       <div className={`${styles.loginWrap} ${styles.body}`}>
         <div className={styles.loginHtml}>
           <input
@@ -61,7 +43,7 @@ function Login() {
             Sign In
           </label>
           <input id="tab-2" type="radio" name="tab" className={styles.signUp} />
-          <label for="tab-2" className={styles.tab}>
+          <label for="tab-2" className={styles.tab} onClick={()=>navigate("/signup")}>
             Sign Up
           </label>
           <div className={styles.loginForm}>
@@ -115,97 +97,10 @@ function Login() {
                 <a href="#forgot">Forgot Password?</a>
               </div>
             </div>
-            <div className={styles.signUpHtm}>
-              <div className={styles.group}>
-                <label for="user" className={styles.label}>
-                  UserName
-                </label>
-                <input
-                  id="user"
-                  type="text"
-                  className={styles.input}
-                  value={usernameRes}
-                  onChange={(e) => setUsernameRes(e.target.value)}
-                />
-              </div>
-              <div className={styles.group}>
-                <label for="email" className={styles.label}>
-                  Email Address
-                </label>
-                <input
-                  id="email"
-                  type="text"
-                  className={styles.input}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </div>
-              <div className={styles.group}>
-                <label for="pass" className={styles.label}>
-                  Password
-                </label>
-                <input
-                  id="pass"
-                  type="password"
-                  className={styles.input}
-                  data-type="password"
-                  value={passwordRes}
-                  onChange={(e) => setPasswordRes(e.target.value)}
-                />
-                <label>incorrect</label>
-              </div>
-              <div className={styles.group}>
-                <label for="date" className={styles.label}>
-                  Birth Date
-                </label>
-                <input
-                  id="date"
-                  type="date"
-                  className={styles.input}
-                  value={dateOfBirth}
-                  onChange={(e) => setDateOfBirth(e.target.value)}
-                />
-              </div>
-              <div className={styles.group}>
-                <input
-                  type="submit"
-                  className={styles.button}
-                  value="Sign Up"
-                  onClick={register}
-                />
-              </div>
-              <div className={styles.divgroup}>
-                <div className={styles.group}>
-                  <a href="" className={styles.social_log_gg}>
-                    <img
-                      src="https://www.pinclipart.com/picdir/big/28-288931_google-plus-logo-icon-vector-google-icon-png.png"
-                      alt=""
-                      width="25px"
-                    />
-                    <span className={styles.imgGoogle}>Google</span>
-                  </a>
-                </div>
-                <div className={styles.group}>
-                  <a href="" className={styles.social_log_fb}>
-                    <img
-                      src="https://1.bp.blogspot.com/-yzvoDfOGEWI/XE9Ci5LowiI/AAAAAAAAHcI/EfvaSOaVpOsRUfoY5WgwYbQkamlPTU9LQCK4BGAYYCw/s1600/icon-facebook.png"
-                      alt=""
-                      width="15px"
-                      height="18px"
-                    />
-                    <span className={styles.imgFb}>Facebook</span>
-                  </a>
-                </div>
-              </div>
-              <div className={styles.hr}></div>
-              <div className={styles.footLnk}>
-                <label for="tab-1">Already Member?</label>
-              </div>
-            </div>
+
           </div>
         </div>
       </div>
-    </>
   );
 }
 

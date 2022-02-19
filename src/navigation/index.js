@@ -18,6 +18,7 @@ import KinhDoanh from "../screens/KinhDoanh";
 import TheGioi from "../screens/TheGioi";
 import ThoiSu from "../screens/ThoiSu";
 import UploadFile from "../screens/UploadFile";
+import SignUp from "../screens/signup";
 
 function RootRoutes(){
     return(
@@ -27,6 +28,7 @@ function RootRoutes(){
             <Route path="/upload-file" element={<UploadFile />} /> 
             
             <Route path="/login" element={<Login />} /> 
+            <Route path="/signup" element={<SignUp />} /> 
             <Route path="/goc-nhin" element={<Gocnhin />} /> 
             <Route path="/du-lich" element={<Dulich />} />
             <Route path="/tim-kiem" element={<TimKiem />} />
